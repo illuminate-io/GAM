@@ -324,12 +324,12 @@ done
 while true; do
     read -p "Continue with Mass Lists Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupUNDERHILL sync manager preview ous_and_children $MANUND;
-        $gam update group $groupWHOLESCHOOL sync manager preview ous_and_children $MANUND;
-        $gam update group $groupSTAFF sync manager preview ous_and_children $MANUND;
-        $gam update group $groupSTUDENTS sync manager preview ous_and_children $MANUND;
-        $gam update group $groupALUMNI sync manager preview ous_and_children $MANUND;
-        $gam update group $groupFAMILIES sync manager preview ous_and_children $MANUND;
+        [Yy]* ) $gam update group $groupUNDERHILL sync manager ous_and_children $MANUND;
+        $gam update group $groupWHOLESCHOOL sync manager ous_and_children $MANUND;
+        $gam update group $groupSTAFF sync manager ous_and_children $MANUND;
+        $gam update group $groupSTUDENTS sync manager ous_and_children $MANUND;
+        $gam update group $groupALUMNI sync manager ous_and_children $MANUND;
+        $gam update group $groupFAMILIES sync manager ous_and_children $MANUND;
          break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
