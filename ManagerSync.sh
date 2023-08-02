@@ -3,7 +3,7 @@
 gam=/home/isaac/bin/gamadv-xtd3/gam
 
 
-# OU Variables
+# Google Workspace Organizational Unit Variables
 
 OUUNI=Users/Staff/Teachers/Unicorn
 OUGRASS=Users/Staff/Teachers/Grasshopper
