@@ -2,7 +2,7 @@
 
 gam=/home/isaac/bin/gamadv-xtd3/gam
 
-gam print users username query "isEnrolledIn2Sv=false isSuspended=false orgUnitPath='/Users/Staff/NO2FA'" >> ../../CSV/no2sv_export.csv
+gam print users username query "isEnrolledIn2Sv=false isSuspended=false orgUnitPath='/Users/Staff'" > ../../CSV/no2sv_export.csv
 
 
 gam csv no2sv.csv gam update user "~user" ou "/Users/Staff/NO2FA"
