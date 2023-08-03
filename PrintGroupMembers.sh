@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+gam=/home/isaac/bin/gamadv-xtd3/gam
 
 read -p "Input the name of the group to print list (includes members from nested groups):" GroupEmail
 
@@ -12,7 +14,7 @@ fi
 # Execute GAM Commands
 
 # remove from groups
-/home/isaac/bin/gamadv-xtd3/gam print group-members group $GroupEmail recursive noduplicates > $GroupEmail-groupmembers.csv
+$gam print group-members group $GroupEmail recursive noduplicates > ../../CSV/$GroupEmail-groupmembers.csv
 
 
 echo "Completed Successfully"
