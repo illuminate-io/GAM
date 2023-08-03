@@ -16,7 +16,7 @@ function Scramble-String([string]$inputString){
 $password = Get-RandomCharacters -length 2 -characters 'abcdefghiklmnoprstuvwxyz'
 $password += Get-RandomCharacters -length 2 -characters 'ABCDEFGHKLMNOPRSTUVWXYZ'
 $password += Get-RandomCharacters -length 2 -characters '1234567890'
-$password += Get-RandomCharacters -length 2 -characters '!"$%&/()=?}][{@#*+'
+$password += Get-RandomCharacters -length 2 -characters '!"$%&/()=?@#*+'
 
 #Show inital string of randomly generated characters 
 #Write-Host $password
