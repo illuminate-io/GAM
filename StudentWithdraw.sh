@@ -20,7 +20,7 @@ $gam user $UserEmail delete groups
 # remove from OU and place in Suspended OU
 
 while true; do
-    read -p "Student (y/n)? " yn
+    read -p "Is this a Student (y/n)? " yn
     case $yn in
         [Yy]* ) 
         $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $UserEmail; break;;
