@@ -14,6 +14,7 @@ OUMS=Users/Staff/Teachers/MS
 OUSPEC=Users/Staff/Teachers/Specials
 OUADM=Users/Staff/Admin
 OUUND=Users/Staff/Underhill
+OUCOUN=Users/Staff/Counselors
 
 #
 # One day you need to make a list for IT staff and perhaps counselors 
@@ -179,6 +180,7 @@ while true; do
         * ) echo "Please answer y or n";;
     esac
 done
+
 #Stargazer Preview
 
 while true; do
@@ -234,7 +236,6 @@ while true; do
         * ) echo "Please answer y or n";;
     esac
 done
-
 
 #Badger Preview
 
@@ -336,7 +337,7 @@ while true; do
     esac
 done
 
-#IT helpdesk
+#IT helpdesk preview
 
 
 while true; do
@@ -348,6 +349,8 @@ while true; do
         * ) echo "Please answer y or n";;
     esac
 done
+
+#IT helpdesk for realsies
 
 while true; do
     read -p "Continue with helpdesk lists Manager Sync (y/n)? " yn
