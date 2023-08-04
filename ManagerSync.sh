@@ -99,6 +99,8 @@ groupBADGSTUDnest6=student-$BADG6@santafeschool.org
 #Middle school groups
 #Middle school families
 groupMSFAMstatic=family-ms@santafeschool.org
+group7FAMstatic=family-seventh@santafeschool.org
+group8FAMstatic=family-eighth@santafeschool.org
 groupMSFAMnest7=family-$MS7@santafeschool.org
 groupMSFAMnes8=family-$MS8@santafeschool.org
 
@@ -275,6 +277,8 @@ while true; do
     read -p "Continue with Middle School Manager Sync preview (y/n)? " yn
     case $yn in
         [Yy]* ) $gam update group $groupMSFAMstatic sync manager preview ous_and_children $MANMS;
+        $gam update group $group7FAMstatic sync manager preview ous_and_children $MANMS;
+        $gam update group $group8FAMstatic sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFAMnest7 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFAMnes8 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDstatic sync manager preview ous_and_children $MANMS;
