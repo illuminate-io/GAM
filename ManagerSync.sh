@@ -296,6 +296,8 @@ while true; do
     read -p "Continue with Middle School Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) $gam update group $groupMSFAMstatic sync manager ous_and_children $MANMS;
+        $gam update group $group7FAMstatic sync manager ous_and_children $MANMS;
+        $gam update group $group8FAMstatic sync manager ous_and_children $MANMS;
         $gam update group $groupMSFAMnest7 sync manager ous_and_children $MANMS;
         $gam update group $groupMSFAMnes8 sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDstatic sync manager ous_and_children $MANMS;
