@@ -106,8 +106,12 @@ groupMSFAMnes8=family-$MS8@santafeschool.org
 
 #Middle school students
 groupMSSTUDstatic=student-ms@santafeschool.org
+groupMSSTUD7static=student-seventh@santafeschool.org
+groupMSSTUD8static=student-eighth@santafeschool.org
 groupMSSTUDnest7=student-$MS7@santafeschool.org
 groupMSSTUDnes8=student-$MS8@santafeschool.org
+
+#MS Faculty
 groupMSFACULTY=midschoolfaculty@santafeschool.org
 
 groupUNDERHILL=underhill@santafeschool.org
