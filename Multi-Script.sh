@@ -17,7 +17,7 @@ newuser
 while :
 do
  clear
- echo "Currently Managing $email"
+ 
  echo "  ________     _____       _____                                                                
  /  _____/    /  _  \     /     \                                                               
 /   \  ___   /  /_\  \   /  \ /  \                                                              
@@ -30,45 +30,29 @@ do
 /    |    \  | \/|  |  \___ \  /  <_\ \/  /        \  \___|  \  ___/|   |  \  \__\  ___/ \___ \ 
 \____|__  /__|   |__| /____  > \_____\ \ /_______  /\___  >__|\___  >___|  /\___  >___  >____  >
         \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ "
- echo "1. Set Vacation Message /Remove Forward"
- echo "2. Delete Signature"
- echo "3. Check Vacation Message"
- echo "4. Check Group Membership"
- echo "5. Remove From One Group"
- echo "6. DO NOT USE"
- echo "7. Remove $email from GAL"
- echo "8. Reset Password"
- echo "9. Suspend User"
- echo "10. Offboarding Student"
- echo "11. Offboarding Staff"
- echo "12. Admin Another User"
- echo "13. Exit"
- echo "Please enter option [1 - 13]"
+
+ echo "Currently Managing $email"
+ echo " "
+ echo "1. Check Group Membership"
+ echo "2. Remove From One Group"
+ echo "3. DO NOT USE"
+ echo "4. Remove $email from GAL"
+ echo "5. Reset Password"
+ echo "6. Suspend User"
+ echo "7. Offboarding Student"
+ echo "8. Offboarding Staff"
+ echo "9. Admin Another User"
+ echo "10. Exit"
+ echo "Please enter option [1 - 10]"
     read opt
     case $opt in
-     1) echo "************ Set Vacation Message / Remove Forward *************";
-        read -p "Please enter vacation message: " vaca_message
-        $gam user $email forward off
-        $gam user $email vacation on subject 'Out of the office' message "$vaca_message" startdate $start_date enddate $end_date 
-        echo "Press [enter] key to continue. . .";
-        read enterKey;;
     
-     2) echo "************ Delete Signature ************";
-        $gam user $email signature ' ';
-        echo "Press [enter] key to continue. . .";
-        read enterKey;;
-     
-     3) echo "************ Current Vacation Message ************";
-        $gam  user $email show vacation;
-        echo "Press [enter] key to continue. . .";
-        read enterKey;;
-    
-     4) echo "************ Check Group Membership ************";
+     1) echo "************ Check Group Membership ************";
         $gam print groups domain santafeschool.org members managers owners | $gam print group-members | grep "$email"
         echo "Groups have been checked [enter] key to continue. . .";
         read enterKey;;
      
-     5) echo "************ Remove From One Group ************";
+     2) echo "************ Remove From One Group ************";
         read -p "Enter Group name to be removed " group_name
         $gam update group $group_name remove owner $email
         $gam update group $group_name remove member $email
@@ -76,7 +60,7 @@ do
         read enterKey;;
    
      
-     6) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
+     3) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
         purge_groups=$($gam info user $email | grep -A 100 "Groups:" |cut -d '<' -f2 |cut -d '>' -f1 |grep -v 'Groups:')
            for i in $purge_groups
             do
@@ -87,38 +71,38 @@ do
         read enterKey;;
    
         
-     7) echo "************ Remove $email from GAL ************";
+     4) echo "************ Remove $email from GAL ************";
         $gam user $email profile unshared
         echo "User is now hidden from the GAL Press [enter] key to continue. . .";
         read enterKey;;
         
-     8) echo "************ Reset Password ************";
+     5) echo "************ Reset Password ************";
         randpassword=$(env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 8) #creates random 8 charecter password
         $gam update user $email password $randpassword
         echo "Password has been reset to $randpassword [enter] key to continue. . .";
         read enterKey;;  
 
-     9) echo "************ Suspend  User ************";
+     6) echo "************ Suspend  User ************";
         $gam update user $email suspended on
         echo "User is now suspended press [enter] key to continue. . .";
         read enterKey;;
 
-     10) echo "************ Offboarding Student ************";
+     7) echo "************ Offboarding Student ************";
         $gam user $UserEmail delete groups;
         $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $UserEmail;
         read enterKey;;
 
-     11) echo "************ Offboarding Staff ************";
+     8) echo "************ Offboarding Staff ************";
         $gam user $UserEmail delete groups;
         $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail;
         read enterKey;;
       
-     12) echo "************ Admin Another User ************";
+     9) echo "************ Admin Another User ************";
         newuser;       
         echo "Press [enter] key to continue. . .";
         read enterKey;;
     
-     13) echo "Bye $USER";
+     10) echo "Bye $USER";
         exit 1;; 
         
      *) echo "$opt is an invaild option. Please select option between 1-15 only"
