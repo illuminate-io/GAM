@@ -1,6 +1,6 @@
 #! /bin/bash
 
-gam="python $HOME/Documents/gam/gam.py" #set this to the location of your GAM binaries
+gam=/home/isaac/bin/gamadv-xtd3/gam #set this to the location of your GAM binaries
 start_date=`date +%Y-%m-%d` # sets date for vacation message in proper formate   
 end_date=`date -v+90d +%Y-%m-%d` #adds 90 days to todays date for vacation message
 newuser(){
@@ -24,12 +24,12 @@ do
  echo "3. Check Vacation Message"
  echo "4. Check Group Membership"
  echo "5. Remove From One Group"
- echo "6. Remove From All Groups"
+ echo "6. DO NOT USE"
  echo "7. Remove $email from GAL"
  echo "8. Reset Password"
  echo "9. Suspend User"
- echo "10. Offboarding"
- echo "11. Show all calendars"
+ echo "10. Offboarding Student"
+ echo "11. Offboarding Staff"
  echo "12. Mirror $email's Groups to another user"
  echo "13. Forward $email's Emails to another user"
  echo "14. Admin Another User"
@@ -55,11 +55,7 @@ do
         read enterKey;;
     
      4) echo "************ Check Group Membership ************";
-        purge_groups=$($gam info user $email | grep -A 100 "Groups:" |cut -d '<' -f2 |cut -d '>' -f1 |sort )
-        for i in $purge_groups
-            do
-               echo $i
-            done;
+        $gam print groups domain santafeschool.org member | $gam print group-members | grep $UserEmail > "$UserEmail-groups.csv";
         echo "Groups have been checked [enter] key to continue. . .";
         read enterKey;;
      
@@ -71,7 +67,7 @@ do
         read enterKey;;
    
      
-     6) echo "************ Remove From All Groups ************";
+     6) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
         purge_groups=$($gam info user $email | grep -A 100 "Groups:" |cut -d '<' -f2 |cut -d '>' -f1 |grep -v 'Groups:')
            for i in $purge_groups
             do
@@ -98,26 +94,14 @@ do
         echo "User is now suspended press [enter] key to continue. . .";
         read enterKey;;
 
-     10) echo "************ Offboarding ************";
-        randpassword=$(env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 8)
-        read -p "Please enter vacation message: " vaca_message
-        $gam user $email forward off
-        $gam user $email vacation on subject 'Out of the office' message "$vaca_message" startdate $start_date enddate $end_date
-        $gam user $email signature '';
-        $gam user $email profile unshared
-        $gam update user $email password $randpassword
-        purge_groups=$($gam info user $email | grep -A 100 "Groups:" |cut -d '<' -f2 |cut -d '>' -f1 |grep -v 'Groups:')
-           for i in $purge_groups
-            do
-               echo removing $i            
-               $gam update group $i remove member $email
-            done;
-        echo "All tasks preformed press password has been set to $randpassword [enter] key to continue. . .";
+     10) echo "************ Offboarding Student ************";
+        $gam user $UserEmail delete groups;
+        $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $UserEmail;
         read enterKey;;
 
-     11) echo "************ Show all calendars ************";
-        $gam user $email show calendars
-         echo "All tasks preformed press [enter] key to continue. . .";
+     11) echo "************ Offboarding Staff ************";
+        $gam user $UserEmail delete groups;
+        $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail;;
         read enterKey;;
 
      12) echo "************ Mirror $email groups to another user ************";
