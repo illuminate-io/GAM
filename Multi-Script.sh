@@ -18,7 +18,18 @@ while :
 do
  clear
  echo "Currently Managing $email"
- echo "   M A I N - M E N U"
+ echo "  ________     _____       _____                                                                
+ /  _____/    /  _  \     /     \                                                               
+/   \  ___   /  /_\  \   /  \ /  \                                                              
+\    \_\  \ /    |    \ /    Y    \                                                             
+ \______  / \____|__  / \____|__  /                                                             
+        \/          \/          \/                                                              
+   _____          __             ____      _________      .__                                   
+  /  _  \________/  |_  ______  /  _ \    /   _____/ ____ |__| ____   ____   ____  ____   ______
+ /  /_\  \_  __ \   __\/  ___/  >  _ </\  \_____  \_/ ___\|  |/ __ \ /    \_/ ___\/ __ \ /  ___/
+/    |    \  | \/|  |  \___ \  /  <_\ \/  /        \  \___|  \  ___/|   |  \  \__\  ___/ \___ \ 
+\____|__  /__|   |__| /____  > \_____\ \ /_______  /\___  >__|\___  >___|  /\___  >___  >____  >
+        \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ "
  echo "1. Set Vacation Message /Remove Forward"
  echo "2. Delete Signature"
  echo "3. Check Vacation Message"
@@ -30,11 +41,9 @@ do
  echo "9. Suspend User"
  echo "10. Offboarding Student"
  echo "11. Offboarding Staff"
- echo "12. Mirror $email's Groups to another user"
- echo "13. Forward $email's Emails to another user"
- echo "14. Admin Another User"
- echo "15. Exit"
- echo "Please enter option [1 - 15]"
+ echo "12. Admin Another User"
+ echo "13. Exit"
+ echo "Please enter option [1 - 13]"
     read opt
     case $opt in
      1) echo "************ Set Vacation Message / Remove Forward *************";
@@ -103,38 +112,13 @@ do
         $gam user $UserEmail delete groups;
         $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail;
         read enterKey;;
-
-     12) echo "************ Mirror $email groups to another user ************";
-        read -p  "Enter email address to be mirrored: " mirrored;
-        echo $email groups will be mirrored to $mirrored press 1 if this is OK or 2 to exit;
-        read answer
-        if [ "$answer" -eq "1" ]
-         then
-              purge_groups=$($gam info user $email |grep -A 100 "Groups:" |cut -d '<' -f2 |cut -d '>' -f1 |grep -v 'Groups:')
-                 for i in $purge_groups
-                  do
-                     echo adding $mirror to $i group  
-                     $gam update group $i add member $mirrored
-                  done;
-          echo "All groups have been mirrored press [enter] key to continue. . .";
-          read enterKey;
-        else
-             clear
-             newuser
-         fi;;
-         
-     13) echo "************ Forward $email's Emails to another user ************";
-         read -p  "Enter email address where mail will be forwarded: " forward;
-         gam user $email forward on $forward keep
-         echo "Emails are bing forwarded press [enter] key to continue. . .";
-        read enterKey;;
-        
-     14) echo "************ Admin Another User ************";
+      
+     12) echo "************ Admin Another User ************";
         newuser;       
         echo "Press [enter] key to continue. . .";
         read enterKey;;
     
-     15) echo "Bye $USER";
+     13) echo "Bye $USER";
         exit 1;; 
         
      *) echo "$opt is an invaild option. Please select option between 1-15 only"
