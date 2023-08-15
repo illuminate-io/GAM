@@ -101,7 +101,7 @@ do
 
      11) echo "************ Offboarding Staff ************";
         $gam user $UserEmail delete groups;
-        $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail;;
+        $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail;
         read enterKey;;
 
      12) echo "************ Mirror $email groups to another user ************";
