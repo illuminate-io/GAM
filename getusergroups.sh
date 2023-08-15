@@ -55,7 +55,7 @@ do
         read enterKey;;
     
      4) echo "************ Check Group Membership ************";
-        $gam print groups domain santafeschool.org member | $gam print group-members | grep $UserEmail > "$UserEmail-groups.csv";
+        $gam print groups domain santafeschool.org member $UserEmail | $gam print group-members | grep $UserEmail > "$UserEmail-groups.csv";
         echo "Groups have been checked [enter] key to continue. . .";
         read enterKey;;
      
