@@ -32,14 +32,8 @@ newuser
 while :
 do
  clear
- 
-   echo -e "The color is: ${red}red${clear}!"
-   echo -e "The color is: ${green}green${clear}!"
-   echo -e "The color is: ${yellow}yellow${clear}!"
-   echo -e "The color is: ${blue}blue${clear}!"
-   echo -e "The color is: ${magenta}magenta${clear}!"
-   echo -e "The color is: ${cyan}cyan${clear}!"
-   echo -e "${magenta}  ________     _____       _____                                                                
+
+echo -e "${magenta}  ________     _____       _____                                                                
  /  _____/    /  _  \     /     \                                                               
 /   \  ___   /  /_\  \   /  \ /  \                                                              
 \    \_\  \ /    |    \ /    Y    \                                                             
@@ -52,7 +46,7 @@ do
 \____|__  /__|   |__| /____  > \_____\ \ /_______  /\___  >__|\___  >___|  /\___  >___  >____  >
         \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ ${clear}"
 
- echo "Currently Managing $email"
+ echo -e "Currently Managing ${yellow}$email${clear}"
  echo " "
  echo "1. Check Group Membership"
  echo "2. Remove From One Group"
