@@ -23,12 +23,12 @@ OUCOUN=Users/Staff/Counselors
 
 # List Managers
 
-MANUNI="'$OUUNI','$OUUND','$OUADM'"
-MANGRASS="'$OUGRASS','$OUUND','$OUADM'"
-MANSTAR="'$OUSTAR','$OUUND','$OUADM'"
-MANCENT="'$OUCENT','$OUSPEC','$OUUND','$OUADM'"
-MANBADG="'$OUBADG','$OUSPEC','$OUUND','$OUADM'"
-MANMS="'$OUMS','$OUSPEC','$OUUND','$OUADM'"
+MANUNI="'$OUUNI','$OUUND','$OUADM','$OUSPEC'"
+MANGRASS="'$OUGRASS','$OUUND','$OUADM','$OUSPEC'"
+MANSTAR="'$OUSTAR','$OUUND','$OUADM','$OUSPEC'"
+MANCENT="'$OUCENT','$OUUND','$OUADM','$OUSPEC'"
+MANBADG="'$OUBADG','$OUUND','$OUADM','$OUSPEC'"
+MANMS="'$OUMS','$OUUND','$OUADM','$OUSPEC'"
 MANUND="'$OUUND','$OUADM'"
 
 
@@ -113,7 +113,6 @@ groupMSSTUDnes8=student-$MS8@santafeschool.org
 
 #MS Faculty
 groupMSFACULTY=midschoolfaculty@santafeschool.org
-
 groupUNDERHILL=underhill@santafeschool.org
 groupWHOLESCHOOL=wholeschool@santafeschool.org
 groupSTUDENTS=students@santafeschool.org
