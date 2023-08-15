@@ -3,6 +3,16 @@
 gam=/home/isaac/bin/gamadv-xtd3/gam #set this to the location of your GAM binaries
 start_date=`date +%Y-%m-%d` # sets date for vacation message in proper formate   
 end_date=`date -v+90d +%Y-%m-%d` #adds 90 days to todays date for vacation message
+
+
+# Set the color variable
+green='\033[0;32m'
+# Clear the color after that
+clear='\033[0m'
+
+
+
+
 newuser(){
    echo "     gApps Admin"
   read -p "Enter email address to admin: " email
@@ -18,7 +28,7 @@ while :
 do
  clear
  
- echo "  ________     _____       _____                                                                
+ echo "${green}  ________     _____       _____                                                                
  /  _____/    /  _  \     /     \                                                               
 /   \  ___   /  /_\  \   /  \ /  \                                                              
 \    \_\  \ /    |    \ /    Y    \                                                             
@@ -29,7 +39,7 @@ do
  /  /_\  \_  __ \   __\/  ___/  >  _ </\  \_____  \_/ ___\|  |/ __ \ /    \_/ ___\/ __ \ /  ___/
 /    |    \  | \/|  |  \___ \  /  <_\ \/  /        \  \___|  \  ___/|   |  \  \__\  ___/ \___ \ 
 \____|__  /__|   |__| /____  > \_____\ \ /_______  /\___  >__|\___  >___|  /\___  >___  >____  >
-        \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ "
+        \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ ${clear}"
 
  echo "Currently Managing $email"
  echo " "
