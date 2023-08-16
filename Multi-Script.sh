@@ -108,11 +108,13 @@ ${magenta}
      7) echo "************ Offboarding Student ************";
         $gam user $email delete groups;
         $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $email;
+        echo "$email has been removed from all groups and placed in Withdrawn Students OU  [enter] key to continue. . .";
         read enterKey;;
 
      8) echo "************ Offboarding Staff ************";
         $gam user $email delete groups;
         $gam update org '/Users/Suspended-Users/Archive Staff' add users $email;
+        echo "$email has been removed from all groups and placed in Withdrawn Staff OU  [enter] key to continue. . .";
         read enterKey;;
       
      9) echo "************ Admin Another User ************";
