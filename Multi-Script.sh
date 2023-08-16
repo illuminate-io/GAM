@@ -45,7 +45,9 @@ ${magenta}
  /  /_\  \_  __ \   __\/  ___/  >  _ </\  \_____  \_/ ___\|  |/ __ \ /    \_/ ___\/ __ \ /  ___/
 /    |    \  | \/|  |  \___ \  /  <_\ \/  /        \  \___|  \  ___/|   |  \  \__\  ___/ \___ \ 
 \____|__  /__|   |__| /____  > \_____\ \ /_______  /\___  >__|\___  >___|  /\___  >___  >____  >
-        \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ ${clear}"
+        \/                 \/         \/         \/     \/        \/     \/     \/    \/     \/ 
+        
+        ${clear}"
 
  echo -e "Currently Managing ${yellow}$email${clear}"
  echo " "
@@ -104,13 +106,13 @@ ${magenta}
         read enterKey;;
 
      7) echo "************ Offboarding Student ************";
-        $gam user $UserEmail delete groups;
-        $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $UserEmail;
+        $gam user $email delete groups;
+        $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $email;
         read enterKey;;
 
      8) echo "************ Offboarding Staff ************";
-        $gam user $UserEmail delete groups;
-        $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail;
+        $gam user $email delete groups;
+        $gam update org '/Users/Suspended-Users/Archive Staff' add users $email;
         read enterKey;;
       
      9) echo "************ Admin Another User ************";
