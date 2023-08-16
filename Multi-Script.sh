@@ -52,9 +52,9 @@ ${magenta}
  echo -e "Currently Managing ${yellow}$email${clear}"
  echo " "
  echo "1. Check Group Membership"
- echo "2. Remove From One Group"
- echo "3. DO NOT USE"
- echo "4. Remove $email from GAL"
+ echo "2. CHANGE THIS TO SOMETHING ELSE"
+ echo "3. CHANGE THIS TO SOMETHING ELSE"
+ echo "4. CHANGE THIS TO SOMETHING ELSE"
  echo "5. Reset Password"
  echo "6. Suspend User"
  echo "7. Offboarding Student"
@@ -70,7 +70,7 @@ ${magenta}
         echo "Groups have been checked [enter] key to continue. . .";
         read enterKey;;
      
-     2) echo "************ Remove From One Group ************";
+     2) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
         read -p "Enter Group name to be removed " group_name
         $gam update group $group_name remove owner $email
         $gam update group $group_name remove member $email
@@ -89,7 +89,7 @@ ${magenta}
         read enterKey;;
    
         
-     4) echo "************ Remove $email from GAL ************";
+     4) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
         $gam user $email profile unshared
         echo "User is now hidden from the GAL Press [enter] key to continue. . .";
         read enterKey;;
