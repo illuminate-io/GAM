@@ -70,11 +70,9 @@ ${magenta}
         echo "Groups have been checked [enter] key to continue. . .";
         read enterKey;;
      
-     2) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
-        read -p "Enter Group name to be removed " group_name
-        $gam update group $group_name remove owner $email
-        $gam update group $group_name remove member $email
-        echo "Group has been removed press [enter] key to continue. . .";
+     2) echo "************ Delete All Other Contacts ************";
+        $gam user $email delete othercontacts emailmatchpattern ".*"
+        echo "Other Contacts have been deleted. Press [enter] key to continue. . .";
         read enterKey;;
    
      
