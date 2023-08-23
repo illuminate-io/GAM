@@ -21,7 +21,7 @@ G6=student-sixth@santafeschool.org
 G7=student-seventh@santafeschool.org
 G8=student-eighth@santafeschool.org
 
-#Centaur Preview
+# Centaur Preview
 
 while true; do
     read -p "Continue with Centaur Manager Sync PREVIEW (y/n)? " yn
