@@ -29,7 +29,7 @@ while true; do
         [Yy]* ) 
         #$gam update group $groupUNIFAMstatic clear manager preview
         $gam update group $G3 add member preview ou_and_children_ns $OU3;
-        gam update group $G4 add member preview ou_and_children_ns $OU4; break;;
+        $gam update group $G4 add member preview ou_and_children_ns $OU4; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
