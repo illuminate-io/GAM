@@ -285,6 +285,8 @@ while true; do
         $gam update group $groupMSFAMnest7 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFAMnest8 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDstatic sync manager preview ous_and_children $MANMS;
+        $gam update group $groupMSSTUD7static sync manager preview ous_and_children $MANMS;
+        $gam update group $groupMSSTUD8static sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest8 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFACULTY sync manager preview ous_and_children $MANMS; break;;
@@ -304,6 +306,8 @@ while true; do
         $gam update group $groupMSFAMnest7 sync manager ous_and_children $MANMS;
         $gam update group $groupMSFAMnest8 sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDstatic sync manager ous_and_children $MANMS;
+        $gam update group $groupMSSTUD7static sync manager ous_and_children $MANMS;
+        $gam update group $groupMSSTUD8static sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest8 sync manager ous_and_children $MANMS;
         $gam update group $groupMSFACULTY sync manager ous_and_children $MANMS; break;;
