@@ -102,14 +102,14 @@ groupMSFAMstatic=family-ms@santafeschool.org
 group7FAMstatic=family-seventh@santafeschool.org
 group8FAMstatic=family-eighth@santafeschool.org
 groupMSFAMnest7=family-$MS7@santafeschool.org
-groupMSFAMnes8=family-$MS8@santafeschool.org
+groupMSFAMnest8=family-$MS8@santafeschool.org
 
 #Middle school students
 groupMSSTUDstatic=student-ms@santafeschool.org
 groupMSSTUD7static=student-seventh@santafeschool.org
 groupMSSTUD8static=student-eighth@santafeschool.org
 groupMSSTUDnest7=student-$MS7@santafeschool.org
-groupMSSTUDnes8=student-$MS8@santafeschool.org
+groupMSSTUDnest8=student-$MS8@santafeschool.org
 
 #MS Faculty
 groupMSFACULTY=midschoolfaculty@santafeschool.org
@@ -283,10 +283,10 @@ while true; do
         $gam update group $group7FAMstatic sync manager preview ous_and_children $MANMS;
         $gam update group $group8FAMstatic sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFAMnest7 sync manager preview ous_and_children $MANMS;
-        $gam update group $groupMSFAMnes8 sync manager preview ous_and_children $MANMS;
+        $gam update group $groupMSFAMnest8 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDstatic sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager preview ous_and_children $MANMS;
-        $gam update group $groupMSSTUDnes8 sync manager preview ous_and_children $MANMS;
+        $gam update group $groupMSSTUDnest8 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFACULTY sync manager preview ous_and_children $MANMS; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -302,10 +302,10 @@ while true; do
         $gam update group $group7FAMstatic sync manager ous_and_children $MANMS;
         $gam update group $group8FAMstatic sync manager ous_and_children $MANMS;
         $gam update group $groupMSFAMnest7 sync manager ous_and_children $MANMS;
-        $gam update group $groupMSFAMnes8 sync manager ous_and_children $MANMS;
+        $gam update group $groupMSFAMnest8 sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDstatic sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager ous_and_children $MANMS;
-        $gam update group $groupMSSTUDnes8 sync manager ous_and_children $MANMS;
+        $gam update group $groupMSSTUDnest8 sync manager ous_and_children $MANMS;
         $gam update group $groupMSFACULTY sync manager ous_and_children $MANMS; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
