@@ -24,7 +24,7 @@ G8=student-eighth@santafeschool.org
 #Centaur Preview
 
 while true; do
-    read -p "Continue with Unicorn Manager Sync Preview (y/n)? " yn
+    read -p "Continue with Centaur Manager Sync PREVIEW (y/n)? " yn
     case $yn in
         [Yy]* ) 
         #$gam update group $groupUNIFAMstatic clear manager preview
@@ -37,7 +37,7 @@ done
 #Centaur for realsies
 
 while true; do
-    read -p "Continue with Unicorn Manager Sync (y/n)? " yn
+    read -p "Continue with Centaur Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
         $gam update group $G3 add member ou_and_children_ns $OU3; break;;
