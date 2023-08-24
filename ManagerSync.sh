@@ -5,16 +5,29 @@ gam=/home/isaac/bin/gamadv-xtd3/gam
 
 # Google Workspace Organizational Unit Variables
 
+#Classes
 OUUNI=Users/Staff/Teachers/Unicorn
 OUGRASS=Users/Staff/Teachers/Grasshopper
 OUSTAR=Users/Staff/Teachers/Stargazer
 OUCENT=Users/Staff/Teachers/Centaur
 OUBADG=Users/Staff/Teachers/Badger
 OUMS=Users/Staff/Teachers/MS
-OUSPEC=Users/Staff/Teachers/Specials
+
+#Admin
 OUADM=Users/Staff/Admin
 OUUND=Users/Staff/Underhill
-OUCOUN=Users/Staff/Counselors
+OUCOUN=Users/Staff/Counselor
+
+#Specials
+OUJAP=Users/Staff/Teachers/Japanese
+OUSPA=Users/Staff/Teachers/Spanish
+OUWELL=Users/Staff/Teachers/Wellness
+OUART1=Users/Staff/Teachers/Art-1
+OUART2=Users/Staff/Teachers/Art-2
+OUPE=Users/Staff/Teachers/PE
+OUDRA1=Users/Staff/Teachers/Drama-1
+OUDRA2=Users/Staff/Teachers/Drama-2
+OUMUS=Users/Staff/Teachers/Music
 
 #
 # One day you need to make a list for IT staff and perhaps counselors 
@@ -23,12 +36,12 @@ OUCOUN=Users/Staff/Counselors
 
 # List Managers
 
-MANUNI="'$OUUNI','$OUUND','$OUADM','$OUSPEC'"
-MANGRASS="'$OUGRASS','$OUUND','$OUADM','$OUSPEC'"
-MANSTAR="'$OUSTAR','$OUUND','$OUADM','$OUSPEC'"
-MANCENT="'$OUCENT','$OUUND','$OUADM','$OUSPEC'"
-MANBADG="'$OUBADG','$OUUND','$OUADM','$OUSPEC'"
-MANMS="'$OUMS','$OUUND','$OUADM','$OUSPEC'"
+MANUNI="'$OUUNI','$OUUND','$OUADM','$OUSPAN','$OUWELL'"
+MANGRASS="'$OUGRASS','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
+MANSTAR="'$OUSTAR','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
+MANCENT="'$OUCENT','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART1','$OUPE','$OUDRA2'"
+MANBADG="'$OUBADG','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
+MANMS="'$OUMS','$OUUND','$OUADM','$OUJAP','$OUSPAN','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
 MANUND="'$OUUND','$OUADM'"
 
 
