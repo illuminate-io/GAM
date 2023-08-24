@@ -29,19 +29,15 @@ OUDRA1=Users/Staff/Teachers/Drama-1
 OUDRA2=Users/Staff/Teachers/Drama-2
 OUMUS=Users/Staff/Teachers/Music
 
-#
-# One day you need to make a list for IT staff and perhaps counselors 
-# (and any other teams that need mass mailing list ability)
-#
 
 # List Managers
 
-MANUNI="'$OUUNI','$OUUND','$OUADM','$OUSPAN','$OUWELL'"
-MANGRASS="'$OUGRASS','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
-MANSTAR="'$OUSTAR','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
-MANCENT="'$OUCENT','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART1','$OUPE','$OUDRA2'"
-MANBADG="'$OUBADG','$OUUND','$OUADM','$OUSPAN','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
-MANMS="'$OUMS','$OUUND','$OUADM','$OUJAP','$OUSPAN','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
+MANUNI="'$OUUNI','$OUUND','$OUADM','$OUSPA','$OUWELL'"
+MANGRASS="'$OUGRASS','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
+MANSTAR="'$OUSTAR','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
+MANCENT="'$OUCENT','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2'"
+MANBADG="'$OUBADG','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
+MANMS="'$OUMS','$OUUND','$OUADM','$OUJAP','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
 MANUND="'$OUUND','$OUADM'"
 
 
