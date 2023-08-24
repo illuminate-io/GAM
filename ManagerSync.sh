@@ -21,7 +21,7 @@ OUCOUN=Users/Staff/Counselor
 #Specials
 OUJAP=Users/Staff/Teachers/Japanese
 OUSPA=Users/Staff/Teachers/Spanish
-OUWELL=Users/Staff/Teachers/Wellness
+OUWELL=Users/Staff/Counselors
 OUART1=Users/Staff/Teachers/Art-1
 OUART2=Users/Staff/Teachers/Art-2
 OUPE=Users/Staff/Teachers/PE
