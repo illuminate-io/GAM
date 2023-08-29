@@ -53,8 +53,8 @@ ${magenta}
  echo " "
  echo "1. Check Group Membership"
  echo "2. Delete All Other Contacts"
- echo "3. ------------------------"
- echo "4. ------------------------"
+ echo "3. Check Last Login Time"
+ echo "4. Remove From All Workspace Contact Lists"
  echo "5. Reset Password"
  echo "6. Suspend User"
  echo "7. Offboarding Student"
@@ -77,19 +77,14 @@ ${magenta}
         read enterKey;;
    
      
-     3) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
-        purge_groups=$($gam info user $email | grep -A 100 "Groups:" |cut -d '<' -f2 |cut -d '>' -f1 |grep -v 'Groups:')
-           for i in $purge_groups
-            do
-               echo removing $i
-               $gam update group $i remove member $email
-            done;
-        echo "All groups removed press [enter] key to continue. . .";
+     3) echo "************ Check Last Login Time ************";
+        $gam report users select users $email parameters accounts:last_login_time;
+        echo "Press [enter] key to continue. . .";
         read enterKey;;
    
         
-     4) echo "************ CHANGE THIS TO SOMETHING ELSE ************";
-        $gam user $email profile unshared
+     4) echo "************ Remove From All Workspace Contact Lists ************";
+        $gam all users_ns clear contacts emailmatchpattern $email
         echo "User is now hidden from the GAL Press [enter] key to continue. . .";
         read enterKey;;
         
@@ -107,13 +102,15 @@ ${magenta}
      7) echo "************ Offboarding Student ************";
         $gam user $email delete groups;
         $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $email;
-        echo "$email has been removed from all groups and placed in Withdrawn Students OU  [enter] key to continue. . .";
+        $gam update user $email suspended on
+        echo "$email has been removed from all groups, suspended, and placed in Withdrawn Students OU  [enter] key to continue. . .";
         read enterKey;;
 
      8) echo "************ Offboarding Staff ************";
         $gam user $email delete groups;
         $gam update org '/Users/Suspended-Users/Archive Staff' add users $email;
-        echo "$email has been removed from all groups and placed in Withdrawn Staff OU  [enter] key to continue. . .";
+        $gam update user $email suspended on
+        echo "$email has been removed from all groups, suspended, and placed in Withdrawn Staff OU  [enter] key to continue. . .";
         read enterKey;;
 
      9) echo "************ Offboarding Family ************";
