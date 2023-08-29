@@ -59,8 +59,9 @@ ${magenta}
  echo "6. Suspend User"
  echo "7. Offboarding Student"
  echo "8. Offboarding Staff"
- echo "9. Admin Another User"
- echo "10. Exit"
+ echo "9. Offboarding Family"
+ echo "10. Admin Another User"
+ echo "11. Exit"
  echo "Please enter option [1 - 10]"
     read opt
     case $opt in
@@ -114,13 +115,18 @@ ${magenta}
         $gam update org '/Users/Suspended-Users/Archive Staff' add users $email;
         echo "$email has been removed from all groups and placed in Withdrawn Staff OU  [enter] key to continue. . .";
         read enterKey;;
+
+     9) echo "************ Offboarding Family ************";
+        $gam user $email delete groups;
+        echo "$email has been removed from all groups  [enter] key to continue. . .";
+        read enterKey;;
       
-     9) echo "************ Admin Another User ************";
+     10) echo "************ Admin Another User ************";
         newuser;       
         echo "Press [enter] key to continue. . .";
         read enterKey;;
     
-     10) echo "Bye $USER";
+     11) echo "Bye $USER";
         exit 1;; 
         
      *) echo "$opt is an invaild option. Please select option between 1-15 only"
