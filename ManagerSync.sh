@@ -229,8 +229,8 @@ while true; do
     case $yn in
         [Yy]* ) 
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
-        $gam update group $group1FAMstatic sync manager preview ous_and_children $MANSTAR;
-        $gam update group $group2FAMstatic sync manager preview ous_and_children $MANSTAR;
+        $gam update group $group1FAMstatic sync manager ous_and_children $MANSTAR;
+        $gam update group $group2FAMstatic sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR; break;;
         [Nn]* ) break;;
