@@ -80,8 +80,8 @@ groupGRASSFAMnestK=family-$K@santafeschool.org
 #Stargazer groups
 #Stargazer families
 groupSTARFAMstatic=family-stargazer@santafeschool.org
-#group1FAMstatic=family-first@santafeschool.org
-#group2FAMstatic=family-second@santafeschool.org
+group1FAMstatic=family-first@santafeschool.org
+group2FAMstatic=family-second@santafeschool.org
 groupSTARFAMnest1=family-$STAR1@santafeschool.org
 groupSTARFAMnest2=family-$STAR2@santafeschool.org
 
@@ -198,7 +198,8 @@ done
 while true; do
     read -p "Continue with Grasshopper Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupGRASSFAMstatic sync manager ous_and_children $MANGRASS;
+        [Yy]* ) 
+        $gam update group $groupGRASSFAMstatic sync manager ous_and_children $MANGRASS;
         $gam update group $groupGRASSFAMnestK sync manager ous_and_children $MANGRASS; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -210,7 +211,10 @@ done
 while true; do
     read -p "Continue with Stargazer Manager Sync Preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $MANSTAR;
+        [Yy]* ) 
+        $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $MANSTAR;
+        $gam update group $group1FAMstatic sync manager preview ous_and_children $MANSTAR;
+        $gam update group $group2FAMstatic sync manager preview ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $MANSTAR; break;;
         [Nn]* ) break;;
@@ -223,7 +227,10 @@ done
 while true; do
     read -p "Continue with Stargazer Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
+        [Yy]* ) 
+        $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
+        $gam update group $group1FAMstatic sync manager preview ous_and_children $MANSTAR;
+        $gam update group $group2FAMstatic sync manager preview ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR; break;;
         [Nn]* ) break;;
