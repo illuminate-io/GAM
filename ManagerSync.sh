@@ -234,7 +234,7 @@ done
 #Centaur Preview
 
 while true; do
-    read -p "Continue with Centaur Manager Sync (y/n)? " yn
+    read -p "Continue with Centaur Manager Sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
         $gam update group $groupCENTFAMmstatic sync manager preview ous_and_children $MANCENT;
