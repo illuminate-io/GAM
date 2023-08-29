@@ -80,28 +80,38 @@ groupGRASSFAMnestK=family-$K@santafeschool.org
 #Stargazer groups
 #Stargazer families
 groupSTARFAMstatic=family-stargazer@santafeschool.org
+#group1FAMstatic=family-first@santafeschool.org
+#group2FAMstatic=family-second@santafeschool.org
 groupSTARFAMnest1=family-$STAR1@santafeschool.org
 groupSTARFAMnest2=family-$STAR2@santafeschool.org
 
 #Centaur groups
 #Centaur families
 groupCENTFAMmstatic=family-centaur@santafeschool.org
+#group3FAMstatic=family-third@santafeschool.org
+#group4FAMstatic=family-fourth@santafeschool.org
 groupCENTFAMnest3=family-$CENT3@santafeschool.org
 groupCENTFAMnest4=family-$CENT4@santafeschool.org
 
 #Centaur students
 groupCENTSTUDstatic=student-centaur@santafeschool.org
+group3STUDstatic=student-third@santafeschool.org
+group4STUDstatic=student-fourth@santafeschool.org
 groupCENTSTUDnest3=student-$CENT3@santafeschool.org
 groupCENTSTUDnest4=student-$CENT4@santafeschool.org
 
 #Badger groups
 #Badger families
 groupBADGFAMstatic=family-badger@santafeschool.org
+#group5FAMstatic=family-fifth@santafeschool.org
+#group6FAMstatic=family-sixth@santafeschool.org
 groupBADGFAMnest5=family-$BADG5@santafeschool.org
 groupBADGFAMnest6=family-$BADG6@santafeschool.org
 
 #Badger students
 groupBADGSTUDstatic=student-badger@santafeschool.org
+group5STUDstatic=student-fifth@santafeschool.org
+group6STUDstatic=student-sixth@santafeschool.org
 groupBADGSTUDnest5=student-$BADG5@santafeschool.org
 groupBADGSTUDnest6=student-$BADG6@santafeschool.org
 
@@ -226,7 +236,10 @@ done
 while true; do
     read -p "Continue with Centaur Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupCENTFAMmstatic sync manager preview ous_and_children $MANCENT;
+        [Yy]* ) 
+        $gam update group $groupCENTFAMmstatic sync manager preview ous_and_children $MANCENT;
+        $gam update group $group3STUDstatic sync manager preview ous_and_children $MANCENT;
+        $gam update group $group4STUDstatic sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest3 sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest4 sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTSTUDnest3 sync manager preview ous_and_children $MANCENT;
@@ -241,7 +254,10 @@ done
 while true; do
     read -p "Continue with Centaur Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupCENTFAMmstatic sync manager ous_and_children $MANCENT;
+        [Yy]* ) 
+        $gam update group $groupCENTFAMmstatic sync manager ous_and_children $MANCENT;
+        $gam update group $group3STUDstatic sync manager ous_and_children $MANCENT;
+        $gam update group $group4STUDstatic sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest3 sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest4 sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTSTUDnest3 sync manager ous_and_children $MANCENT;
@@ -256,7 +272,10 @@ done
 while true; do
     read -p "Continue with Badger Manager Sync Preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupBADGFAMstatic sync manager preview ous_and_children $MANBADG;
+        [Yy]* ) 
+        $gam update group $groupBADGFAMstatic sync manager preview ous_and_children $MANBADG;
+        $gam update group $group4STUDstatic sync manager preview ous_and_children $MANBADG;
+        $gam update group $group5STUDstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest5 sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest6 sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager preview ous_and_children $MANBADG;
@@ -273,6 +292,8 @@ while true; do
     read -p "Continue with Badger Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) $gam update group $groupBADGFAMstatic sync manager ous_and_children $MANBADG;
+        $gam update group $group4STUDstatic sync manager ous_and_children $MANBADG;
+        $gam update group $group5STUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest5 sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest6 sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager ous_and_children $MANBADG;
