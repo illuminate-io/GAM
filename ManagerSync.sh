@@ -285,10 +285,10 @@ while true; do
     case $yn in
         [Yy]* ) 
         $gam update group $groupBADGFAMstatic sync manager preview ous_and_children $MANBADG;
-        $gam update group $group4STUDstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $group5STUDstatic sync manager preview ous_and_children $MANBADG;
-        $gam update group $group4FAMstatic sync manager preview ous_and_children $MANBADG;
+        $gam update group $group6STUDstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $group5FAMstatic sync manager preview ous_and_children $MANBADG;
+        $gam update group $group6FAMstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest5 sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest6 sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager preview ous_and_children $MANBADG;
@@ -305,10 +305,10 @@ while true; do
     read -p "Continue with Badger Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) $gam update group $groupBADGFAMstatic sync manager ous_and_children $MANBADG;
-        $gam update group $group4STUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $group5STUDstatic sync manager ous_and_children $MANBADG;
-        $gam update group $group4FAMstatic sync manager ous_and_children $MANBADG;
+        $gam update group $group6STUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $group5FAMstatic sync manager ous_and_children $MANBADG;
+        $gam update group $group6FAMstatic sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest5 sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGFAMnest6 sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager ous_and_children $MANBADG;
