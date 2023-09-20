@@ -165,6 +165,16 @@ while true; do
     esac
 done
 
+while true; do
+    read -p "Continue with Unicorn Delivery Settings Preview (y/n)? " yn
+    case $yn in
+        [Yy]* )
+        $gam update group $groupUNIFAMstatic update nomail preview ous_and_children $OUWELL; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer y or n";;
+    esac
+done
+
 #Unicorn for realsies
 
 while true; do
