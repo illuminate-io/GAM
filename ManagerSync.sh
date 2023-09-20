@@ -165,15 +165,7 @@ while true; do
     esac
 done
 
-while true; do
-    read -p "Continue with Unicorn Delivery Settings Preview (y/n)? " yn
-    case $yn in
-        [Yy]* )
-        $gam update group $groupUNIFAMstatic update nomail preview ous_and_children $OUWELL; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer y or n";;
-    esac
-done
+
 
 #Unicorn for realsies
 
@@ -232,6 +224,16 @@ while true; do
     esac
 done
 
+while true; do
+    read -p "Continue with Unicorn Delivery Settings Preview (y/n)? " yn
+    case $yn in
+        [Yy]* )
+        $gam update group $groupUNIFAMstatic update nomail preview ous_and_children $OUWELL; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer y or n";;
+    esac
+done
+
 #Stargazer for realsies
 
 while true; do
@@ -243,6 +245,16 @@ while true; do
         $gam update group $group2FAMstatic sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer y or n";;
+    esac
+done
+
+while true; do
+    read -p "Continue with Stargazer Delivery Settings Preview (y/n)? " yn
+    case $yn in
+        [Yy]* )
+        $gam update group $groupSTARFAMnest1 update nomail ous_and_children $OUSPA; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
