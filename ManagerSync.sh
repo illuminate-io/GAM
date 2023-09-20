@@ -30,14 +30,25 @@ OUDRA2=Users/Staff/Teachers/Drama-2
 OUMUS=Users/Staff/Teachers/Music
 
 
-# List Managers
+# List nomail Managers (these managers will not receive any mail from the group)
 
-MANUNI="'$OUUNI','$OUUND','$OUADM','$OUWELL'"
-MANGRASS="'$OUGRASS','$OUUND','$OUADM','$OUWELL'"
-MANSTAR="'$OUSTAR','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA1'"
-MANCENT="'$OUCENT','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2'"
-MANBADG="'$OUBADG','$OUUND','$OUADM','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
-MANMS="'$OUMS','$OUUND','$OUADM','$OUJAP','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
+nmUNI="'$OUADM','$OUWELL'"
+nmGRASS="'$OUADM','$OUWELL'"
+nmSTAR="'$OUADM','$OUWELL','$OUSPA'"
+nmCENT="'$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2'"
+nmBADG="'$OUADM','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
+nmMS="'$OUADM','$OUJAP','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
+nmUND=""
+
+
+# List allmail Managers (these managers will receive all mail sent to the group)
+
+MANUNI="'$OUUNI','$OUUND'"
+MANGRASS="'$OUGRASS','$OUUND'"
+MANSTAR="'$OUSTAR','$OUUND',"
+MANCENT="'$OUCENT','$OUUND',"
+MANBADG="'$OUBADG','$OUUND'"
+MANMS="'$OUMS','$OUUND'"
 MANUND="'$OUUND','$OUADM'"
 
 
@@ -156,10 +167,17 @@ while true; do
     read -p "Continue with Unicorn Manager Sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
-        #$gam update group $groupUNIFAMstatic clear manager preview
+        $gam update group $groupUNIFAMstatic clear manager preview
+
+#allmail OUs
         $gam update group $groupUNIFAMstatic sync manager preview ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager preview ous_and_children $MANUNI;
-        $gam update group $groupUNIFAMnestPK2 sync manager preview ous_and_children $MANUNI; break;;
+        $gam update group $groupUNIFAMnestPK2 sync manager preview ous_and_children $MANUNI; break;
+#nomail OUs
+        $gam update group $groupUNIFAMstatic sync manager nomail preview ous_and_children $nmUNI;
+        $gam update group $groupUNIFAMnestPK1 sync manager nomail preview ous_and_children $nmUNI;
+        $gam update group $groupUNIFAMnestPK2 sync manager nomail preview ous_and_children $nmUNI; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -251,9 +269,12 @@ while true; do
 done
 
 while true; do
-    read -p "Continue with Stargazer Delivery Settings Preview (y/n)? " yn
+    read -p "Continue with Stargazer Delivery Settings (y/n)? " yn
     case $yn in
         [Yy]* )
+
+
+
         $gam update group $groupSTARFAMnest1 update nomail ous_and_children $OUSPA; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
