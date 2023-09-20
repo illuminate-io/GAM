@@ -166,14 +166,16 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 while true; do
     read -p "Continue with Unicorn Manager Sync Preview (y/n)? " yn
     case $yn in
-        [Yy]* ) 
+        [Yy]* )
+
+#clear managers
         $gam update group $groupUNIFAMstatic clear manager preview
 
-#allmail OUs
+#allmail managers
         $gam update group $groupUNIFAMstatic sync manager preview ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager preview ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK2 sync manager preview ous_and_children $MANUNI; break;
-#nomail OUs
+#nomail managers
         $gam update group $groupUNIFAMstatic sync manager nomail preview ous_and_children $nmUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager nomail preview ous_and_children $nmUNI;
         $gam update group $groupUNIFAMnestPK2 sync manager nomail preview ous_and_children $nmUNI; break;;
@@ -190,11 +192,20 @@ done
 while true; do
     read -p "Continue with Unicorn Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) 
-        #$gam update group $groupUNIFAMstatic clear manager preview
+        [Yy]* )
+
+#clear managers
+        $gam update group $groupUNIFAMstatic clear manager
+
+#allmail managers
         $gam update group $groupUNIFAMstatic sync manager ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager ous_and_children $MANUNI;
-        $gam update group $groupUNIFAMnestPK2 sync manager ous_and_children $MANUNI; break;;
+        $gam update group $groupUNIFAMnestPK2 sync manager ous_and_children $MANUNI; break;
+#nomail managers
+        $gam update group $groupUNIFAMstatic sync manager nomail ous_and_children $nmUNI;
+        $gam update group $groupUNIFAMnestPK1 sync manager nomail ous_and_children $nmUNI;
+        $gam update group $groupUNIFAMnestPK2 sync manager nomail ous_and_children $nmUNI; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
