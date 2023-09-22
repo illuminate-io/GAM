@@ -711,7 +711,7 @@ while true; do
     case $yn in
         [Yy]* ) 
         
-        $gam update group $groupHELPDESK add manager preview user isaac@santafeschool.org;
+        $gam update group $groupHELPDESK sync manager preview user isaac@santafeschool.org;
 
          break;;
         [Nn]* ) break;;
@@ -726,7 +726,7 @@ while true; do
     case $yn in
         [Yy]* ) 
         
-        $gam update group $groupHELPDESK add manager user isaac@santafeschool.org;
+        $gam update group $groupHELPDESK sync manager user isaac@santafeschool.org;
         
          break;;
         [Nn]* ) break;;
