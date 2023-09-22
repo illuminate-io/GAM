@@ -203,9 +203,9 @@ while true; do
 
 #clear managers
 
-        $gam update group_ns $groupUNIFAMstatic clear manager;
-        $gam update group_ns $groupUNIFAMnestPK1 clear manager;
-        $gam update group_ns $groupUNIFAMnestPK2 clear manager;
+        $gam update group $groupUNIFAMstatic clear manager;
+        $gam update group $groupUNIFAMnestPK1 clear manager;
+        $gam update group $groupUNIFAMnestPK2 clear manager;
 
 #allmail managers
 
@@ -234,8 +234,8 @@ while true; do
 
 #clear grasshopper managers preview
 
-        $gam update group_ns $groupGRASSFAMstatic clear manager preview;
-        $gam update group_ns $groupGRASSFAMnestK clear manager preview;
+        $gam update group $groupGRASSFAMstatic clear manager preview;
+        $gam update group $groupGRASSFAMnestK clear manager preview;
 
 #allmail grasshopper managers preview
 
@@ -261,8 +261,8 @@ while true; do
 
 #clear grasshopper managers
 
-        $gam update group_ns $groupGRASSFAMstatic clear manager;
-        $gam update group_ns $groupGRASSFAMnestK clear manager;
+        $gam update group $groupGRASSFAMstatic clear manager;
+        $gam update group $groupGRASSFAMnestK clear manager;
 
 #allmail grasshopper managers
 
@@ -288,11 +288,11 @@ while true; do
 
 #clear stargazer managers preview
 
-        $gam update group_ns $groupSTARFAMnest1 clear manager preview;
-        $gam update group_ns $group1FAMstatic clear manager preview;
-        $gam update group_ns $group2FAMstatic clear manager preview;
-        $gam update group_ns $groupSTARFAMnest1 clear manager preview;
-        $gam update group_ns $groupSTARFAMnest2 clear manager preview;
+        $gam update group $groupSTARFAMnest1 clear manager preview;
+        $gam update group $group1FAMstatic clear manager preview;
+        $gam update group $group2FAMstatic clear manager preview;
+        $gam update group $groupSTARFAMnest1 clear manager preview;
+        $gam update group $groupSTARFAMnest2 clear manager preview;
 
 #allmail stargazer managers preview
 
@@ -325,11 +325,11 @@ while true; do
 
 #clear stargazer managers
 
-        $gam update group_ns $groupSTARFAMnest1 clear manager;
-        $gam update group_ns $group1FAMstatic clear manager;
-        $gam update group_ns $group2FAMstatic clear manager;
-        $gam update group_ns $groupSTARFAMnest1 clear manager;
-        $gam update group_ns $groupSTARFAMnest2 clear manager;
+        $gam update group $groupSTARFAMnest1 clear manager;
+        $gam update group $group1FAMstatic clear manager;
+        $gam update group $group2FAMstatic clear manager;
+        $gam update group $groupSTARFAMnest1 clear manager;
+        $gam update group $groupSTARFAMnest2 clear manager;
 
 #allmail stargazer managers
 
@@ -361,15 +361,15 @@ while true; do
 
 #clear centaur managers preview
 
-        $gam update group_ns $groupCENTFAMmstatic clear manager preview;
-        $gam update group_ns $group3STUDstatic clear manager preview;
-        $gam update group_ns $group4STUDstatic clear manager preview;
-        $gam update group_ns $group3FAMstatic clear manager preview;
-        $gam update group_ns $group4FAMstatic clear manager preview;
-        $gam update group_ns $groupCENTFAMnest3 clear manager preview;
-        $gam update group_ns $groupCENTFAMnest4 clear manager preview;
-        $gam update group_ns $groupCENTSTUDnest3 clear manager preview;
-        $gam update group_ns $groupCENTSTUDnest4 clear manager preview;
+        $gam update group $groupCENTFAMmstatic clear manager preview;
+        $gam update group $group3STUDstatic clear manager preview;
+        $gam update group $group4STUDstatic clear manager preview;
+        $gam update group $group3FAMstatic clear manager preview;
+        $gam update group $group4FAMstatic clear manager preview;
+        $gam update group $groupCENTFAMnest3 clear manager preview;
+        $gam update group $groupCENTFAMnest4 clear manager preview;
+        $gam update group $groupCENTSTUDnest3 clear manager preview;
+        $gam update group $groupCENTSTUDnest4 clear manager preview;
 
 #allmail centaur managers preview
 
@@ -409,15 +409,15 @@ while true; do
 
 #clear centaur managers
 
-        $gam update group_ns $groupCENTFAMmstatic clear manager;
-        $gam update group_ns $group3STUDstatic clear manager;
-        $gam update group_ns $group4STUDstatic clear manager;
-        $gam update group_ns $group3FAMstatic clear manager;
-        $gam update group_ns $group4FAMstatic clear manager;
-        $gam update group_ns $groupCENTFAMnest3 clear manager;
-        $gam update group_ns $groupCENTFAMnest4 clear manager;
-        $gam update group_ns $groupCENTSTUDnest3 clear manager;
-        $gam update group_ns $groupCENTSTUDnest4 clear manager;
+        $gam update group $groupCENTFAMmstatic clear manager;
+        $gam update group $group3STUDstatic clear manager;
+        $gam update group $group4STUDstatic clear manager;
+        $gam update group $group3FAMstatic clear manager;
+        $gam update group $group4FAMstatic clear manager;
+        $gam update group $groupCENTFAMnest3 clear manager;
+        $gam update group $groupCENTFAMnest4 clear manager;
+        $gam update group $groupCENTSTUDnest3 clear manager;
+        $gam update group $groupCENTSTUDnest4 clear manager;
 
 #allmail centaur managers
 
@@ -456,16 +456,16 @@ while true; do
 
 #clear badger managers preview
 
-        $gam update group_ns $groupBADGFAMstatic clear manager preview;
-        $gam update group_ns $group5STUDstatic clear manager preview;
-        $gam update group_ns $group6STUDstatic clear manager preview;
-        $gam update group_ns $group5FAMstatic clear manager preview;
-        $gam update group_ns $group6FAMstatic clear manager preview;
-        $gam update group_ns $groupBADGFAMnest5 clear manager preview;
-        $gam update group_ns $groupBADGFAMnest6 clear manager preview;
-        $gam update group_ns $groupBADGSTUDstatic clear manager preview;
-        $gam update group_ns $groupBADGSTUDnest5 clear manager preview;
-        $gam update group_ns $groupBADGSTUDnest6 clear manager preview; 
+        $gam update group $groupBADGFAMstatic clear manager preview;
+        $gam update group $group5STUDstatic clear manager preview;
+        $gam update group $group6STUDstatic clear manager preview;
+        $gam update group $group5FAMstatic clear manager preview;
+        $gam update group $group6FAMstatic clear manager preview;
+        $gam update group $groupBADGFAMnest5 clear manager preview;
+        $gam update group $groupBADGFAMnest6 clear manager preview;
+        $gam update group $groupBADGSTUDstatic clear manager preview;
+        $gam update group $groupBADGSTUDnest5 clear manager preview;
+        $gam update group $groupBADGSTUDnest6 clear manager preview; 
 
 #allmail badger managers preview
 
@@ -508,16 +508,16 @@ while true; do
 
 #clear badger managers
 
-        $gam update group_ns $groupBADGFAMstatic clear manager;
-        $gam update group_ns $group5STUDstatic clear manager;
-        $gam update group_ns $group6STUDstatic clear manager;
-        $gam update group_ns $group5FAMstatic clear manager;
-        $gam update group_ns $group6FAMstatic clear manager;
-        $gam update group_ns $groupBADGFAMnest5 clear manager;
-        $gam update group_ns $groupBADGFAMnest6 clear manager;
-        $gam update group_ns $groupBADGSTUDstatic clear manager;
-        $gam update group_ns $groupBADGSTUDnest5 clear manager;
-        $gam update group_ns $groupBADGSTUDnest6 clear manager;       
+        $gam update group $groupBADGFAMstatic clear manager;
+        $gam update group $group5STUDstatic clear manager;
+        $gam update group $group6STUDstatic clear manager;
+        $gam update group $group5FAMstatic clear manager;
+        $gam update group $group6FAMstatic clear manager;
+        $gam update group $groupBADGFAMnest5 clear manager;
+        $gam update group $groupBADGFAMnest6 clear manager;
+        $gam update group $groupBADGSTUDstatic clear manager;
+        $gam update group $groupBADGSTUDnest5 clear manager;
+        $gam update group $groupBADGSTUDnest6 clear manager;       
 
 #allmail badger managers
 
@@ -560,17 +560,17 @@ while true; do
         
 #clear ms managers preview
 
-        $gam update group_ns $groupMSFAMstatic clear manager preview;
-        $gam update group_ns $group7FAMstatic clear manager preview;
-        $gam update group_ns $group8FAMstatic clear manager preview;
-        $gam update group_ns $groupMSFAMnest7 clear manager preview;
-        $gam update group_ns $groupMSFAMnest8 clear manager preview;
-        $gam update group_ns $groupMSSTUDstatic clear manager preview;
-        $gam update group_ns $groupMSSTUD7static clear manager preview;
-        $gam update group_ns $groupMSSTUD8static clear manager preview;
-        $gam update group_ns $groupMSSTUDnest7 clear manager preview;
-        $gam update group_ns $groupMSSTUDnest8 clear manager preview;
-        $gam update group_ns $groupMSFACULTY clear manager preview;
+        $gam update group $groupMSFAMstatic clear manager preview;
+        $gam update group $group7FAMstatic clear manager preview;
+        $gam update group $group8FAMstatic clear manager preview;
+        $gam update group $groupMSFAMnest7 clear manager preview;
+        $gam update group $groupMSFAMnest8 clear manager preview;
+        $gam update group $groupMSSTUDstatic clear manager preview;
+        $gam update group $groupMSSTUD7static clear manager preview;
+        $gam update group $groupMSSTUD8static clear manager preview;
+        $gam update group $groupMSSTUDnest7 clear manager preview;
+        $gam update group $groupMSSTUDnest8 clear manager preview;
+        $gam update group $groupMSFACULTY clear manager preview;
 
 #allmail ms managers preview
 
@@ -614,17 +614,17 @@ while true; do
         
 #clear ms managers
 
-        $gam update group_ns $groupMSFAMstatic clear manager;
-        $gam update group_ns $group7FAMstatic clear manager;
-        $gam update group_ns $group8FAMstatic clear manager;
-        $gam update group_ns $groupMSFAMnest7 clear manager;
-        $gam update group_ns $groupMSFAMnest8 clear manager;
-        $gam update group_ns $groupMSSTUDstatic clear manager;
-        $gam update group_ns $groupMSSTUD7static clear manager;
-        $gam update group_ns $groupMSSTUD8static clear manager;
-        $gam update group_ns $groupMSSTUDnest7 clear manager;
-        $gam update group_ns $groupMSSTUDnest8 clear manager;
-        $gam update group_ns $groupMSFACULTY clear manager;    
+        $gam update group $groupMSFAMstatic clear manager;
+        $gam update group $group7FAMstatic clear manager;
+        $gam update group $group8FAMstatic clear manager;
+        $gam update group $groupMSFAMnest7 clear manager;
+        $gam update group $groupMSFAMnest8 clear manager;
+        $gam update group $groupMSSTUDstatic clear manager;
+        $gam update group $groupMSSTUD7static clear manager;
+        $gam update group $groupMSSTUD8static clear manager;
+        $gam update group $groupMSSTUDnest7 clear manager;
+        $gam update group $groupMSSTUDnest8 clear manager;
+        $gam update group $groupMSFACULTY clear manager;    
 
 #allmail ms managers
 
