@@ -151,6 +151,9 @@ groupHELPDESK=helpdesk@santafeschool.org
 groupALUMNI=alumni@santafeschool.org
 groupFAMILIES=families@santafeschool.org
 
+
+#calculation of mailing list years
+
 echo "This year's graduation class is 20$MS8"
 echo "Unicorns include years 20$PK1 and 20$PK2 (pre-k)"
 echo "Grasshopper includes year 20$K (kindergarten)"
@@ -168,14 +171,18 @@ while true; do
     case $yn in
         [Yy]* )
 
-#clear managers
+#clear managers preview
+
         $gam update group $groupUNIFAMstatic clear manager preview
 
-#allmail managers
+#allmail managers preview
+
         $gam update group $groupUNIFAMstatic sync manager preview ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager preview ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK2 sync manager preview ous_and_children $MANUNI; break;
-#nomail managers
+
+#nomail managers preview
+
         $gam update group $groupUNIFAMstatic sync manager nomail preview ous_and_children $nmUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager nomail preview ous_and_children $nmUNI;
         $gam update group $groupUNIFAMnestPK2 sync manager nomail preview ous_and_children $nmUNI; break;;
@@ -195,13 +202,19 @@ while true; do
         [Yy]* )
 
 #clear managers
-        $gam update group $groupUNIFAMstatic clear manager
+
+        $gam update group_ns $groupUNIFAMstatic clear manager;
+        $gam update group_ns $groupUNIFAMnestPK1 clear manager;
+        $gam update group_ns $groupUNIFAMnestPK2 clear manager;
 
 #allmail managers
+
         $gam update group $groupUNIFAMstatic sync manager ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK2 sync manager ous_and_children $MANUNI; break;
+
 #nomail managers
+
         $gam update group $groupUNIFAMstatic sync manager nomail ous_and_children $nmUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager nomail ous_and_children $nmUNI;
         $gam update group $groupUNIFAMnestPK2 sync manager nomail ous_and_children $nmUNI; break;;
@@ -217,8 +230,23 @@ done
 while true; do
     read -p "Continue with Grasshopper Manager Sync Preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupGRASSFAMstatic sync manager preview ous_and_children $MANGRASS;
-        $gam update group $groupGRASSFAMnestK sync manager preview ous_and_children $MANGRASS; break;;
+        [Yy]* ) 
+
+#clear grasshopper managers preview
+
+        $gam update group_ns $groupGRASSFAMstatic clear manager preview;
+        $gam update group_ns $groupGRASSFAMnestK clear manager preview;
+
+#allmail grasshopper managers preview
+
+        $gam update group $groupGRASSFAMstatic sync manager preview ous_and_children $MANGRASS;
+        $gam update group $groupGRASSFAMnestK sync manager preview ous_and_children $MANGRASS; break;
+
+#nomail grasshopper managers preview
+
+        $gam update group $groupGRASSFAMstatic sync manager preview ous_and_children $nmGRASS;
+        $gam update group $groupGRASSFAMnestK sync manager preview ous_and_children $nmGRASS; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -227,11 +255,25 @@ done
 #Grasshopper for realsies
 
 while true; do
-    read -p "Continue with Grasshopper Manager Sync (y/n)? " yn
+    read -p "Continue with Grasshopper Manager Sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
+
+#clear grasshopper managers
+
+        $gam update group_ns $groupGRASSFAMstatic clear manager;
+        $gam update group_ns $groupGRASSFAMnestK clear manager;
+
+#allmail grasshopper managers
+
         $gam update group $groupGRASSFAMstatic sync manager ous_and_children $MANGRASS;
-        $gam update group $groupGRASSFAMnestK sync manager ous_and_children $MANGRASS; break;;
+        $gam update group $groupGRASSFAMnestK sync manager ous_and_children $MANGRASS; break;
+
+#nomail grasshopper managers
+
+        $gam update group $groupGRASSFAMstatic sync manager ous_and_children $nmGRASS;
+        $gam update group $groupGRASSFAMnestK sync manager ous_and_children $nmGRASS; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -242,22 +284,33 @@ done
 while true; do
     read -p "Continue with Stargazer Manager Sync Preview (y/n)? " yn
     case $yn in
-        [Yy]* ) 
+        [Yy]* )
+
+#clear stargazer managers preview
+
+        $gam update group_ns $groupSTARFAMnest1 clear manager preview;
+        $gam update group_ns $group1FAMstatic clear manager preview;
+        $gam update group_ns $group2FAMstatic clear manager preview;
+        $gam update group_ns $groupSTARFAMnest1 clear manager preview;
+        $gam update group_ns $groupSTARFAMnest2 clear manager preview;
+
+#allmail stargazer managers preview
+
         $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $MANSTAR;
         $gam update group $group1FAMstatic sync manager preview ous_and_children $MANSTAR;
         $gam update group $group2FAMstatic sync manager preview ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $MANSTAR;
-        $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $MANSTAR; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer y or n";;
-    esac
-done
+        $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $MANSTAR; break;
 
-while true; do
-    read -p "Continue with Unicorn Delivery Settings Preview (y/n)? " yn
-    case $yn in
-        [Yy]* )
-        $gam update group $groupUNIFAMstatic update nomail preview ous_and_children $OUWELL; break;;
+#nomail grasshopper managers preview
+
+        $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $nmSTAR;
+        $gam update group $group1FAMstatic sync manager preview ous_and_children $nmSTAR;
+        $gam update group $group2FAMstatic sync manager preview ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $nmSTAR; break;;
+
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -268,25 +321,32 @@ done
 while true; do
     read -p "Continue with Stargazer Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) 
+        [Yy]* )
+
+#clear stargazer managers
+
+        $gam update group_ns $groupSTARFAMnest1 clear manager;
+        $gam update group_ns $group1FAMstatic clear manager;
+        $gam update group_ns $group2FAMstatic clear manager;
+        $gam update group_ns $groupSTARFAMnest1 clear manager;
+        $gam update group_ns $groupSTARFAMnest2 clear manager;
+
+#allmail stargazer managers
+
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
         $gam update group $group1FAMstatic sync manager ous_and_children $MANSTAR;
         $gam update group $group2FAMstatic sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
-        $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer y or n";;
-    esac
-done
+        $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR; break;
 
-while true; do
-    read -p "Continue with Stargazer Delivery Settings (y/n)? " yn
-    case $yn in
-        [Yy]* )
+#nomail grasshopper managers
 
+        $gam update group $groupSTARFAMnest1 sync manager ous_and_children $nmSTAR;
+        $gam update group $group1FAMstatic sync manager ous_and_children $nmSTAR;
+        $gam update group $group2FAMstatic sync manager ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest1 sync manager ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest2 sync manager ous_and_children $nmSTAR; break;;
 
-
-        $gam update group $groupSTARFAMnest1 update nomail ous_and_children $OUSPA; break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -298,6 +358,21 @@ while true; do
     read -p "Continue with Centaur Manager Sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
+
+#clear centaur managers preview
+
+        $gam update group_ns $groupCENTFAMmstatic clear manager preview;
+        $gam update group_ns $group3STUDstatic clear manager preview;
+        $gam update group_ns $group4STUDstatic clear manager preview;
+        $gam update group_ns $group3FAMstatic clear manager preview;
+        $gam update group_ns $group4FAMstatic clear manager preview;
+        $gam update group_ns $groupCENTFAMnest3 clear manager preview;
+        $gam update group_ns $groupCENTFAMnest4 clear manager preview;
+        $gam update group_ns $groupCENTSTUDnest3 clear manager preview;
+        $gam update group_ns $groupCENTSTUDnest4 clear manager preview;
+
+#allmail centaur managers preview
+
         $gam update group $groupCENTFAMmstatic sync manager preview ous_and_children $MANCENT;
         $gam update group $group3STUDstatic sync manager preview ous_and_children $MANCENT;
         $gam update group $group4STUDstatic sync manager preview ous_and_children $MANCENT;
@@ -306,7 +381,20 @@ while true; do
         $gam update group $groupCENTFAMnest3 sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest4 sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTSTUDnest3 sync manager preview ous_and_children $MANCENT;
-        $gam update group $groupCENTSTUDnest4 sync manager preview ous_and_children $MANCENT; break;;
+        $gam update group $groupCENTSTUDnest4 sync manager preview ous_and_children $MANCENT; break;
+
+#nomail centaur managers preview
+
+        $gam update group $groupCENTFAMmstatic sync manager preview ous_and_children $nmCENT;
+        $gam update group $group3STUDstatic sync manager preview ous_and_children $nmCENT;
+        $gam update group $group4STUDstatic sync manager preview ous_and_children $nmCENT;
+        $gam update group $group3FAMstatic sync manager preview ous_and_children $nmCENT;
+        $gam update group $group4FAMstatic sync manager preview ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest3 sync manager preview ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest4 sync manager preview ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest3 sync manager preview ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest4 sync manager preview ous_and_children $nmCENT; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -315,9 +403,24 @@ done
 #Centaur for realsies
 
 while true; do
-    read -p "Continue with Centaur Manager Sync (y/n)? " yn
+    read -p "Continue with Centaur Manager Sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
+
+#clear centaur managers
+
+        $gam update group_ns $groupCENTFAMmstatic clear manager;
+        $gam update group_ns $group3STUDstatic clear manager;
+        $gam update group_ns $group4STUDstatic clear manager;
+        $gam update group_ns $group3FAMstatic clear manager;
+        $gam update group_ns $group4FAMstatic clear manager;
+        $gam update group_ns $groupCENTFAMnest3 clear manager;
+        $gam update group_ns $groupCENTFAMnest4 clear manager;
+        $gam update group_ns $groupCENTSTUDnest3 clear manager;
+        $gam update group_ns $groupCENTSTUDnest4 clear manager;
+
+#allmail centaur managers
+
         $gam update group $groupCENTFAMmstatic sync manager ous_and_children $MANCENT;
         $gam update group $group3STUDstatic sync manager ous_and_children $MANCENT;
         $gam update group $group4STUDstatic sync manager ous_and_children $MANCENT;
@@ -326,7 +429,19 @@ while true; do
         $gam update group $groupCENTFAMnest3 sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest4 sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTSTUDnest3 sync manager ous_and_children $MANCENT;
-        $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $MANCENT; break;;
+        $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $MANCENT; break;
+
+#nomail centaur managers
+        $gam update group $groupCENTFAMmstatic sync manager ous_and_children $nmCENT;
+        $gam update group $group3STUDstatic sync manager ous_and_children $nmCENT;
+        $gam update group $group4STUDstatic sync manager ous_and_children $nmCENT;
+        $gam update group $group3FAMstatic sync manager ous_and_children $nmCENT;
+        $gam update group $group4FAMstatic sync manager ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest3 sync manager ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest4 sync manager ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest3 sync manager ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $nmCENT; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -337,7 +452,23 @@ done
 while true; do
     read -p "Continue with Badger Manager Sync Preview (y/n)? " yn
     case $yn in
-        [Yy]* ) 
+        [Yy]* )
+
+#clear badger managers preview
+
+        $gam update group_ns $groupBADGFAMstatic clear manager preview;
+        $gam update group_ns $group5STUDstatic clear manager preview;
+        $gam update group_ns $group6STUDstatic clear manager preview;
+        $gam update group_ns $group5FAMstatic clear manager preview;
+        $gam update group_ns $group6FAMstatic clear manager preview;
+        $gam update group_ns $groupBADGFAMnest5 clear manager preview;
+        $gam update group_ns $groupBADGFAMnest6 clear manager preview;
+        $gam update group_ns $groupBADGSTUDstatic clear manager preview;
+        $gam update group_ns $groupBADGSTUDnest5 clear manager preview;
+        $gam update group_ns $groupBADGSTUDnest6 clear manager preview; 
+
+#allmail badger managers preview
+
         $gam update group $groupBADGFAMstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $group5STUDstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $group6STUDstatic sync manager preview ous_and_children $MANBADG;
@@ -347,7 +478,22 @@ while true; do
         $gam update group $groupBADGFAMnest6 sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDnest5 sync manager preview ous_and_children $MANBADG;
-        $gam update group $groupBADGSTUDnest6 sync manager preview ous_and_children $MANBADG; break;;
+        $gam update group $groupBADGSTUDnest6 sync manager preview ous_and_children $MANBADG; break;
+
+
+#nomail badger managers preview
+
+        $gam update group $groupBADGFAMstatic sync manager preview ous_and_children $nmBADG;
+        $gam update group $group5STUDstatic sync manager preview ous_and_children $nmBADG;
+        $gam update group $group6STUDstatic sync manager preview ous_and_children $nmBADG;
+        $gam update group $group5FAMstatic sync manager preview ous_and_children $nmBADG;
+        $gam update group $group6FAMstatic sync manager preview ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest5 sync manager preview ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest6 sync manager preview ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDstatic sync manager preview ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest5 sync manager preview ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest6 sync manager preview ous_and_children $nmBADG; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -358,7 +504,24 @@ done
 while true; do
     read -p "Continue with Badger Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupBADGFAMstatic sync manager ous_and_children $MANBADG;
+        [Yy]* )
+
+#clear badger managers
+
+        $gam update group_ns $groupBADGFAMstatic clear manager;
+        $gam update group_ns $group5STUDstatic clear manager;
+        $gam update group_ns $group6STUDstatic clear manager;
+        $gam update group_ns $group5FAMstatic clear manager;
+        $gam update group_ns $group6FAMstatic clear manager;
+        $gam update group_ns $groupBADGFAMnest5 clear manager;
+        $gam update group_ns $groupBADGFAMnest6 clear manager;
+        $gam update group_ns $groupBADGSTUDstatic clear manager;
+        $gam update group_ns $groupBADGSTUDnest5 clear manager;
+        $gam update group_ns $groupBADGSTUDnest6 clear manager;       
+
+#allmail badger managers
+
+        $gam update group $groupBADGFAMstatic sync manager ous_and_children $MANBADG;
         $gam update group $group5STUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $group6STUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $group5FAMstatic sync manager ous_and_children $MANBADG;
@@ -367,7 +530,22 @@ while true; do
         $gam update group $groupBADGFAMnest6 sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDnest5 sync manager ous_and_children $MANBADG;
-        $gam update group $groupBADGSTUDnest6 sync manager ous_and_children $MANBADG; break;;
+        $gam update group $groupBADGSTUDnest6 sync manager ous_and_children $MANBADG; break;
+
+
+#nomail badger managers
+
+        $gam update group $groupBADGFAMstatic sync manager ous_and_children $nmBADG;
+        $gam update group $group5STUDstatic sync manager ous_and_children $nmBADG;
+        $gam update group $group6STUDstatic sync manager ous_and_children $nmBADG;
+        $gam update group $group5FAMstatic sync manager ous_and_children $nmBADG;
+        $gam update group $group6FAMstatic sync manager ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest5 sync manager ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest6 sync manager ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDstatic sync manager ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest5 sync manager ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest6 sync manager ous_and_children $nmBADG; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -378,7 +556,25 @@ done
 while true; do
     read -p "Continue with Middle School Manager Sync preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupMSFAMstatic sync manager preview ous_and_children $MANMS;
+        [Yy]* ) 
+        
+#clear ms managers preview
+
+        $gam update group_ns $groupMSFAMstatic clear manager preview;
+        $gam update group_ns $group7FAMstatic clear manager preview;
+        $gam update group_ns $group8FAMstatic clear manager preview;
+        $gam update group_ns $groupMSFAMnest7 clear manager preview;
+        $gam update group_ns $groupMSFAMnest8 clear manager preview;
+        $gam update group_ns $groupMSSTUDstatic clear manager preview;
+        $gam update group_ns $groupMSSTUD7static clear manager preview;
+        $gam update group_ns $groupMSSTUD8static clear manager preview;
+        $gam update group_ns $groupMSSTUDnest7 clear manager preview;
+        $gam update group_ns $groupMSSTUDnest8 clear manager preview;
+        $gam update group_ns $groupMSFACULTY clear manager preview;
+
+#allmail ms managers preview
+
+        $gam update group $groupMSFAMstatic sync manager preview ous_and_children $MANMS;
         $gam update group $group7FAMstatic sync manager preview ous_and_children $MANMS;
         $gam update group $group8FAMstatic sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSFAMnest7 sync manager preview ous_and_children $MANMS;
@@ -388,7 +584,22 @@ while true; do
         $gam update group $groupMSSTUD8static sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest8 sync manager preview ous_and_children $MANMS;
-        $gam update group $groupMSFACULTY sync manager preview ous_and_children $MANMS; break;;
+        $gam update group $groupMSFACULTY sync manager preview ous_and_children $MANMS; break;
+
+#nomail ms managers preview
+
+        $gam update group $groupMSFAMstatic sync manager preview ous_and_children $nmMS;
+        $gam update group $group7FAMstatic sync manager preview ous_and_children $nmMS;
+        $gam update group $group8FAMstatic sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest7 sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest8 sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUDstatic sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUD7static sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUD8static sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest7 sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest8 sync manager preview ous_and_children $nmMS;
+        $gam update group $groupMSFACULTY sync manager preview ous_and_children $nmMS; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -397,9 +608,27 @@ done
 #Middle School for realsies
 
 while true; do
-    read -p "Continue with Middle School Manager Sync (y/n)? " yn
+    read -p "Continue with Middle School Manager Sync preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupMSFAMstatic sync manager ous_and_children $MANMS;
+        [Yy]* ) 
+        
+#clear ms managers
+
+        $gam update group_ns $groupMSFAMstatic clear manager;
+        $gam update group_ns $group7FAMstatic clear manager;
+        $gam update group_ns $group8FAMstatic clear manager;
+        $gam update group_ns $groupMSFAMnest7 clear manager;
+        $gam update group_ns $groupMSFAMnest8 clear manager;
+        $gam update group_ns $groupMSSTUDstatic clear manager;
+        $gam update group_ns $groupMSSTUD7static clear manager;
+        $gam update group_ns $groupMSSTUD8static clear manager;
+        $gam update group_ns $groupMSSTUDnest7 clear manager;
+        $gam update group_ns $groupMSSTUDnest8 clear manager;
+        $gam update group_ns $groupMSFACULTY clear manager;    
+
+#allmail ms managers
+
+        $gam update group $groupMSFAMstatic sync manager ous_and_children $MANMS;
         $gam update group $group7FAMstatic sync manager ous_and_children $MANMS;
         $gam update group $group8FAMstatic sync manager ous_and_children $MANMS;
         $gam update group $groupMSFAMnest7 sync manager ous_and_children $MANMS;
@@ -409,7 +638,22 @@ while true; do
         $gam update group $groupMSSTUD8static sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest8 sync manager ous_and_children $MANMS;
-        $gam update group $groupMSFACULTY sync manager ous_and_children $MANMS; break;;
+        $gam update group $groupMSFACULTY sync manager ous_and_children $MANMS; break;
+
+#nomail ms managers
+
+        $gam update group $groupMSFAMstatic sync manager ous_and_children $nmMS;
+        $gam update group $group7FAMstatic sync manager ous_and_children $nmMS;
+        $gam update group $group8FAMstatic sync manager ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest7 sync manager ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest8 sync manager ous_and_children $nmMS;
+        $gam update group $groupMSSTUDstatic sync manager ous_and_children $nmMS;
+        $gam update group $groupMSSTUD7static sync manager ous_and_children $nmMS;
+        $gam update group $groupMSSTUD8static sync manager ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest7 sync manager ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest8 sync manager ous_and_children $nmMS;
+        $gam update group $groupMSFACULTY sync manager ous_and_children $nmMS; break;;
+
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
     esac
@@ -420,12 +664,15 @@ done
 while true; do
     read -p "Continue with Mass Lists Manager Sync preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupUNDERHILL sync manager preview ous_and_children $MANUND;
+        [Yy]* ) 
+        
+        $gam update group $groupUNDERHILL sync manager preview ous_and_children $MANUND;
         $gam update group $groupWHOLESCHOOL sync manager preview ous_and_children $MANUND;
         $gam update group $groupSTAFF sync manager preview ous_and_children $MANUND;
         $gam update group $groupSTUDENTS sync manager preview ous_and_children $MANUND;
         $gam update group $groupALUMNI sync manager preview ous_and_children $MANUND;
         $gam update group $groupFAMILIES sync manager preview ous_and_children $MANUND;
+
          break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -437,12 +684,15 @@ done
 while true; do
     read -p "Continue with Mass Lists Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupUNDERHILL sync manager ous_and_children $MANUND;
+        [Yy]* ) 
+        
+        $gam update group $groupUNDERHILL sync manager ous_and_children $MANUND;
         $gam update group $groupWHOLESCHOOL sync manager ous_and_children $MANUND;
         $gam update group $groupSTAFF sync manager ous_and_children $MANUND;
         $gam update group $groupSTUDENTS sync manager ous_and_children $MANUND;
         $gam update group $groupALUMNI sync manager ous_and_children $MANUND;
         $gam update group $groupFAMILIES sync manager ous_and_children $MANUND;
+
          break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -455,7 +705,10 @@ done
 while true; do
     read -p "Continue with helpdesk lists Manager Sync preview (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupHELPDESK sync manager preview user isaac@santafeschool.org;
+        [Yy]* ) 
+        
+        $gam update group $groupHELPDESK sync manager preview user isaac@santafeschool.org;
+
          break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -467,7 +720,10 @@ done
 while true; do
     read -p "Continue with helpdesk lists Manager Sync (y/n)? " yn
     case $yn in
-        [Yy]* ) $gam update group $groupHELPDESK sync manager user isaac@santafeschool.org;
+        [Yy]* ) 
+        
+        $gam update group $groupHELPDESK sync manager user isaac@santafeschool.org;
+        
          break;;
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
