@@ -255,7 +255,7 @@ done
 #Grasshopper for realsies
 
 while true; do
-    read -p "Continue with Grasshopper Manager Sync Preview (y/n)? " yn
+    read -p "Continue with Grasshopper Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
 
@@ -403,7 +403,7 @@ done
 #Centaur for realsies
 
 while true; do
-    read -p "Continue with Centaur Manager Sync Preview (y/n)? " yn
+    read -p "Continue with Centaur Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
 
@@ -608,7 +608,7 @@ done
 #Middle School for realsies
 
 while true; do
-    read -p "Continue with Middle School Manager Sync preview (y/n)? " yn
+    read -p "Continue with Middle School Manager Sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
         
