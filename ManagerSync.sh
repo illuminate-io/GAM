@@ -244,8 +244,8 @@ while true; do
 
 #nomail grasshopper managers preview
 
-        $gam update group $groupGRASSFAMstatic sync manager preview ous_and_children $nmGRASS;
-        $gam update group $groupGRASSFAMnestK sync manager preview ous_and_children $nmGRASS; break;;
+        $gam update group $groupGRASSFAMstatic sync manager nomail preview ous_and_children $nmGRASS;
+        $gam update group $groupGRASSFAMnestK sync manager nomail preview ous_and_children $nmGRASS; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -271,8 +271,8 @@ while true; do
 
 #nomail grasshopper managers
 
-        $gam update group $groupGRASSFAMstatic sync manager ous_and_children $nmGRASS;
-        $gam update group $groupGRASSFAMnestK sync manager ous_and_children $nmGRASS; break;;
+        $gam update group $groupGRASSFAMstatic sync manager nomail ous_and_children $nmGRASS;
+        $gam update group $groupGRASSFAMnestK sync manager nomail ous_and_children $nmGRASS; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -304,11 +304,11 @@ while true; do
 
 #nomail grasshopper managers preview
 
-        $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $nmSTAR;
-        $gam update group $group1FAMstatic sync manager preview ous_and_children $nmSTAR;
-        $gam update group $group2FAMstatic sync manager preview ous_and_children $nmSTAR;
-        $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $nmSTAR;
-        $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $nmSTAR; break;;
+        $gam update group $groupSTARFAMnest1 sync manager nomail preview ous_and_children $nmSTAR;
+        $gam update group $group1FAMstatic sync manager nomail preview ous_and_children $nmSTAR;
+        $gam update group $group2FAMstatic sync manager nomail preview ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest1 sync manager nomail preview ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest2 sync manager nomail preview ous_and_children $nmSTAR; break;;
 
 
         [Nn]* ) break;;
@@ -341,11 +341,11 @@ while true; do
 
 #nomail grasshopper managers
 
-        $gam update group $groupSTARFAMnest1 sync manager ous_and_children $nmSTAR;
-        $gam update group $group1FAMstatic sync manager ous_and_children $nmSTAR;
-        $gam update group $group2FAMstatic sync manager ous_and_children $nmSTAR;
-        $gam update group $groupSTARFAMnest1 sync manager ous_and_children $nmSTAR;
-        $gam update group $groupSTARFAMnest2 sync manager ous_and_children $nmSTAR; break;;
+        $gam update group $groupSTARFAMnest1 sync manager nomail ous_and_children $nmSTAR;
+        $gam update group $group1FAMstatic sync manager nomail ous_and_children $nmSTAR;
+        $gam update group $group2FAMstatic sync manager nomail ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest1 sync manager nomail ous_and_children $nmSTAR;
+        $gam update group $groupSTARFAMnest2 sync manager nomail ous_and_children $nmSTAR; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -385,15 +385,15 @@ while true; do
 
 #nomail centaur managers preview
 
-        $gam update group $groupCENTFAMmstatic sync manager preview ous_and_children $nmCENT;
-        $gam update group $group3STUDstatic sync manager preview ous_and_children $nmCENT;
-        $gam update group $group4STUDstatic sync manager preview ous_and_children $nmCENT;
-        $gam update group $group3FAMstatic sync manager preview ous_and_children $nmCENT;
-        $gam update group $group4FAMstatic sync manager preview ous_and_children $nmCENT;
-        $gam update group $groupCENTFAMnest3 sync manager preview ous_and_children $nmCENT;
-        $gam update group $groupCENTFAMnest4 sync manager preview ous_and_children $nmCENT;
-        $gam update group $groupCENTSTUDnest3 sync manager preview ous_and_children $nmCENT;
-        $gam update group $groupCENTSTUDnest4 sync manager preview ous_and_children $nmCENT; break;;
+        $gam update group $groupCENTFAMmstatic sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $group3STUDstatic sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $group4STUDstatic sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $group3FAMstatic sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $group4FAMstatic sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest3 sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest4 sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest3 sync manager nomail preview ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest4 sync manager nomail preview ous_and_children $nmCENT; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -432,15 +432,15 @@ while true; do
         $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $MANCENT; break;
 
 #nomail centaur managers
-        $gam update group $groupCENTFAMmstatic sync manager ous_and_children $nmCENT;
-        $gam update group $group3STUDstatic sync manager ous_and_children $nmCENT;
-        $gam update group $group4STUDstatic sync manager ous_and_children $nmCENT;
-        $gam update group $group3FAMstatic sync manager ous_and_children $nmCENT;
-        $gam update group $group4FAMstatic sync manager ous_and_children $nmCENT;
-        $gam update group $groupCENTFAMnest3 sync manager ous_and_children $nmCENT;
-        $gam update group $groupCENTFAMnest4 sync manager ous_and_children $nmCENT;
-        $gam update group $groupCENTSTUDnest3 sync manager ous_and_children $nmCENT;
-        $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $nmCENT; break;;
+        $gam update group $groupCENTFAMmstatic sync manager nomail ous_and_children $nmCENT;
+        $gam update group $group3STUDstatic sync manager nomail ous_and_children $nmCENT;
+        $gam update group $group4STUDstatic sync manager nomail ous_and_children $nmCENT;
+        $gam update group $group3FAMstatic sync manager nomail ous_and_children $nmCENT;
+        $gam update group $group4FAMstatic sync manager nomail ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest3 sync manager nomail ous_and_children $nmCENT;
+        $gam update group $groupCENTFAMnest4 sync manager nomail ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest3 sync manager nomail ous_and_children $nmCENT;
+        $gam update group $groupCENTSTUDnest4 sync manager nomail ous_and_children $nmCENT; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -483,16 +483,16 @@ while true; do
 
 #nomail badger managers preview
 
-        $gam update group $groupBADGFAMstatic sync manager preview ous_and_children $nmBADG;
-        $gam update group $group5STUDstatic sync manager preview ous_and_children $nmBADG;
-        $gam update group $group6STUDstatic sync manager preview ous_and_children $nmBADG;
-        $gam update group $group5FAMstatic sync manager preview ous_and_children $nmBADG;
-        $gam update group $group6FAMstatic sync manager preview ous_and_children $nmBADG;
-        $gam update group $groupBADGFAMnest5 sync manager preview ous_and_children $nmBADG;
-        $gam update group $groupBADGFAMnest6 sync manager preview ous_and_children $nmBADG;
-        $gam update group $groupBADGSTUDstatic sync manager preview ous_and_children $nmBADG;
-        $gam update group $groupBADGSTUDnest5 sync manager preview ous_and_children $nmBADG;
-        $gam update group $groupBADGSTUDnest6 sync manager preview ous_and_children $nmBADG; break;;
+        $gam update group $groupBADGFAMstatic sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $group5STUDstatic sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $group6STUDstatic sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $group5FAMstatic sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $group6FAMstatic sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest5 sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest6 sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDstatic sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest5 sync manager nomail preview ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest6 sync manager nomail preview ous_and_children $nmBADG; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -535,16 +535,16 @@ while true; do
 
 #nomail badger managers
 
-        $gam update group $groupBADGFAMstatic sync manager ous_and_children $nmBADG;
-        $gam update group $group5STUDstatic sync manager ous_and_children $nmBADG;
-        $gam update group $group6STUDstatic sync manager ous_and_children $nmBADG;
-        $gam update group $group5FAMstatic sync manager ous_and_children $nmBADG;
-        $gam update group $group6FAMstatic sync manager ous_and_children $nmBADG;
-        $gam update group $groupBADGFAMnest5 sync manager ous_and_children $nmBADG;
-        $gam update group $groupBADGFAMnest6 sync manager ous_and_children $nmBADG;
-        $gam update group $groupBADGSTUDstatic sync manager ous_and_children $nmBADG;
-        $gam update group $groupBADGSTUDnest5 sync manager ous_and_children $nmBADG;
-        $gam update group $groupBADGSTUDnest6 sync manager ous_and_children $nmBADG; break;;
+        $gam update group $groupBADGFAMstatic sync manager nomail ous_and_children $nmBADG;
+        $gam update group $group5STUDstatic sync manager nomail ous_and_children $nmBADG;
+        $gam update group $group6STUDstatic sync manager nomail ous_and_children $nmBADG;
+        $gam update group $group5FAMstatic sync manager nomail ous_and_children $nmBADG;
+        $gam update group $group6FAMstatic sync manager nomail ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest5 sync manager nomail ous_and_children $nmBADG;
+        $gam update group $groupBADGFAMnest6 sync manager nomail ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDstatic sync manager nomail ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest5 sync manager nomail ous_and_children $nmBADG;
+        $gam update group $groupBADGSTUDnest6 sync manager nomail ous_and_children $nmBADG; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -588,17 +588,17 @@ while true; do
 
 #nomail ms managers preview
 
-        $gam update group $groupMSFAMstatic sync manager preview ous_and_children $nmMS;
-        $gam update group $group7FAMstatic sync manager preview ous_and_children $nmMS;
-        $gam update group $group8FAMstatic sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSFAMnest7 sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSFAMnest8 sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSSTUDstatic sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSSTUD7static sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSSTUD8static sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSSTUDnest7 sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSSTUDnest8 sync manager preview ous_and_children $nmMS;
-        $gam update group $groupMSFACULTY sync manager preview ous_and_children $nmMS; break;;
+        $gam update group $groupMSFAMstatic sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $group7FAMstatic sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $group8FAMstatic sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest7 sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest8 sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUDstatic sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUD7static sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUD8static sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest7 sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest8 sync manager nomail preview ous_and_children $nmMS;
+        $gam update group $groupMSFACULTY sync manager nomail preview ous_and_children $nmMS; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -642,17 +642,17 @@ while true; do
 
 #nomail ms managers
 
-        $gam update group $groupMSFAMstatic sync manager ous_and_children $nmMS;
-        $gam update group $group7FAMstatic sync manager ous_and_children $nmMS;
-        $gam update group $group8FAMstatic sync manager ous_and_children $nmMS;
-        $gam update group $groupMSFAMnest7 sync manager ous_and_children $nmMS;
-        $gam update group $groupMSFAMnest8 sync manager ous_and_children $nmMS;
-        $gam update group $groupMSSTUDstatic sync manager ous_and_children $nmMS;
-        $gam update group $groupMSSTUD7static sync manager ous_and_children $nmMS;
-        $gam update group $groupMSSTUD8static sync manager ous_and_children $nmMS;
-        $gam update group $groupMSSTUDnest7 sync manager ous_and_children $nmMS;
-        $gam update group $groupMSSTUDnest8 sync manager ous_and_children $nmMS;
-        $gam update group $groupMSFACULTY sync manager ous_and_children $nmMS; break;;
+        $gam update group $groupMSFAMstatic sync manager nomail ous_and_children $nmMS;
+        $gam update group $group7FAMstatic sync manager nomail ous_and_children $nmMS;
+        $gam update group $group8FAMstatic sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest7 sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSFAMnest8 sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSSTUDstatic sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSSTUD7static sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSSTUD8static sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest7 sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSSTUDnest8 sync manager nomail ous_and_children $nmMS;
+        $gam update group $groupMSFACULTY sync manager nomail ous_and_children $nmMS; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
