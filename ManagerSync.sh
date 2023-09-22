@@ -179,7 +179,7 @@ while true; do
 
         $gam update group $groupUNIFAMstatic sync manager preview ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager preview ous_and_children $MANUNI;
-        $gam update group $groupUNIFAMnestPK2 sync manager preview ous_and_children $MANUNI; break;
+        $gam update group $groupUNIFAMnestPK2 sync manager preview ous_and_children $MANUNI;
 
 #nomail managers preview
 
@@ -211,7 +211,7 @@ while true; do
 
         $gam update group $groupUNIFAMstatic sync manager ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 sync manager ous_and_children $MANUNI;
-        $gam update group $groupUNIFAMnestPK2 sync manager ous_and_children $MANUNI; break;
+        $gam update group $groupUNIFAMnestPK2 sync manager ous_and_children $MANUNI;
 
 #nomail managers
 
@@ -240,7 +240,7 @@ while true; do
 #allmail grasshopper managers preview
 
         $gam update group $groupGRASSFAMstatic sync manager preview ous_and_children $MANGRASS;
-        $gam update group $groupGRASSFAMnestK sync manager preview ous_and_children $MANGRASS; break;
+        $gam update group $groupGRASSFAMnestK sync manager preview ous_and_children $MANGRASS;
 
 #nomail grasshopper managers preview
 
@@ -267,7 +267,7 @@ while true; do
 #allmail grasshopper managers
 
         $gam update group $groupGRASSFAMstatic sync manager ous_and_children $MANGRASS;
-        $gam update group $groupGRASSFAMnestK sync manager ous_and_children $MANGRASS; break;
+        $gam update group $groupGRASSFAMnestK sync manager ous_and_children $MANGRASS;
 
 #nomail grasshopper managers
 
@@ -300,7 +300,7 @@ while true; do
         $gam update group $group1FAMstatic sync manager preview ous_and_children $MANSTAR;
         $gam update group $group2FAMstatic sync manager preview ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager preview ous_and_children $MANSTAR;
-        $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $MANSTAR; break;
+        $gam update group $groupSTARFAMnest2 sync manager preview ous_and_children $MANSTAR;
 
 #nomail grasshopper managers preview
 
@@ -337,7 +337,7 @@ while true; do
         $gam update group $group1FAMstatic sync manager ous_and_children $MANSTAR;
         $gam update group $group2FAMstatic sync manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 sync manager ous_and_children $MANSTAR;
-        $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR; break;
+        $gam update group $groupSTARFAMnest2 sync manager ous_and_children $MANSTAR;
 
 #nomail grasshopper managers
 
@@ -381,7 +381,7 @@ while true; do
         $gam update group $groupCENTFAMnest3 sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest4 sync manager preview ous_and_children $MANCENT;
         $gam update group $groupCENTSTUDnest3 sync manager preview ous_and_children $MANCENT;
-        $gam update group $groupCENTSTUDnest4 sync manager preview ous_and_children $MANCENT; break;
+        $gam update group $groupCENTSTUDnest4 sync manager preview ous_and_children $MANCENT;
 
 #nomail centaur managers preview
 
@@ -429,7 +429,7 @@ while true; do
         $gam update group $groupCENTFAMnest3 sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTFAMnest4 sync manager ous_and_children $MANCENT;
         $gam update group $groupCENTSTUDnest3 sync manager ous_and_children $MANCENT;
-        $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $MANCENT; break;
+        $gam update group $groupCENTSTUDnest4 sync manager ous_and_children $MANCENT;
 
 #nomail centaur managers
         $gam update group $groupCENTFAMmstatic sync manager nomail ous_and_children $nmCENT;
@@ -478,7 +478,7 @@ while true; do
         $gam update group $groupBADGFAMnest6 sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager preview ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDnest5 sync manager preview ous_and_children $MANBADG;
-        $gam update group $groupBADGSTUDnest6 sync manager preview ous_and_children $MANBADG; break;
+        $gam update group $groupBADGSTUDnest6 sync manager preview ous_and_children $MANBADG;
 
 
 #nomail badger managers preview
@@ -530,7 +530,7 @@ while true; do
         $gam update group $groupBADGFAMnest6 sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDstatic sync manager ous_and_children $MANBADG;
         $gam update group $groupBADGSTUDnest5 sync manager ous_and_children $MANBADG;
-        $gam update group $groupBADGSTUDnest6 sync manager ous_and_children $MANBADG; break;
+        $gam update group $groupBADGSTUDnest6 sync manager ous_and_children $MANBADG;
 
 
 #nomail badger managers
@@ -584,7 +584,7 @@ while true; do
         $gam update group $groupMSSTUD8static sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager preview ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest8 sync manager preview ous_and_children $MANMS;
-        $gam update group $groupMSFACULTY sync manager preview ous_and_children $MANMS; break;
+        $gam update group $groupMSFACULTY sync manager preview ous_and_children $MANMS;
 
 #nomail ms managers preview
 
@@ -638,7 +638,7 @@ while true; do
         $gam update group $groupMSSTUD8static sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest7 sync manager ous_and_children $MANMS;
         $gam update group $groupMSSTUDnest8 sync manager ous_and_children $MANMS;
-        $gam update group $groupMSFACULTY sync manager ous_and_children $MANMS; break;
+        $gam update group $groupMSFACULTY sync manager ous_and_children $MANMS;
 
 #nomail ms managers
 
