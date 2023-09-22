@@ -167,7 +167,7 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 #Unicorn Preview
 
 while true; do
-    read -p "Continue with Unicorn Manager add Preview (y/n)? " yn
+    read -p "Continue with Unicorn Manager sync Preview (y/n)? " yn
     case $yn in
         [Yy]* )
 
@@ -197,7 +197,7 @@ done
 #Unicorn for realsies
 
 while true; do
-    read -p "Continue with Unicorn Manager add (y/n)? " yn
+    read -p "Continue with Unicorn Manager sync (y/n)? " yn
     case $yn in
         [Yy]* )
 
@@ -228,7 +228,7 @@ done
 #Grasshopper Preview
 
 while true; do
-    read -p "Continue with Grasshopper Manager add Preview (y/n)? " yn
+    read -p "Continue with Grasshopper Manager sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
 
@@ -255,7 +255,7 @@ done
 #Grasshopper for realsies
 
 while true; do
-    read -p "Continue with Grasshopper Manager add (y/n)? " yn
+    read -p "Continue with Grasshopper Manager sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
 
@@ -282,7 +282,7 @@ done
 #Stargazer Preview
 
 while true; do
-    read -p "Continue with Stargazer Manager add Preview (y/n)? " yn
+    read -p "Continue with Stargazer Manager sync Preview (y/n)? " yn
     case $yn in
         [Yy]* )
 
@@ -319,7 +319,7 @@ done
 #Stargazer for realsies
 
 while true; do
-    read -p "Continue with Stargazer Manager add (y/n)? " yn
+    read -p "Continue with Stargazer Manager sync (y/n)? " yn
     case $yn in
         [Yy]* )
 
@@ -355,7 +355,7 @@ done
 #Centaur Preview
 
 while true; do
-    read -p "Continue with Centaur Manager add Preview (y/n)? " yn
+    read -p "Continue with Centaur Manager sync Preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
 
@@ -403,7 +403,7 @@ done
 #Centaur for realsies
 
 while true; do
-    read -p "Continue with Centaur Manager add (y/n)? " yn
+    read -p "Continue with Centaur Manager sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
 
@@ -450,7 +450,7 @@ done
 #Badger Preview
 
 while true; do
-    read -p "Continue with Badger Manager add Preview (y/n)? " yn
+    read -p "Continue with Badger Manager sync Preview (y/n)? " yn
     case $yn in
         [Yy]* )
 
@@ -502,7 +502,7 @@ done
 #Badger for realsies
 
 while true; do
-    read -p "Continue with Badger Manager add (y/n)? " yn
+    read -p "Continue with Badger Manager sync (y/n)? " yn
     case $yn in
         [Yy]* )
 
@@ -554,7 +554,7 @@ done
 #Middle School Preview
 
 while true; do
-    read -p "Continue with Middle School Manager add preview (y/n)? " yn
+    read -p "Continue with Middle School Manager sync preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
         
@@ -608,7 +608,7 @@ done
 #Middle School for realsies
 
 while true; do
-    read -p "Continue with Middle School Manager add (y/n)? " yn
+    read -p "Continue with Middle School Manager sync (y/n)? " yn
     case $yn in
         [Yy]* ) 
         
@@ -662,7 +662,7 @@ done
 #Mass mailing lists preview
 
 while true; do
-    read -p "Continue with Mass Lists Manager add preview (y/n)? " yn
+    read -p "Continue with Mass Lists Manager sync preview (y/n)? " yn
     case $yn in
         [Yy]* ) 
         
