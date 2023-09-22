@@ -52,7 +52,6 @@ MANMS="'$OUMS','$OUUND'"
 MANUND="'$OUUND','$OUADM'"
 
 
-
 # Graduation Year variables
 
 read -p "what is the the two digit year for this year's graduation class?" gradyear
@@ -288,7 +287,6 @@ while true; do
 
 #clear stargazer managers preview
 
-        $gam update group $groupSTARFAMnest1 clear manager preview;
         $gam update group $group1FAMstatic clear manager preview;
         $gam update group $group2FAMstatic clear manager preview;
         $gam update group $groupSTARFAMnest1 clear manager preview;
@@ -296,7 +294,6 @@ while true; do
 
 #allmail stargazer managers preview
 
-        $gam update group $groupSTARFAMnest1 add manager preview ous_and_children $MANSTAR;
         $gam update group $group1FAMstatic add manager preview ous_and_children $MANSTAR;
         $gam update group $group2FAMstatic add manager preview ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 add manager preview ous_and_children $MANSTAR;
@@ -304,7 +301,6 @@ while true; do
 
 #nomail grasshopper managers preview
 
-        $gam update group $groupSTARFAMnest1 add manager nomail preview ous_and_children $nmSTAR;
         $gam update group $group1FAMstatic add manager nomail preview ous_and_children $nmSTAR;
         $gam update group $group2FAMstatic add manager nomail preview ous_and_children $nmSTAR;
         $gam update group $groupSTARFAMnest1 add manager nomail preview ous_and_children $nmSTAR;
@@ -325,7 +321,6 @@ while true; do
 
 #clear stargazer managers
 
-        $gam update group $groupSTARFAMnest1 clear manager;
         $gam update group $group1FAMstatic clear manager;
         $gam update group $group2FAMstatic clear manager;
         $gam update group $groupSTARFAMnest1 clear manager;
@@ -333,15 +328,13 @@ while true; do
 
 #allmail stargazer managers
 
-        $gam update group $groupSTARFAMnest1 add manager ous_and_children $MANSTAR;
         $gam update group $group1FAMstatic add manager ous_and_children $MANSTAR;
         $gam update group $group2FAMstatic add manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest1 add manager ous_and_children $MANSTAR;
         $gam update group $groupSTARFAMnest2 add manager ous_and_children $MANSTAR;
 
-#nomail grasshopper managers
+#nomail stargazer managers
 
-        $gam update group $groupSTARFAMnest1 add manager nomail ous_and_children $nmSTAR;
         $gam update group $group1FAMstatic add manager nomail ous_and_children $nmSTAR;
         $gam update group $group2FAMstatic add manager nomail ous_and_children $nmSTAR;
         $gam update group $groupSTARFAMnest1 add manager nomail ous_and_children $nmSTAR;
@@ -664,7 +657,18 @@ done
 while true; do
     read -p "Continue with Mass Lists Manager sync preview (y/n)? " yn
     case $yn in
-        [Yy]* ) 
+        [Yy]* )
+
+#clear managers
+
+        $gam update group $groupUNDERHILL clear manager;
+        $gam update group $groupWHOLESCHOOL clear manager;
+        $gam update group $groupSTAFF clear manager;
+        $gam update group $groupSTUDENTS clear manager;
+        $gam update group $groupALUMNI clear manager;
+        $gam update group $groupFAMILIES clear manager;
+
+#add mass mailing managers
         
         $gam update group $groupUNDERHILL add manager preview ous_and_children $MANUND;
         $gam update group $groupWHOLESCHOOL add manager preview ous_and_children $MANUND;
