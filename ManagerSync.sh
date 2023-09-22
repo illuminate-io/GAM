@@ -183,9 +183,9 @@ while true; do
 
 #nomail managers preview
 
-#        $gam update group $groupUNIFAMstatic add manager nomail preview ous_and_children $nmUNI;
-#       $gam update group $groupUNIFAMnestPK1 add manager nomail preview ous_and_children $nmUNI;
-#        $gam update group $groupUNIFAMnestPK2 add manager nomail preview ous_and_children $nmUNI; break;;
+        $gam update group $groupUNIFAMstatic add manager nomail preview ous_and_children $nmUNI;
+        $gam update group $groupUNIFAMnestPK1 add manager nomail preview ous_and_children $nmUNI;
+        $gam update group $groupUNIFAMnestPK2 add manager nomail preview ous_and_children $nmUNI; break;;
 
         [Nn]* ) break;;
         * ) echo "Please answer y or n";;
@@ -211,7 +211,7 @@ while true; do
 
         $gam update group $groupUNIFAMstatic add manager ous_and_children $MANUNI;
         $gam update group $groupUNIFAMnestPK1 add manager ous_and_children $MANUNI;
-        $gam update group $groupUNIFAMnestPK2 add manager ous_and_children $MANUNI; break;;
+        $gam update group $groupUNIFAMnestPK2 add manager ous_and_children $MANUNI;
 
 #nomail managers
 
@@ -240,7 +240,7 @@ while true; do
 #allmail grasshopper managers preview
 
         $gam update group $groupGRASSFAMstatic add manager preview ous_and_children $MANGRASS;
-        $gam update group $groupGRASSFAMnestK add manager preview ous_and_children $MANGRASS; break;;
+        $gam update group $groupGRASSFAMnestK add manager preview ous_and_children $MANGRASS;
 
 #nomail grasshopper managers preview
 
