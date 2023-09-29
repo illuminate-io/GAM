@@ -17,6 +17,7 @@ OUMS=Users/Staff/Teachers/MS
 OUADM=Users/Staff/Admin
 OUUND=Users/Staff/Underhill
 OUCOUN=Users/Staff/Counselor
+OUSHAR=Users/Staff/SharedAccounts
 
 #Specials
 OUJAP=Users/Staff/Teachers/Japanese
@@ -32,13 +33,13 @@ OUMUS=Users/Staff/Teachers/Music
 
 # List nomail Managers (these managers will not receive any mail from the group)
 
-nmUNI="'$OUADM','$OUWELL'"
-nmGRASS="'$OUADM','$OUWELL'"
-nmSTAR="'$OUADM','$OUWELL','$OUSPA'"
-nmCENT="'$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2'"
-nmBADG="'$OUADM','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2'"
-nmMS="'$OUJAP','$OUWELL','$OUART2','$OUDRA2'"
-nmUND=""
+nmUNI="'$OUADM','$OUWELL','$OUSHAR'"
+nmGRASS="'$OUADM','$OUWELL','$OUSHAR'"
+nmSTAR="'$OUADM','$OUWELL','$OUSPA','$OUSHAR'"
+nmCENT="'$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
+nmBADG="'$OUADM','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2','$OUSHAR'"
+nmMS="'$OUJAP','$OUWELL','$OUART2','$OUDRA2','$OUSHAR'"
+nmUND="'$OUSHAR'"
 
 
 # List allmail Managers (these managers will receive all mail sent to the group)
