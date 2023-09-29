@@ -33,22 +33,22 @@ OUMUS=Users/Staff/Teachers/Music
 
 # List nomail Managers (these managers will not receive any mail from the group)
 
-nmUNI="'$OUADM','$OUWELL','$OUSHAR'"
-nmGRASS="'$OUADM','$OUWELL','$OUSHAR'"
-nmSTAR="'$OUADM','$OUWELL','$OUSPA','$OUSHAR'"
-nmCENT="'$OUADM','$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
-nmBADG="'$OUADM','$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2','$OUSHAR'"
+nmUNI="'$OUWELL','$OUSHAR'"
+nmGRASS="'$OUWELL','$OUSHAR'"
+nmSTAR="'$OUWELL','$OUSPA','$OUSHAR'"
+nmCENT="'$OUSPA','$OUWELL','$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
+nmBADG="'$OUSPA','$OUWELL','$OUART2','$OUPE','$OUDRA2','$OUSHAR'"
 nmMS="'$OUJAP','$OUWELL','$OUART2','$OUDRA2','$OUSHAR'"
 nmUND="'$OUSHAR'"
 
 
 # List allmail Managers (these managers will receive all mail sent to the group)
 
-MANUNI="'$OUUNI','$OUUND'"
-MANGRASS="'$OUGRASS','$OUUND'"
-MANSTAR="'$OUSTAR','$OUUND',"
-MANCENT="'$OUCENT','$OUUND',"
-MANBADG="'$OUBADG','$OUUND'"
+MANUNI="'$OUADM','$OUUNI','$OUUND'"
+MANGRASS="'$OUADM','$OUGRASS','$OUUND'"
+MANSTAR="'$OUADM','$OUSTAR','$OUUND',"
+MANCENT="'$OUADM','$OUCENT','$OUUND',"
+MANBADG="'$OUADM','$OUBADG','$OUUND'"
 MANMS="'$OUADM','$OUMS','$OUUND','$OUSPA','$OUPE'"
 MANUND="'$OUUND','$OUADM'"
 
