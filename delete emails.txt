@@ -1,4 +1,4 @@
-##delete specific email for all users
+##delete specific email for all users...uh
 gam all users delete messages query rfc822msgid:dovecot-sieve-1646149215-26827-0@backend20.mail.ord1d.rsapps.net doit
 
 ##delete specific message for one user
