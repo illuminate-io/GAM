@@ -660,15 +660,6 @@ done
 #     case $yn in
 #         [Yy]* )
 
-# #clear managers
-
-#         $gam update group $groupUNDERHILL clear manager;
-#         $gam update group $groupWHOLESCHOOL clear manager;
-#         $gam update group $groupSTAFF clear manager;
-#         $gam update group $groupSTUDENTS clear manager;
-#         $gam update group $groupALUMNI clear manager;
-#         $gam update group $groupFAMILIES clear manager;
-
 # #add mass mailing managers
         
 #         $gam update group $groupUNDERHILL add manager preview ous_and_children $MANUND;
@@ -690,6 +681,17 @@ while true; do
     read -p "Continue with Mass Lists Manager add (y/n)? " yn
     case $yn in
         [Yy]* ) 
+
+#clear managers
+
+         $gam update group $groupUNDERHILL clear manager;
+         $gam update group $groupWHOLESCHOOL clear manager;
+         $gam update group $groupSTAFF clear manager;
+         $gam update group $groupSTUDENTS clear manager;
+         $gam update group $groupALUMNI clear manager;
+         $gam update group $groupFAMILIES clear manager;
+
+
         
         $gam update group $groupUNDERHILL add manager ous_and_children $MANUND;
         $gam update group $groupWHOLESCHOOL add manager ous_and_children $MANUND;
