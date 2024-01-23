@@ -57,6 +57,8 @@ MANUND="'$OUUND','$OUADM'"
 
 #read -p "what is the the two digit year for this year's graduation class?" gradyear
 
+#CHANGE YEAR VARIABLE BELOW EVERY SUMMER
+
 gradyear=24
 
 let PK1=$gradyear+10
