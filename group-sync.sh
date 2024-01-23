@@ -105,6 +105,3 @@ $gam update group family-31@santafeschool.org sync members csvfile gsheet:member
 $gam update group family-32@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-32"
 $gam update group family-33@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-33"
 $gam update group family-34@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-34"
-
-
-```
