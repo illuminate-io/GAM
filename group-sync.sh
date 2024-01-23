@@ -90,13 +90,45 @@ $gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manage
 ##Sync families rotating years
 
 $gam update group family-$PK1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK1"
+
+sleep 10s
+
 $gam update group family-$PK2@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK2"
+
+sleep 10s
+
 $gam update group family-$K@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$K"
+
+sleep 10s
+
 $gam update group family-$STAR1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$STAR1"
+
+sleep 10s
+
 $gam update group family-$STAR2@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$STAR2"
+
+sleep 10s
+
 $gam update group family-$CENT3@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$CENT3"
+
+sleep 10s
+
 $gam update group family-$CENT4@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$CENT4"
+
+sleep 10s
+
 $gam update group family-$BADG5@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$BADG5"
+
+sleep 10s
+
 $gam update group family-$BADG6@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$BADG6"
+
+sleep 10s
+
 $gam update group family-$MS7@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$MS7"
+
+sleep 10s
+
 $gam update group family-$MS8@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$MS8"
+
+sleep 10s
