@@ -85,6 +85,7 @@ $gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manage
 
 ##Sync families static years
 
+$gam update group family-pre15@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-pre15"
 $gam update group family-15@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-15"
 $gam update group family-16@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-16"
 $gam update group family-17@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-17"
