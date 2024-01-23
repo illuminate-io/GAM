@@ -2,7 +2,11 @@
 
 gam=/home/isaac/bin/gamadv-xtd3/gam
 
-# Google Workspace Organizational Unit Variables
+#Google Sheet ID
+
+GSHEET=10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g
+
+##Google Workspace Organizational Unit Variables
 
 #Classes
 OUUNI=Users/Staff/Teachers/Unicorn
@@ -83,26 +87,16 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 
 $gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manager gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "helpdesk"
 
-##Sync families static years
+##Sync families rotating years
 
-$gam update group family-pre15@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-pre15"
-$gam update group family-15@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-15"
-$gam update group family-16@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-16"
-$gam update group family-17@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-17"
-$gam update group family-18@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-18"
-$gam update group family-19@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-19"
-$gam update group family-20@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-20"
-$gam update group family-21@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-21"
-$gam update group family-22@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-22"
-$gam update group family-23@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-23"
-$gam update group family-24@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-24"
-$gam update group family-25@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-25"
-$gam update group family-26@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-26"
-$gam update group family-27@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-27"
-$gam update group family-28@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-28"
-$gam update group family-29@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-29"
-$gam update group family-30@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-30"
-$gam update group family-31@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-31"
-$gam update group family-32@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-32"
-$gam update group family-33@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-33"
-$gam update group family-34@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "family-34"
+$gam update group family-$PK1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK1"
+$gam update group family-$PK2@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK2"
+$gam update group family-$K@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$K"
+$gam update group family-$STAR1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$STAR1"
+$gam update group family-$STAR2@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$STAR2"
+$gam update group family-$CENT3@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$CENT3"
+$gam update group family-$CENT4@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$CENT4"
+$gam update group family-$BADG5@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$BADG5"
+$gam update group family-$BADG6@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$BADG6"
+$gam update group family-$MS7@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$MS7"
+$gam update group family-$MS8@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$MS8"
