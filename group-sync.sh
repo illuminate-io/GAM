@@ -6,7 +6,14 @@ gam=/home/isaac/bin/gamadv-xtd3/gam
 
 GSHEET=10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g
 
-##Google Workspace Organizational Unit Variables
+#Google Sheet ID for faculty groups
+
+
+#Google Sheet ID for student groups
+
+
+
+#Google Workspace Organizational Unit Variables
 
 #Classes
 OUUNI=Users/Staff/Teachers/Unicorn
@@ -34,8 +41,6 @@ OUDRA2=Users/Staff/Teachers/Drama-2
 OUMUS=Users/Staff/Teachers/Music
 
 #calculation of mailing list years
-
-
 
 # Graduation Year variables
 
@@ -84,6 +89,9 @@ groupGRASSFAMnestK=family-$K@santafeschool.org
 
 #Stargazer groups
 #Stargazer families
+
+STARGROUPS=("family-stargazer@santafeschool.org" "family-first@santafeschool.org" "family-second@santafeschool.org" "family-$STAR1@santafeschool.org 'family-$STAR2@santafeschool.org") 
+
 groupSTARFAMstatic=family-stargazer@santafeschool.org
 group1FAMstatic=family-first@santafeschool.org
 group2FAMstatic=family-second@santafeschool.org
@@ -148,9 +156,7 @@ groupFAMILIES=families@santafeschool.org
 
 #Iterative version
 
-
-
-# Define the list of groups
+# Define the list of groups (these groups should be based on common managers)
 GROUPS=("group1" "group2" "group3")
 
 # Define the Google Sheet and Tab
@@ -161,9 +167,11 @@ TAB="your_tab_name"
 for GROUP in "${GROUPS[@]}"; do
     echo "Updating group: $GROUP"
     gam update group "$GROUP" sync managers csvfile gsheet:manager gam@santafeschool.org "$GSHEET" "$TAB"
+    gam update group "$GROUP" sync managers csvfile gsheet:nomailmanager gam@santafeschool.org "$GSHEET" "$TAB"
+    gam update group "$GROUP" sync members csvfile gsheet:member gam@santafeschool.org "$GSHEET" "$TAB"
 done
 
-
+$gam update group $groupUNIFAMnestPK1 add manager ous_and_children $MANUNI;
 
 ##Sync managers
 
