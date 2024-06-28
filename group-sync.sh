@@ -35,6 +35,8 @@ OUMUS=Users/Staff/Teachers/Music
 
 #calculation of mailing list years
 
+
+
 # Graduation Year variables
 
 
@@ -67,9 +69,109 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 
 ###########################################################################
 
+# Lists
+
+#Unigazer groups
+#Unigazer families
+groupUNIFAMstatic=family-unicorn@santafeschool.org
+groupUNIFAMnestPK1=family-$PK1@santafeschool.org
+groupUNIFAMnestPK2=family-$PK2@santafeschool.org
+
+#Grasshopper groups
+#Grasshopper families
+groupGRASSFAMstatic=family-grasshopper@santafeschool.org 
+groupGRASSFAMnestK=family-$K@santafeschool.org
+
+#Stargazer groups
+#Stargazer families
+groupSTARFAMstatic=family-stargazer@santafeschool.org
+group1FAMstatic=family-first@santafeschool.org
+group2FAMstatic=family-second@santafeschool.org
+groupSTARFAMnest1=family-$STAR1@santafeschool.org
+groupSTARFAMnest2=family-$STAR2@santafeschool.org
+
+#Centaur groups
+#Centaur families
+groupCENTFAMmstatic=family-centaur@santafeschool.org
+group3FAMstatic=family-third@santafeschool.org
+group4FAMstatic=family-fourth@santafeschool.org
+groupCENTFAMnest3=family-$CENT3@santafeschool.org
+groupCENTFAMnest4=family-$CENT4@santafeschool.org
+
+#Centaur students
+groupCENTSTUDstatic=student-centaur@santafeschool.org
+group3STUDstatic=student-third@santafeschool.org
+group4STUDstatic=student-fourth@santafeschool.org
+groupCENTSTUDnest3=student-$CENT3@santafeschool.org
+groupCENTSTUDnest4=student-$CENT4@santafeschool.org
+
+#Badger groups
+#Badger families
+groupBADGFAMstatic=family-badger@santafeschool.org
+group5FAMstatic=family-fifth@santafeschool.org
+group6FAMstatic=family-sixth@santafeschool.org
+groupBADGFAMnest5=family-$BADG5@santafeschool.org
+groupBADGFAMnest6=family-$BADG6@santafeschool.org
+
+#Badger students
+groupBADGSTUDstatic=student-badger@santafeschool.org
+group5STUDstatic=student-fifth@santafeschool.org
+group6STUDstatic=student-sixth@santafeschool.org
+groupBADGSTUDnest5=student-$BADG5@santafeschool.org
+groupBADGSTUDnest6=student-$BADG6@santafeschool.org
+
+#Middle school groups
+#Middle school families
+groupMSFAMstatic=family-ms@santafeschool.org
+group7FAMstatic=family-seventh@santafeschool.org
+group8FAMstatic=family-eighth@santafeschool.org
+groupMSFAMnest7=family-$MS7@santafeschool.org
+groupMSFAMnest8=family-$MS8@santafeschool.org
+
+#Middle school students
+groupMSSTUDstatic=student-ms@santafeschool.org
+groupMSSTUD7static=student-seventh@santafeschool.org
+groupMSSTUD8static=student-eighth@santafeschool.org
+groupMSSTUDnest7=student-$MS7@santafeschool.org
+groupMSSTUDnest8=student-$MS8@santafeschool.org
+
+#MS Faculty
+groupMSFACULTY=midschoolfaculty@santafeschool.org
+groupUNDERHILL=underhill@santafeschool.org
+groupWHOLESCHOOL=wholeschool@santafeschool.org
+groupSTUDENTS=students@santafeschool.org
+groupSTAFF=staff@santafeschool.org
+groupHELPDESK=helpdesk@santafeschool.org
+groupALUMNI=alumni@santafeschool.org
+groupFAMILIES=families@santafeschool.org
+
+
+#Iterative version
+
+
+
+# Define the list of groups
+GROUPS=("group1" "group2" "group3")
+
+# Define the Google Sheet and Tab
+GSHEET="your_google_sheet_id"
+TAB="your_tab_name"
+
+# Loop through each group and execute the command
+for GROUP in "${GROUPS[@]}"; do
+    echo "Updating group: $GROUP"
+    gam update group "$GROUP" sync managers csvfile gsheet:manager gam@santafeschool.org "$GSHEET" "$TAB"
+done
+
+
+
 ##Sync managers
 
-$gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manager gam@santafeschool.org 10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g "helpdesk"
+$gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manager gam@santafeschool.org $GSHEET "helpdesk"
+
+
+
+
 
 ##Sync families rotating years
 
