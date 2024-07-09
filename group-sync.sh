@@ -174,10 +174,10 @@ for STARGROUP in "${STARGROUPS[@]}"; do
 done
 
 # Loop through each group and execute the command for managers that will not receive mail
-for STARGROUP in "${STARGROUPS[@]}"; do
-    echo "Updating group: $STARGROUP"
-    gam update group "$STARGROUP" sync managers csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-done
+#for STARGROUP in "${STARGROUPS[@]}"; do
+#    echo "Updating group: $STARGROUP"
+#    gam update group "$STARGROUP" sync managers csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+#done
 
 # PAUSE BEFORE CONTINUING
 
