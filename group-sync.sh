@@ -170,8 +170,8 @@ STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupS
 # Loop through each group and execute the command for managers that will receive mail
 for STARGROUP in "${STARGROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
-    gam update group "$STARGROUP" sync managers allmail csvfile gsheet:stargazer-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    gam update group "$STARGROUP" sync members csvfile gsheet:
+    gam update group "$STARGROUP" sync managers csvfile gsheet:stargazer-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+#    gam update group "$STARGROUP" sync members csvfile gsheet:
 done
 
 # Loop through each group and execute the command for managers that will not receive mail
