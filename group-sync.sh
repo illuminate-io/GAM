@@ -177,7 +177,7 @@ done
 # Loop through each group and execute the command for managers that will not receive mail
 for STARGROUP in "${STARGROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
-    gam update group "$STARGROUP" sync managers nomail csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$STARGROUP" add managers nomail csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
 done
 
 # PAUSE BEFORE CONTINUING
