@@ -54,7 +54,7 @@ ${magenta}
  echo "1. Check Group Membership"
  echo "2. Delete All Other Contacts"
  echo "3. Check Last Login Time"
- echo "4. Remove From All Workspace Contact Lists"
+ echo "4. Yearly Grade Shift (Mid-July)"
  echo "5. Reset Password"
  echo "6. Suspend User"
  echo "7. Offboarding Student"
