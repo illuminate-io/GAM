@@ -74,7 +74,9 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 
 ###########################################################################
 
+# PAUSE BEFORE CONTINUING
 
+read -n 1 -s -r -p "Press any key to continue..."
 
 # Lists
 
