@@ -4,7 +4,7 @@ gam=/home/isaac/bin/gamadv-xtd3/gam
 
 #Google Sheet ID for families
 
-GSHEET=10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g
+#GSHEET=10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g
 
 #Google Sheet ID for faculty groups
 
@@ -74,6 +74,8 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 
 ###########################################################################
 
+
+
 # Lists
 
 #Unigazer groups
@@ -89,8 +91,6 @@ groupGRASSFAMnestK=family-$K@santafeschool.org
 
 #Stargazer groups
 #Stargazer families
-
-STARGROUPS=("family-stargazer@santafeschool.org" "family-first@santafeschool.org" "family-second@santafeschool.org" "family-$STAR1@santafeschool.org 'family-$STAR2@santafeschool.org") 
 
 groupSTARFAMstatic=family-stargazer@santafeschool.org
 group1FAMstatic=family-first@santafeschool.org
@@ -154,75 +154,41 @@ groupALUMNI=alumni@santafeschool.org
 groupFAMILIES=families@santafeschool.org
 
 
+
+
 #Iterative version
 
-# Define the list of groups (these groups should be based on common managers)
-GROUPS=("group1" "group2" "group3")
-
 # Define the Google Sheet and Tab
-GSHEET="your_google_sheet_id"
-TAB="your_tab_name"
+GSHEET="10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g"
+MTAB="family-managers"
 
-# Loop through each group and execute the command
-for GROUP in "${GROUPS[@]}"; do
-    echo "Updating group: $GROUP"
-    gam update group "$GROUP" sync managers csvfile gsheet:manager gam@santafeschool.org "$GSHEET" "$TAB"
-    gam update group "$GROUP" sync managers csvfile gsheet:nomailmanager gam@santafeschool.org "$GSHEET" "$TAB"
-    gam update group "$GROUP" sync members csvfile gsheet:member gam@santafeschool.org "$GSHEET" "$TAB"
+#STARGAZER
+STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupSTARFAMnest1" "$groupSTARFAMnest2")
+
+# Loop through each group and execute the command for managers that will receive mail
+for STARGROUP in "${STARGROUPS[@]}"; do
+    echo "Updating group: $STARGROUP"
+    gam update group "$STARGROUP" sync managers csvfile gsheet:stargazer-mail gam@santafeschool.org "$GSHEET" "$MTAB"
 done
 
-$gam update group $groupUNIFAMnestPK1 add manager ous_and_children $MANUNI;
+# Loop through each group and execute the command for managers that will not receive mail
+for STARGROUP in "${STARGROUPS[@]}"; do
+    echo "Updating group: $STARGROUP"
+    gam update group "$STARGROUP" sync managers csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+done
+
+# PAUSE BEFORE CONTINUING
+
+read -n 1 -s -r -p "Press any key to continue..."
+
+#gam update group "$GROUP" sync members csvfile gsheet:member gam@santafeschool.org "$GSHEET" "$TAB"
+
+#$gam update group $groupUNIFAMnestPK1 add manager ous_and_children $MANUNI;
 
 ##Sync managers
 
-$gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manager gam@santafeschool.org $GSHEET "helpdesk"
-
-
-
-
+#$gam update group helpdesk@santafeschool.org sync managers csvfile gsheet:manager gam@santafeschool.org $GSHEET "helpdesk"
 
 ##Sync families rotating years
 
-$gam update group family-$PK1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK1"
-
-sleep 10s
-
-$gam update group family-$PK2@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK2"
-
-sleep 10s
-
-$gam update group family-$K@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$K"
-
-sleep 10s
-
-$gam update group family-$STAR1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$STAR1"
-
-sleep 10s
-
-$gam update group family-$STAR2@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$STAR2"
-
-sleep 10s
-
-$gam update group family-$CENT3@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$CENT3"
-
-sleep 10s
-
-$gam update group family-$CENT4@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$CENT4"
-
-sleep 10s
-
-$gam update group family-$BADG5@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$BADG5"
-
-sleep 10s
-
-$gam update group family-$BADG6@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$BADG6"
-
-sleep 10s
-
-$gam update group family-$MS7@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$MS7"
-
-sleep 10s
-
-$gam update group family-$MS8@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$MS8"
-
-sleep 10s
+#$gam update group family-$PK1@santafeschool.org sync members csvfile gsheet:member gam@santafeschool.org $GSHEET "family-$PK1"
