@@ -198,7 +198,7 @@ ${magenta}
 
          echo "Updating groups"
          #unicorn
-         gam update group "$groupUNIFAMstatic" sync members "'$groupUNIFAMnestPK1','$groupUNIFAMnestPK2'"
+         gam update group "$groupUNIFAMstatic" sync members "$groupUNIFAMnestPK1,$groupUNIFAMnestPK2"
          #grasshopper
          gam update group "$groupGRASSFAMstatic" sync members "$groupGRASSFAMnestK"
          #stargazer
