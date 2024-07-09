@@ -194,9 +194,10 @@ ${magenta}
          groupALUMNI=alumni@santafeschool.org
          groupFAMILIES=families@santafeschool.org
 
+         echo "Verify years are good. otherwise CTRL+C to exit or press [enter] key to continue...";
+         read enterKey;
 
-
-         echo "Updating groups"
+         echo "Updating family groups"
          #unicorn
          gam update group "$groupUNIFAMstatic" sync members "$groupUNIFAMnestPK1,$groupUNIFAMnestPK2"
          #grasshopper
@@ -206,16 +207,41 @@ ${magenta}
          gam update group "$group1FAMstatic" sync members "$groupSTARFAMnest1"
          gam update group "$group2FAMstatic" sync members "$groupSTARFAMnest2"
          #centaur
-#         gam update group "$GROUP" sync members "$groupGRASSFAMnestK"
+         gam update group "$groupCENTFAMstatic" sync members "$group3FAMstatic,$group4FAMstatic"
+         gam update group "$group3FAMstatic" sync members "$groupCENTFAMnest3"
+         gam update group "$group4FAMstatic" sync members "$groupCENTFAMnest4"        
          #badger
-#         gam update group "$GROUP" sync members "$groupGRASSFAMnestK"
+         gam update group "$groupBADGFAMstatic" sync members "$group5FAMstatic,$group6FAMstatic"
+         gam update group "$group5FAMstatic" sync members "$groupBADGFAMnest5"
+         gam update group "$group6FAMstatic" sync members "$groupBADGFAMnest6" 
          #middle school
-#         gam update group "$GROUP" sync members "$groupGRASSFAMnestK"
-         #mass lists
+         gam update group "$groupMSFAMstatic" sync members "$group7FAMstatic,$group8FAMstatic"
+         gam update group "$group7FAMstatic" sync members "$groupMSFAMnest7"
+         gam update group "$group8FAMstatic" sync members "$groupMSFAMnest8" 
 
-         echo "nested groups year shift is complete [enter] key to continue...";
-         read enterKey;;
+         echo "Verify family lists are good. otherwise CTRL+C to exit or press [enter] key to continue...";
+         read enterKey;
+
+         #student lists
         
+         echo "Updating student groups"
+
+         #centaur
+         gam update group "$groupCENTSTUDstatic" sync members "$group3STUDstatic,$group4STUDstatic"
+         gam update group "$group3STUDstatic" sync members "$groupCENTSTUDnest3"
+         gam update group "$group4STUDstatic" sync members "$groupCENTSTUDest4"        
+         #badger
+         gam update group "$groupBADGSTUDstatic" sync members "$group5STUDstatic,$group6STUDstatic"
+         gam update group "$group5STUDstatic" sync members "$groupBADGSTUDnest5"
+         gam update group "$group6STUDstatic" sync members "$groupBADGSTUDnest6" 
+         #middle school
+         gam update group "$groupMSSTUDstatic" sync members "$group7STUDtatic,$group8STUDstatic"
+         gam update group "$group7STUDstatic" sync members "$groupMSSTUDnest7"
+         gam update group "$group8STUDstatic" sync members "$groupMSSTUDnest8" 
+
+         echo "Verify student lists are good. otherwise CTRL+C to exit or press [enter] key to continue...";
+         read enterKey;;
+
      5) echo "************ Reset Password ************";
         randpassword=$(env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 8) #creates random 8 charecter password
         $gam update user $email password $randpassword
