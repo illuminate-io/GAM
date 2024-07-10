@@ -1,3 +1,3 @@
 # config.sh
 
-currentgradyear=25
+gradyear=25
