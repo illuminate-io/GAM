@@ -59,16 +59,16 @@ UNIGROUPS=("$groupUNIFAMstatic" "$groupUNIFAMnestPK1" "$groupUNIFAMnestPK2")
 for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
     gam update group "$UNIGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
+    echo "sleep for 8s"
     sleep 8
     gam update group "$UNIGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
+    echo "sleep for 8s"
     sleep 8
     gam update group "$UNIGROUP" add managers csvfile gsheet:unicorn-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
+    echo "sleep for 8s"
     sleep 8
     gam update group "$UNIGROUP" add managers nomail csvfile gsheet:unicorn-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
+    echo "sleep for 8s"
     sleep 8
 #    gam update group "$UNIGROUP" sync members csvfile gsheet:
 done
