@@ -40,37 +40,31 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 
 read -n 1 -s -r -p "Press any key to continue..."
 
-
 #Define the Google Sheet and Tab
 GSHEET="10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g"
 MTAB="family-managers"
 
-#Stargazer groups
-#Stargazer families
-
-groupSTARFAMstatic=family-stargazer@santafeschool.org
-group1FAMstatic=family-first@santafeschool.org
-group2FAMstatic=family-second@santafeschool.org
-groupSTARFAMnest1=family-$STAR1@santafeschool.org
-groupSTARFAMnest2=family-$STAR2@santafeschool.org
+#Grasshopper groups
+#Grasshopper families
+groupGRASSFAMstatic=family-grasshopper@santafeschool.org 
+groupGRASSFAMnestK=family-$K@santafeschool.org
 
 #FAMILY GROUPS
-STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupSTARFAMnest1" "$groupSTARFAMnest2")
+GRASSGROUPS=("$groupGRASSFAMstatic" "$groupGRASSFAMnestK")
 
-#STARGAZER
-for STARGROUP in "${STARGROUPS[@]}"; do
-    echo "Updating group: $STARGROUP"
-    gam update group "$STARGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+# Loop through each group and execute the command for managers that will not receive mail
+for GRASSGROUP in "${GRASSGROUPS[@]}"; do
+    echo "Updating group: $GRASSGROUP"
+    gam update group "$GRASSGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     echo "sleep for 5s"
     sleep 5
-    gam update group "$STARGROUP" add managers csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$GRASSGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     echo "sleep for 5s"
     sleep 5
-    gam update group "$STARGROUP" add managers csvfile gsheet:stargazer-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$GRASSGROUP" add managers csvfile gsheet:grasshopper-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     echo "sleep for 5s"
     sleep 5
-    gam update group "$STARGROUP" add managers csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$GRASSGROUP" add managers nomail csvfile gsheet:grasshopper-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     echo "sleep for 5s"
     sleep 5
-#    gam update group "$STARGROUP" sync members csvfile gsheet:
 done
