@@ -56,15 +56,15 @@ GRASSGROUPS=("$groupGRASSFAMstatic" "$groupGRASSFAMnestK")
 for GRASSGROUP in "${GRASSGROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
     gam update group "$GRASSGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$GRASSGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$GRASSGROUP" add managers csvfile gsheet:grasshopper-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$GRASSGROUP" add managers nomail csvfile gsheet:grasshopper-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
 done

@@ -69,15 +69,15 @@ CENTGROUPS=("$groupCENTSTUDstatic" "$group3STUDstatic" "$group4STUDstatic" "$gro
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
     gam update group "$CENTGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$CENTGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$CENTGROUP" add managers csvfile gsheet:centaur-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$CENTGROUP" add managers nomail csvfile gsheet:centaur-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
 done

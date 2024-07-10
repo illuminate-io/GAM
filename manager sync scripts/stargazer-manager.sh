@@ -61,16 +61,16 @@ STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupS
 for STARGROUP in "${STARGROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
     gam update group "$STARGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$STARGROUP" add managers csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$STARGROUP" add managers csvfile gsheet:stargazer-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$STARGROUP" add managers csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
 #    gam update group "$STARGROUP" sync members csvfile gsheet:
 done

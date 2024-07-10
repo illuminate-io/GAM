@@ -40,8 +40,6 @@ echo "Middle School includes years 20$MS7 (7th Grade) and 20$MS8 (8th Grade)"
 
 read -n 1 -s -r -p "Press any key to continue..."
 
-
-
 #Define the Google Sheet and Tab
 GSHEET="10vu7t1Ojk0c8hXUUMglMl4jzmvX2oS1j5kig_tK413g"
 MTAB="family-managers"
@@ -70,14 +68,14 @@ BADGGROUPS=("$groupBADGSTUDstatic" "$group5STUDstatic" "$group6STUDstatic" "$gro
 for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "Updating group: $BADGGROUP"
     gam update group "$BADGGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$BADGGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$BADGGROUP" add managers csvfile gsheet:badger-mail gam@santafeschool.org "$GSHEET" "$MTAB"
-    echo "sleep for 5s"
-    sleep 5
+    echo "sleep for 8s"
+    sleep 8
     gam update group "$BADGGROUP" add managers nomail csvfile gsheet:badger-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
-    sleep 5
+    sleep 8
 done
