@@ -6,8 +6,8 @@ gam=/home/isaac/bin/gamadv-xtd3/gam
 
 # Graduation Year variables
 
-
-read -p "what is the the two digit year for this year's graduation class?" gradyear
+source config.sh
+#read -p "what is the the two digit year for this year's graduation class?" gradyear
 
 
 let PK1=$gradyear+10
