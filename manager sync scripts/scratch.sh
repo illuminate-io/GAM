@@ -170,13 +170,64 @@ MANUND="'$OUUND','$OUADM'"
 
 
 #FAMILY GROUPS
+UNIGROUPS=("$groupUNIFAMstatic" "$groupUNIFAMnestPK1" "$groupUNIFAMnestPK2")
+GRASSGROUPS=("$groupGRASSFAMstatic" "$groupGRASSFAMnestK")
+STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupSTARFAMnest1" "$groupSTARFAMnest2")
+CENTGROUPS=("$groupCENTFAMstatic" "$group3FAMstatic" "$group4FAMstatic" "$groupCENTFAMnest3" "$groupCENTFAMnest4" "$groupCENTSTUDstatic" "$group3STUDstatic" "$group4STUDstatic" "$groupCENTSTUDnest3" "$groupCENTSTUDnest4")
 BADGGROUPS=("$groupBADGFAMstatic" "$group5FAMstatic" "$group6FAMstatic" "$groupBADGFAMnest5" "$groupBADGFAMnest6" "$groupBADGSTUDstatic" "$group5STUDstatic" "$group6STUDstatic" "$groupBADGSTUDnest5" "$groupBADGSTUDnest6")
+MSGROUPS=("$groupMSFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupMSFAMnest1" "$groupMSFAMnest2" "$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
+MASSGROUPS=("$groupMSFACULTY" "$groupUNDERHILL" "$groupWHOLESCHOOL" "$groupSTUDENTS" "$groupSTAFF" "$groupHELPDESK" "$groupALUMNI" "$groupFAMILIES")
+
+#UNICORN
+for UNIGROUP in "${UNIGROUPS[@]}"; do
+    echo "Updating group: $UNIGROUP"
+    gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" sync manager ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
+    echo "complete"
+done
+
+#GRASSHOPPER
+for GRASSGROUP in "${GRASSROUPS[@]}"; do
+    echo "Updating group: $GRASSGROUP"
+    gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" sync manager ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
+    echo "complete"
+done
+
+#STARGAZER
+for STARGROUP in "${STARROUPS[@]}"; do
+    echo "Updating group: $STARGROUP"
+    gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" sync manager ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
+    echo "complete"
+done
+
+#CENTAUR
+for CENTGROUP in "${CENTGROUPS[@]}"; do
+    echo "Updating group: $CENTGROUP"
+    gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" sync manager ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
+    echo "complete"
+done
 
 #BADGER
 for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "Updating group: $BADGGROUP"
     gam ous_and_children "$MANBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" sync manager ~primaryEmail
-    echo "sleep for 8s"
-    sleep 8
+    echo "sleep for 5s"
+    sleep 5
+    echo "complete"
+done
+
+#MIDDLE SCHOOL
+for MSGROUP in "${MSGROUPS[@]}"; do
+    echo "Updating group: $MSGROUP"
+    gam ous_and_children "$MANMS" print primaryEmail | gam csv - gam update group "$MSGROUP" sync manager ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done

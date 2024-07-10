@@ -61,9 +61,8 @@ groupCENTSTUDnest3=student-$CENT3@santafeschool.org
 groupCENTSTUDnest4=student-$CENT4@santafeschool.org
 
 #FAMILY-GROUPS
-CENTGROUPS=("$groupCENTFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupCENTFAMnest1" "$groupCENTFAMnest2")
-#STUDENT GROUPS
-CENTGROUPS=("$groupCENTSTUDstatic" "$group3STUDstatic" "$group4STUDstatic" "$groupCENTSTUDnest3" "$groupCENTSTUDnest4")
+CENTGROUPS=("$groupCENTFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupCENTFAMnest1" "$groupCENTFAMnest2" "$groupCENTSTUDstatic" "$group3STUDstatic" "$group4STUDstatic" "$groupCENTSTUDnest3" "$groupCENTSTUDnest4")
+
 
 #CENTAUR
 for CENTGROUP in "${CENTGROUPS[@]}"; do

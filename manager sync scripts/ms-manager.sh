@@ -60,9 +60,9 @@ groupMSSTUDnest7=student-$MS7@santafeschool.org
 groupMSSTUDnest8=student-$MS8@santafeschool.org
 
 #FAMILY GROUPS
-MSGROUPS=("$groupMSFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupMSFAMnest1" "$groupMSFAMnest2")
+MSGROUPS=("$groupMSFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupMSFAMnest1" "$groupMSFAMnest2" "$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
 #STUDENT GROUPS
-MSGROUPS=("$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
+MSGROUPS=()
 
 #MIDDLE SCHOOL
 for MSGROUP in "${MSGROUPS[@]}"; do
