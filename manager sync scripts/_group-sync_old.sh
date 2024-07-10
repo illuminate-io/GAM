@@ -183,7 +183,7 @@ MSGROUPS=("$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMS
 # Loop through each group and execute the command for managers that will receive mail
 for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
-    gam update group "$UNIGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$UNIGROUP" add managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$UNIGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$UNIGROUP" add managers csvfile gsheet:unicorn-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$UNIGROUP" add managers nomail csvfile gsheet:unicorn-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
@@ -191,61 +191,58 @@ for UNIGROUP in "${UNIGROUPS[@]}"; do
 done
 
 echo "sleep for 5s"
-sleep 5s
+sleep 15s
 
 # Loop through each group and execute the command for managers that will not receive mail
 for GRASSGROUP in "${GRASSGROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
-    gam update group "$GRASSGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$GRASSGROUP" add managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$GRASSGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$GRASSGROUP" add managers csvfile gsheet:grasshopper-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$GRASSGROUP" add managers nomail csvfile gsheet:grasshopper-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
 done
 
 echo "sleep for 5s"
-sleep 5s
+sleep 15s
 
 #STARGAZER
 for STARGROUP in "${STARGROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
-    gam update group "$STARGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$STARGROUP" add managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$STARGROUP" add managers csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$STARGROUP" add managers csvfile gsheet:stargazer-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$STARGROUP" add managers csvfile gsheet:stargazer-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
 #    gam update group "$STARGROUP" sync members csvfile gsheet:
 done
 
-echo "sleep for 5s"
-sleep 5s
-
 #CENTAUR
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
-    gam update group "$CENTGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$CENTGROUP" add managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$CENTGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$CENTGROUP" add managers csvfile gsheet:centaur-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$CENTGROUP" add managers nomail csvfile gsheet:centaur-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
 done
 
-echo "sleep for 5s"
-sleep 5s
-
 #BADGER
 for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "Updating group: $BADGGROUP"
-    gam update group "$BADGGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$BADGGROUP" add managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    echo "sleep for 5s"
+    sleep 5s
     gam update group "$BADGGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+    echo "sleep for 5s"
+    sleep 5s
     gam update group "$BADGGROUP" add managers csvfile gsheet:badger-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    echo "sleep for 5s"
+    sleep 5s
     gam update group "$BADGGROUP" add managers nomail csvfile gsheet:badger-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
 done
-
-echo "sleep for 5 seconds"
-sleep 5s
 
 #MIDDLE SCHOOL
 for MSGROUP in "${MSGROUPS[@]}"; do
     echo "Updating group: $MSGROUP"
-    gam update group "$MSGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    gam update group "$MSGROUP" add managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$MSGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$MSGROUP" add managers csvfile gsheet:ms-mail gam@santafeschool.org "$GSHEET" "$MTAB"
     gam update group "$MSGROUP" add managers nomail csvfile gsheet:ms-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
