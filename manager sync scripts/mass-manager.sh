@@ -19,4 +19,15 @@ groupHELPDESK=helpdesk@santafeschool.org
 groupALUMNI=alumni@santafeschool.org
 groupFAMILIES=families@santafeschool.org
 
-MASSGROUPS=("$groupMASSFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupMASSFAMnest1" "$groupMASSFAMnest2")
+MASSGROUPS=("$groupMSFACULTY" "$groupUNDERHILL" "$groupWHOLESCHOOL" "$groupSTUDENTS" "$groupSTAFF" "$groupHELPDESK" "$groupALUMNI" "$groupFAMILIES")
+
+
+# Loop through each group and execute the command for managers that will receive mail
+for MASSGROUP in "${MASSGROUPS[@]}"; do
+    echo "Updating group: $MASSGROUP"
+    gam update group "$MASSGROUP" sync managers csvfile gsheet:all-mail gam@santafeschool.org "$GSHEET" "$MTAB"
+    echo "sleep for 8s"
+    sleep 8
+    gam update group "$MASSGROUP" add managers nomail csvfile gsheet:all-nomail gam@santafeschool.org "$GSHEET" "$MTAB"
+    echo "sleep for 8s"
+    sleep 8
