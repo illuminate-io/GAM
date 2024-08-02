@@ -154,7 +154,7 @@ nmGRASS="'$OUSHAR'"
 #stargazer
 nmSTAR="'$OUSPA','$OUSHAR'"
 #centaur
-nmCENT="'$OUSPA',,'$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
+nmCENT="'$OUSPA','$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
 #badger
 nmBADG="'$OUSPA','$OUART2','$OUPE','$OUDRA2','$OUSHAR'"
 #middle school
@@ -172,7 +172,7 @@ MANGRASS="'$OUADM','$OUGRASS','$OUUND','$OUSHAR'"
 #stargazer
 MANSTAR="'$OUADM','$OUSTAR','$OUUND','$OUSPA','$OUSHAR'"
 #centaur
-MANCENT="'$OUADM','$OUCENT','$OUUND','$OUSPA',,'$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
+MANCENT="'$OUADM','$OUCENT','$OUUND','$OUSPA','$OUART1','$OUPE','$OUDRA2','$OUSHAR'"
 #badger
 MANBADG="'$OUADM','$OUBADG','$OUUND','$OUSPA','$OUART2','$OUPE','$OUDRA2','$OUSHAR'"
 #middle school
