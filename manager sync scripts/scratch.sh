@@ -246,7 +246,7 @@ for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "Updating group: $MASSGROUP"
     gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" sync manager ~primaryEmail
     gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add manager nomail ~primaryEmail
-    gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$MEMSTAFF" sync member ~primaryEmail
+    gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$groupSTAFF" sync member ~primaryEmail
     echo "sleep for 5s"
  #   sleep 5
     echo "complete"
