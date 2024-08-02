@@ -256,8 +256,8 @@ for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "complete"
 
 #staff Members only
-for MASSGROUP in "${MASSGROUPS[@]}"; do
-    echo "Updating group: $MASSGROUP"
+for STAFFMEMONLY in "${STAFFMEMONLYS[@]}"; do
+    echo "Updating group: $STAFFMEMONLY"
     gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$STAFFMEMONLY" sync member ~primaryEmail
     echo "sleep for 5s"
  #   sleep 5
@@ -265,8 +265,8 @@ for MASSGROUP in "${MASSGROUPS[@]}"; do
 done
 
 #MidSchoolFaculty Members only
-for MASSGROUP in "${MASSGROUPS[@]}"; do
-    echo "Updating group: $MASSGROUP"
+for MSMEMONLY in "${MSMEMONLYS[@]}"; do
+    echo "Updating group: $MSMEMONLY"
     gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" sync member ~primaryEmail
     echo "sleep for 5s"
  #   sleep 5
