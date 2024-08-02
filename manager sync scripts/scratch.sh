@@ -162,17 +162,18 @@ MANUNI="'$OUADM','$OUUNI','$OUUND'"
 MANGRASS="'$OUADM','$OUGRASS','$OUUND'"
 MANSTAR="'$OUADM','$OUSTAR','$OUUND',"
 MANCENT="'$OUADM','$OUCENT','$OUUND',"
-MANBADG="'$OUADM','$OUBADG','$OUUND','$OUWELL'"
-MANMS="'$OUADM','$OUMS','$OUUND','$OUSPA','$OUPE','$OUWELL'"
+MANBADG="'$OUADM','$OUBADG','$OUUND'"
+MANMS="'$OUADM','$OUMS','$OUUND','$OUSPA','$OUPE'"
 MANALL="'$OUUND','$OUADM'"
 
 # sync members only
 
 #staff (staff@santafeschool.org)
 MEMSTAFF="'$OUUNI','$OUGRASS','$OUSTAR','$OUCENT','$OUBADG','$OUMS','$OUJAP','$OUSPA','$OUWELL','$OUART1','$OUART2','$OUPE','$OUDRA1','$OUDRA2','$OUMUS'"
+MEMMS="'$OUWELL'"
 
 
-#FAMILY GROUPS
+#FAMILY MANAGER GROUPS
 UNIGROUPS=("$groupUNIFAMstatic" "$groupUNIFAMnestPK1" "$groupUNIFAMnestPK2")
 GRASSGROUPS=("$groupGRASSFAMstatic" "$groupGRASSFAMnestK")
 STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupSTARFAMnest1" "$groupSTARFAMnest2")
@@ -180,6 +181,10 @@ CENTGROUPS=("$groupCENTFAMstatic" "$group3FAMstatic" "$group4FAMstatic" "$groupC
 BADGGROUPS=("$groupBADGFAMstatic" "$group5FAMstatic" "$group6FAMstatic" "$groupBADGFAMnest5" "$groupBADGFAMnest6" "$groupBADGSTUDstatic" "$group5STUDstatic" "$group6STUDstatic" "$groupBADGSTUDnest5" "$groupBADGSTUDnest6")
 MSGROUPS=("$groupMSFAMstatic" "$group7FAMstatic" "$group8FAMstatic" "$groupMSFAMnest7" "$groupMSFAMnest8" "$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
 MASSGROUPS=("$groupMSFACULTY" "$groupUNDERHILL" "$groupWHOLESCHOOL" "$groupSTUDENTS" "$groupSTAFF" "$groupHELPDESK" "$groupALUMNI" "$groupFAMILIES")
+
+#STAFF groups for Members only
+STAFFMEMONLY=("$groupSTAFF")
+MSMEMONLY=("$groupMSFACULTY")
 
 #UNICORN
 for UNIGROUP in "${UNIGROUPS[@]}"; do
@@ -241,12 +246,28 @@ for MSGROUP in "${MSGROUPS[@]}"; do
     echo "complete"
 done
 
-#MASS
+#MASS Managers
 for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "Updating group: $MASSGROUP"
     gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" sync manager ~primaryEmail
     gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add manager nomail ~primaryEmail
-    gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$groupSTAFF" sync member ~primaryEmail
+    echo "sleep for 5s"
+ #   sleep 5
+    echo "complete"
+
+#staff Members only
+for MASSGROUP in "${MASSGROUPS[@]}"; do
+    echo "Updating group: $MASSGROUP"
+    gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$STAFFMEMONLY" sync member ~primaryEmail
+    echo "sleep for 5s"
+ #   sleep 5
+    echo "complete"
+done
+
+#MidSchoolFaculty Members only
+for MASSGROUP in "${MASSGROUPS[@]}"; do
+    echo "Updating group: $MASSGROUP"
+    gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" sync member ~primaryEmail
     echo "sleep for 5s"
  #   sleep 5
     echo "complete"
