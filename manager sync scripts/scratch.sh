@@ -67,6 +67,7 @@ OUPE=Users/Staff/Teachers/PE
 OUDRA1=Users/Staff/Teachers/Drama-1
 OUDRA2=Users/Staff/Teachers/Drama-2
 OUMUS=Users/Staff/Teachers/Music
+OUSUP=Users/Staff/Teachers/Supplementary
 
 # Lists
 
