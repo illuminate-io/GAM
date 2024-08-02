@@ -254,6 +254,7 @@ for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "sleep for 5s"
  #   sleep 5
     echo "complete"
+done
 
 #staff Members only
 for STAFFMEMONLY in "${STAFFMEMONLYS[@]}"; do
