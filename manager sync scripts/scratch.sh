@@ -163,7 +163,7 @@ nmMS="'$OUJAP','$OUART2','$OUDRA2','$OUSHAR'"
 nmALL="'$OUSHAR'"
 
 
-# List all Managers (these managers will receive all mail sent to the group)
+# List all Managers
 
 #unicorn
 MANUNI="'$OUADM','$OUUNI','$OUUND','$OUSHAR'"
@@ -204,9 +204,10 @@ MSMEMONLY=("$groupMSFACULTY")
 for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
     gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
-#    sleep 5
+    sleep 5
+    gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" update nomail ~primaryEmail
+
     echo "complete"
 done
 
@@ -214,9 +215,9 @@ done
 for GRASSGROUP in "${GRASSROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
     gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
-#    sleep 5
+    sleep 5
+    gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" update nomail ~primaryEmail
     echo "complete"
 done
 
@@ -224,9 +225,9 @@ done
 for STARGROUP in "${STARROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
     gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
-#    sleep 5
+    sleep 5
+    gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" update nomail ~primaryEmail
     echo "complete"
 done
 
@@ -234,9 +235,9 @@ done
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
     gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
-#    sleep 5
+    sleep 5
+    gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" update nomail ~primaryEmail
     echo "complete"
 done
 
@@ -244,9 +245,10 @@ done
 for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "Updating group: $BADGGROUP"
     gam ous_and_children "$MANBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
-#    sleep 5
+    sleep 5
+    gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" update nomail ~primaryEmail
+
     echo "complete"
 done
 
@@ -254,9 +256,9 @@ done
 for MSGROUP in "${MSGROUPS[@]}"; do
     echo "Updating group: $MSGROUP"
     gam ous_and_children "$MANMS" print primaryEmail | gam csv - gam update group "$MSGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
- #   sleep 5
+    sleep 5
+    gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" update nomail ~primaryEmail
     echo "complete"
 done
 
@@ -264,9 +266,9 @@ done
 for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "Updating group: $MASSGROUP"
     gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" sync manager ~primaryEmail
-    gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" update nomail ~primaryEmail
     echo "sleep for 5s"
- #   sleep 5
+    sleep 5
+    gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" update nomail ~primaryEmail
     echo "complete"
 done
 
