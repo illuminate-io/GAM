@@ -207,7 +207,8 @@ for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" update nomail ~primaryEmail
-
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -218,6 +219,8 @@ for GRASSGROUP in "${GRASSROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" update nomail ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -228,6 +231,8 @@ for STARGROUP in "${STARROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" update nomail ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -238,6 +243,8 @@ for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" update nomail ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -248,7 +255,8 @@ for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" update nomail ~primaryEmail
-
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -259,6 +267,8 @@ for MSGROUP in "${MSGROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" update nomail ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -269,6 +279,8 @@ for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "sleep for 5s"
     sleep 5
     gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" update nomail ~primaryEmail
+    echo "sleep for 5s"
+    sleep 5
     echo "complete"
 done
 
@@ -277,7 +289,7 @@ for STAFFMEMONLY in "${STAFFMEMONLYS[@]}"; do
     echo "Updating group: $STAFFMEMONLY"
     gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$STAFFMEMONLY" sync member ~primaryEmail
     echo "sleep for 5s"
- #   sleep 5
+    sleep 5
     echo "complete"
 done
 
@@ -286,6 +298,6 @@ for MSMEMONLY in "${MSMEMONLYS[@]}"; do
     echo "Updating group: $MSMEMONLY"
     gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" sync member ~primaryEmail
     echo "sleep for 5s"
- #   sleep 5
+    sleep 5
     echo "complete"
 done
