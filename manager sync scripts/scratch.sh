@@ -201,7 +201,7 @@ STAFFMEMONLY=("$groupSTAFF")
 MSMEMONLY=("$groupMSFACULTY")
 
 #UNICORN
-for UNIGROUP in "${UNIGROUPS[@]}"; do
+# for UNIGROUP in "${UNIGROUPS[@]}"; do
 #     echo "Updating group: $UNIGROUP"
 #     gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group $UNIGROUP clear manager
 #     echo "sleep for 5s"
