@@ -203,6 +203,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #UNICORN
 for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
+    gam update group $UNIGROUP clear manager
     gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
@@ -215,6 +216,7 @@ done
 #GRASSHOPPER
 for GRASSGROUP in "${GRASSROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
+    gam update group $GRASSGROUP clear manager
     gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
@@ -227,6 +229,7 @@ done
 #STARGAZER
 for STARGROUP in "${STARROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
+    gam update group $STARGROUP clear manager
     gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
@@ -239,6 +242,7 @@ done
 #CENTAUR
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
+    gam update group $CENTGROUP clear manager
     gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
@@ -251,6 +255,7 @@ done
 #BADGER
 for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "Updating group: $BADGGROUP"
+    gam update group $BADGGROUP clear manager
     gam ous_and_children "$MANBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
@@ -263,6 +268,7 @@ done
 #MIDDLE SCHOOL
 for MSGROUP in "${MSGROUPS[@]}"; do
     echo "Updating group: $MSGROUP"
+    gam update group $MSGROUP clear manager
     gam ous_and_children "$MANMS" print primaryEmail | gam csv - gam update group "$MSGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
@@ -275,6 +281,7 @@ done
 #MASS Managers
 for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "Updating group: $MASSGROUP"
+    gam update group $MASSGROUP clear manager
     gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
