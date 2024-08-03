@@ -248,7 +248,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #CENTAUR
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
-    gam update group $CENTGROUP clear managers
+    gam update group $CENTGROUP clear manager
 done
     echo "sleep for 5s"
     sleep 5
