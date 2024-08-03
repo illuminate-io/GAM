@@ -166,17 +166,17 @@ nmALL="'$OUSHAR'"
 # List all Managers
 
 #unicorn
-MANUNI="'$OUADM','$OUUND','$OUSHAR','$OUUNI'"
+MANUNI="'$OUADM','$OUUND','$OUUNI'"
 #grasshopper
-MANGRASS="'$OUADM','$OUUND','$OUSHAR','$OUGRASS'"
+MANGRASS="'$OUADM','$OUUND','$OUGRASS'"
 #stargazer
-MANSTAR="'$OUADM','$OUUND','$OUSHAR','$OUSTAR','$OUSPA'"
+MANSTAR="'$OUADM','$OUUND','$OUSTAR'"
 #centaur
-MANCENT="'$OUADM','$OUUND','$OUSHAR','$OUCENT','$OUSPA','$OUART1','$OUPE','$OUDRA2'"
+MANCENT="'$OUADM','$OUUND','$OUCENT'"
 #badger
-MANBADG="'$OUADM','$OUUND','$OUSHAR','$OUBADG','$OUSPA','$OUART2','$OUPE','$OUDRA2'"
+MANBADG="'$OUADM','$OUUND','$OUBADG'"
 #middle school
-MANMS="'$OUADM','$OUUND','$OUSHAR','$OUMS','$OUSPA','$OUPE','$OUJAP','$OUART2','$OUDRA2'"
+MANMS="'$OUADM','$OUUND','$OUSHAR','$OUMS','$OUSPA'"
 #all
 MANALL="'$OUADM','$OUUND','$OUSHAR'"
 
@@ -209,7 +209,7 @@ for UNIGROUP in "${UNIGROUPS[@]}"; do
     gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
@@ -224,7 +224,7 @@ for GRASSGROUP in "${GRASSROUPS[@]}"; do
     gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
@@ -239,7 +239,7 @@ for STARGROUP in "${STARROUPS[@]}"; do
     gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
@@ -254,7 +254,7 @@ for CENTGROUP in "${CENTGROUPS[@]}"; do
     gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
@@ -269,7 +269,7 @@ for BADGGROUP in "${BADGGROUPS[@]}"; do
     gam ous_and_children "$MANBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
@@ -282,7 +282,7 @@ for MSGROUP in "${MSGROUPS[@]}"; do
     gam ous_and_children "$MANMS" print primaryEmail | gam csv - gam update group "$MSGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
@@ -297,7 +297,7 @@ for MASSGROUP in "${MASSGROUPS[@]}"; do
     gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" sync manager ~primaryEmail
     echo "sleep for 5s"
     sleep 5
-    gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" update nomail ~primaryEmail
+    gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add nomail user ~primaryEmail
     echo "sleep for 5s"
     sleep 5
     echo "complete"
