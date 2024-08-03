@@ -203,7 +203,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #UNICORN
 # for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
-    gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group $UNIGROUP clear manager
+    gam csv - gam update group $UNIGROUP clear manager
 #     echo "sleep for 5s"
 #     sleep 5
     gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" add manager ~primaryEmail
@@ -218,7 +218,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #GRASSHOPPER
 # for GRASSGROUP in "${GRASSROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
-    gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group $GRASSGROUP clear manager
+    gam csv - gam update group $GRASSGROUP clear manager
 #     echo "sleep for 5s"
 #     sleep 5
     gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add manager ~primaryEmail
@@ -233,7 +233,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #STARGAZER
 # for STARGROUP in "${STARROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
-    gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group $STARGROUP clear manager
+    gam csv - gam update group $STARGROUP clear manager
     # echo "sleep for 5s"
     # sleep 5
     gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add manager ~primaryEmail
