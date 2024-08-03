@@ -253,7 +253,7 @@ done
     echo "sleep for 5s"
     sleep 5
 for CENTGROUP in "${CENTGROUPS[@]}"; do
-    gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" sync manager ~primaryEmail
+    gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager ~primaryEmail
 done
     echo "sleep for 5s"
     sleep 5
