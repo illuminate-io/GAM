@@ -213,7 +213,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #     echo "sleep for 5s"
 #     sleep 5
 #     echo "complete"
-# done
+ done
 
 #GRASSHOPPER
  for GRASSGROUP in "${GRASSROUPS[@]}"; do
@@ -228,7 +228,7 @@ MSMEMONLY=("$groupMSFACULTY")
 #     echo "sleep for 5s"
 #     sleep 5
 #     echo "complete"
-# done
+ done
 
 #STARGAZER
  for STARGROUP in "${STARROUPS[@]}"; do
