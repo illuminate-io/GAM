@@ -201,7 +201,7 @@ STAFFMEMONLY=("$groupSTAFF")
 MSMEMONLY=("$groupMSFACULTY")
 
 #UNICORN
-# for UNIGROUP in "${UNIGROUPS[@]}"; do
+ for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
     gam update group $UNIGROUP clear manager
 #     echo "sleep for 5s"
@@ -216,7 +216,7 @@ MSMEMONLY=("$groupMSFACULTY")
 # done
 
 #GRASSHOPPER
-# for GRASSGROUP in "${GRASSROUPS[@]}"; do
+ for GRASSGROUP in "${GRASSROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
     gam update group $GRASSGROUP clear manager
 #     echo "sleep for 5s"
@@ -231,7 +231,7 @@ MSMEMONLY=("$groupMSFACULTY")
 # done
 
 #STARGAZER
-# for STARGROUP in "${STARROUPS[@]}"; do
+ for STARGROUP in "${STARROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
     gam update group $STARGROUP clear manager
     # echo "sleep for 5s"
