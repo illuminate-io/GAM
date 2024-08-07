@@ -194,7 +194,7 @@ STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupS
 CENTGROUPS=("$groupCENTFAMstatic" "$group3FAMstatic" "$group4FAMstatic" "$groupCENTFAMnest3" "$groupCENTFAMnest4" "$groupCENTSTUDstatic" "$group3STUDstatic" "$group4STUDstatic" "$groupCENTSTUDnest3" "$groupCENTSTUDnest4")
 BADGGROUPS=("$groupBADGFAMstatic" "$group5FAMstatic" "$group6FAMstatic" "$groupBADGFAMnest5" "$groupBADGFAMnest6" "$groupBADGSTUDstatic" "$group5STUDstatic" "$group6STUDstatic" "$groupBADGSTUDnest5" "$groupBADGSTUDnest6")
 MSGROUPS=("$groupMSFAMstatic" "$group7FAMstatic" "$group8FAMstatic" "$groupMSFAMnest7" "$groupMSFAMnest8" "$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
-MASSGROUPS=("$groupMSFACULTY" "$groupUNDERHILL" "$groupWHOLESCHOOL" "$groupSTUDENTS" "$groupSTAFF" "$groupHELPDESK" "$groupALUMNI" "$groupFAMILIES")
+MASSGROUPS=("$groupMSFACULTY" "$groupUNDERHILL" "$groupWHOLESCHOOL" "$groupSTUDENTS" "$groupSTAFF" "$groupALUMNI" "$groupFAMILIES")
 
 #STAFF groups for Members only
 STAFFMEMONLY=("$groupSTAFF")
