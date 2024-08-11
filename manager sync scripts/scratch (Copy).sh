@@ -271,7 +271,6 @@ done
 #staff Members only
 for STAFFMEMONLY in "${STAFFMEMONLYS[@]}"; do
     echo "Updating group: $STAFFMEMONLY"
-    gam update group $STAFFMEMONLY clear member
     gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$STAFFMEMONLY" add member ~primaryEmail
     echo "complete"
 done
@@ -279,7 +278,6 @@ done
 #MidSchoolFaculty Members only
 for MSMEMONLY in "${MSMEMONLYS[@]}"; do
     echo "Updating group: $MSMEMONLY"
-    gam update group $MSMEMONLY clear member
     gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" add member ~primaryEmail
     echo "complete"
 done
