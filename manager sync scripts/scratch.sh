@@ -176,9 +176,9 @@ MANCENT="'$OUADM','$OUUND','$OUCENT'"
 #badger
 MANBADG="'$OUADM','$OUUND','$OUBADG'"
 #middle school
-MANMS="'$OUADM','$OUUND','$OUSHAR','$OUMS','$OUSPA'"
+MANMS="'$OUADM','$OUUND','$OUMS','$OUSPA'"
 #all
-MANALL="'$OUADM','$OUUND','$OUSHAR'"
+MANALL="'$OUADM','$OUUND'"
 
 # add members only
 
