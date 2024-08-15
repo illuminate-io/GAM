@@ -1,3 +1,5 @@
-# config.sh
+#!/bin/bash
 
-gradyear=25
+#config.sh
+
+export gradyear=25

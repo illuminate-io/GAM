@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 gam=/home/isaac/bin/gamadv-xtd3/gam
@@ -91,7 +90,7 @@ groupSTARFAMnest2=family-$STAR2@santafeschool.org
 
 #Centaur groups
 #Centaur families
-groupCENTFAMmstatic=family-centaur@santafeschool.org
+groupCENTFAMstatic=family-centaur@santafeschool.org
 group3FAMstatic=family-third@santafeschool.org
 group4FAMstatic=family-fourth@santafeschool.org
 groupCENTFAMnest3=family-$CENT3@santafeschool.org
@@ -193,7 +192,7 @@ GRASSGROUPS=("$groupGRASSFAMstatic" "$groupGRASSFAMnestK")
 STARGROUPS=("$groupSTARFAMstatic" "$group1FAMstatic" "$group2FAMstatic" "$groupSTARFAMnest1" "$groupSTARFAMnest2")
 CENTGROUPS=("$groupCENTFAMstatic" "$group3FAMstatic" "$group4FAMstatic" "$groupCENTFAMnest3" "$groupCENTFAMnest4" "$groupCENTSTUDstatic" "$group3STUDstatic" "$group4STUDstatic" "$groupCENTSTUDnest3" "$groupCENTSTUDnest4")
 BADGGROUPS=("$groupBADGFAMstatic" "$group5FAMstatic" "$group6FAMstatic" "$groupBADGFAMnest5" "$groupBADGFAMnest6" "$groupBADGSTUDstatic" "$group5STUDstatic" "$group6STUDstatic" "$groupBADGSTUDnest5" "$groupBADGSTUDnest6")
-MSGROUPS=("$groupMSFAMstatic" "$group7FAMstatic" "$group8FAMstatic" "$groupMSFAMnest7" "$groupMSFAMnest8" "$groupMSSTUDstatic" "$group7STUDstatic" "$group8STUDstatic" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
+MSGROUPS=("$groupMSFAMstatic" "$group7FAMstatic" "$group8FAMstatic" "$groupMSFAMnest7" "$groupMSFAMnest8" "$groupMSSTUDstatic" "$groupMSSTUD7static" "$groupMSSTUD8static" "$groupMSSTUDnest7" "$groupMSSTUDnest8")
 MASSGROUPS=("$groupMSFACULTY" "$groupUNDERHILL" "$groupWHOLESCHOOL" "$groupSTUDENTS" "$groupSTAFF" "$groupALUMNI" "$groupFAMILIES")
 
 #STAFF groups for Members only
@@ -203,25 +202,25 @@ MSMEMONLY=("$groupMSFACULTY")
 #UNICORN
  for UNIGROUP in "${UNIGROUPS[@]}"; do
     echo "Updating group: $UNIGROUP"
-    gam update group $UNIGROUP clear manager
-    gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" add manager nomail user ~primaryEmail
+    $gam update group $UNIGROUP clear manager
+    $gam ous_and_children "$MANUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmUNI" print primaryEmail | gam csv - gam update group "$UNIGROUP" add manager nomail user ~primaryEmail
  done
 
 #GRASSHOPPER
  for GRASSGROUP in "${GRASSGROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
-    gam update group $GRASSGROUP clear manager
-    gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add manager nomail user ~primaryEmail
+    $gam update group $GRASSGROUP clear manager
+    $gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add manager nomail user ~primaryEmail
  done
 
 #STARGAZER
  for STARGROUP in "${STARGROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
-    gam update group $STARGROUP clear manager
-    gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add manager nomail user ~primaryEmail
+    $gam update group $STARGROUP clear manager
+    $gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add manager nomail user ~primaryEmail
 
  done
 
@@ -229,10 +228,10 @@ MSMEMONLY=("$groupMSFACULTY")
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
     
-    gam update group $CENTGROUP clear manager
+    $gam update group $CENTGROUP clear manager
 
-    gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager nomail user ~primaryEmail
+    $gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager nomail user ~primaryEmail
 done
 
     echo "complete"
@@ -240,42 +239,42 @@ done
 #BADGER
 for BADGGROUP in "${BADGGROUPS[@]}"; do
     echo "Updating group: $BADGGROUP"
-    gam update group $BADGGROUP clear manager
-    gam ous_and_children "$MANBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" add manager nomail user ~primaryEmail
+    $gam update group $BADGGROUP clear manager
+    $gam ous_and_children "$MANBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmBADG" print primaryEmail | gam csv - gam update group "$BADGGROUP" add manager nomail user ~primaryEmail
     echo "complete"
 done
 
 #MIDDLE SCHOOL
 for MSGROUP in "${MSGROUPS[@]}"; do
     echo "Updating group: $MSGROUP"
-    gam update group $MSGROUP clear manager
-    gam ous_and_children "$MANMS" print primaryEmail | gam csv - gam update group "$MSGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" add manager nomail user ~primaryEmail
+    $gam update group $MSGROUP clear manager
+    $gam ous_and_children "$MANMS" print primaryEmail | gam csv - gam update group "$MSGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmMS" print primaryEmail | gam csv - gam update group "$MSGROUP" add manager nomail user ~primaryEmail
     echo "complete"
 done
 
 #MASS Managers
 for MASSGROUP in "${MASSGROUPS[@]}"; do
     echo "Updating group: $MASSGROUP"
-    gam update group $MASSGROUP clear manager
-    gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add manager ~primaryEmail
-    gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add manager nomail user ~primaryEmail
+    $gam update group $MASSGROUP clear manager
+    $gam ous_and_children "$MANALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add manager ~primaryEmail
+    $gam ous_and_children "$nmALL" print primaryEmail | gam csv - gam update group "$MASSGROUP" add manager nomail user ~primaryEmail
     echo "complete"
 done
 
 #staff Members only
 for STAFFMEMONLY in "${STAFFMEMONLYS[@]}"; do
     echo "Updating group: $STAFFMEMONLY"
-    gam update group $STAFFMEMONLY clear member
-    gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$STAFFMEMONLY" add member ~primaryEmail
+    $gam update group $STAFFMEMONLY clear member
+    $gam ous_and_children "$MEMSTAFF" print primaryEmail | gam csv - gam update group "$STAFFMEMONLY" add member ~primaryEmail
     echo "complete"
 done
 
 #MidSchoolFaculty Members only
 for MSMEMONLY in "${MSMEMONLYS[@]}"; do
     echo "Updating group: $MSMEMONLY"
-    gam update group $MEMONLY clear member
-    gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" add member ~primaryEmail
+    $gam update group $MEMONLY clear member
+    $gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" add member ~primaryEmail
     echo "complete"
 done
