@@ -228,14 +228,10 @@ MSMEMONLY=("$groupMSFACULTY")
 #CENTAUR
 for CENTGROUP in "${CENTGROUPS[@]}"; do
     echo "Updating group: $CENTGROUP"
+    
     gam update group $CENTGROUP clear manager
-done
 
-for CENTGROUP in "${CENTGROUPS[@]}"; do
     gam ous_and_children "$MANCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager ~primaryEmail
-done
-
-for CENTGROUP in "${CENTGROUPS[@]}"; do
     gam ous_and_children "$nmCENT" print primaryEmail | gam csv - gam update group "$CENTGROUP" add manager nomail user ~primaryEmail
 done
 
@@ -279,7 +275,7 @@ done
 #MidSchoolFaculty Members only
 for MSMEMONLY in "${MSMEMONLYS[@]}"; do
     echo "Updating group: $MSMEMONLY"
-    gam update group $MSMEMONLY clear member
+    gam update group $MEMONLY clear member
     gam ous_and_children "$MEMMS" print primaryEmail | gam csv - gam update group "$MSMEMONLY" add member ~primaryEmail
     echo "complete"
 done
