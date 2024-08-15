@@ -6,21 +6,22 @@ gam=/home/isaac/bin/gamadv-xtd3/gam
 
 # Graduation Year variables
 
-source config.sh
+gradyear=25
+
 #read -p "what is the the two digit year for this year's graduation class?" gradyear
 
 
-let PK1=$gradyear+10
-let PK2=$gradyear+9
-let K=$gradyear+8
-let STAR1=$gradyear+7
-let STAR2=$gradyear+6
-let CENT3=$gradyear+5
-let CENT4=$gradyear+4
-let BADG5=$gradyear+3
-let BADG6=$gradyear+2
-let MS7=$gradyear+1
-let MS8=$gradyear
+(( PK1=gradyear+10 )) || true
+(( PK2=gradyear+9 )) || true
+(( K=gradyear+8 )) || true
+(( STAR1=gradyear+7 )) || true
+(( STAR2=gradyear+6 )) || true
+(( CENT3=gradyear+5 )) || true
+(( CENT4=gradyear+4 )) || true
+(( BADG5=gradyear+3 )) || true
+(( BADG6=gradyear+2 )) || true
+(( MS7=gradyear+1 )) || true
+(( MS8=gradyear )) || true
 
 
 ##Print class years for verification
