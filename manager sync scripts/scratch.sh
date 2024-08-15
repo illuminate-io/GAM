@@ -209,7 +209,7 @@ MSMEMONLY=("$groupMSFACULTY")
  done
 
 #GRASSHOPPER
- for GRASSGROUP in "${GRASSROUPS[@]}"; do
+ for GRASSGROUP in "${GRASSGROUPS[@]}"; do
     echo "Updating group: $GRASSGROUP"
     gam update group $GRASSGROUP clear manager
     gam ous_and_children "$MANGRASS" print primaryEmail | gam csv - gam update group "$GRASSGROUP" add manager ~primaryEmail
@@ -217,7 +217,7 @@ MSMEMONLY=("$groupMSFACULTY")
  done
 
 #STARGAZER
- for STARGROUP in "${STARROUPS[@]}"; do
+ for STARGROUP in "${STARGROUPS[@]}"; do
     echo "Updating group: $STARGROUP"
     gam update group $STARGROUP clear manager
     gam ous_and_children "$MANSTAR" print primaryEmail | gam csv - gam update group "$STARGROUP" add manager ~primaryEmail
