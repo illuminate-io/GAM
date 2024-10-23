@@ -1,4 +1,0 @@
-gam print users username query "isEnrolledIn2Sv=true isSuspended=false orgUnitPath='/Users/Staff/NO2FA'" >> i:\temp\no2sv_export.csv
-
-
-gam csv no2sv.csv gam update user "~user" ou "/Users/Staff/NO2FA"
