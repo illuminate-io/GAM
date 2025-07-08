@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Path to GAMADV-XTD3
-gam=/home/isaac/bin/gamadv-xtd3/gam
-
 # Source the config file
 source config.sh
+
+# Source shared configuration
+source "$(dirname "$0")/../shared-config.sh"
 
 # Color codes for prettifying output
 RED='\033[0;31m'
@@ -77,9 +77,9 @@ sync_managers() {
     local nomail_managers=$3
 
     echo -e "${BLUE}Updating group: $group${NC}"
-    $gam update group "$group" clear manager
-    $gam ous_and_children "$managers" print primaryEmail | $gam csv - $gam update group "$group" add manager ~primaryEmail
-    $gam ous_and_children "$nomail_managers" print primaryEmail | $gam csv - $gam update group "$group" add manager nomail user ~primaryEmail
+    "$GAM_PATH" update group "$group" clear manager
+    "$GAM_PATH" ous_and_children "$managers" print primaryEmail | "$GAM_PATH" csv - "$GAM_PATH" update group "$group" add manager ~primaryEmail
+    "$GAM_PATH" ous_and_children "$nomail_managers" print primaryEmail | "$GAM_PATH" csv - "$GAM_PATH" update group "$group" add manager nomail user ~primaryEmail
 }
 
 # Option-based menu

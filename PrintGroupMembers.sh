@@ -1,10 +1,11 @@
 #!/bin/bash
 
-gam=/home/isaac/bin/gamadv-xtd3/gam
+# Source shared configuration
+source "$(dirname "$0")/shared-config.sh"
 
 read -p "Input the name of the group to print list (includes members from nested groups):" GroupEmail
 
-if [ -n $GroupEmail ]; then
+if [ -n "$GroupEmail" ]; then
     echo "Searching..."
 else
     echo "No group email input."
@@ -13,8 +14,8 @@ fi
 
 # Execute GAM Commands
 
-# remove from groups
-$gam print group-members group $GroupEmail recursive noduplicates > ../../CSV/$GroupEmail-groupmembers.csv
+# Print group members
+"$GAM_PATH" print group-members group "$GroupEmail" recursive noduplicates > ../../CSV/"$GroupEmail"-groupmembers.csv
 
 
 echo "Completed Successfully"

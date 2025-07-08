@@ -1,11 +1,12 @@
 #!/bin/bash
 
-gam=/home/isaac/bin/gamadv-xtd3/gam
+# Source shared configuration
+source "$(dirname "$0")/shared-config.sh"
 
 
 read -p "Input the user email of account to disable:" UserEmail
 
-if [ -n $UserEmail ]; then
+if [ -n "$UserEmail" ]; then
     echo "Removing [$UserEmail] from all groups, suspending user, and placing in 'Suspended' OU"
 else
     echo "No user email input."
@@ -15,7 +16,7 @@ fi
 # Execute GAM Commands
 
 # remove from groups
-$gam user $UserEmail delete groups
+"$GAM_PATH" user "$UserEmail" delete groups
 
 # remove from OU and place in Suspended OU
 
@@ -23,16 +24,16 @@ while true; do
     read -p "Is this a Student (y/n)? " yn
     case $yn in
         [Yy]* ) 
-        $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $UserEmail; break;;
+        "$GAM_PATH" update org "$SUSPENDED_STUDENTS_OU" add users "$UserEmail"; break;;
         [Nn]* )
-        $gam update org '/Users/Suspended-Users/Archive Staff' add users $UserEmail; break;;
+        "$GAM_PATH" update org "$SUSPENDED_STAFF_OU" add users "$UserEmail"; break;;
         * ) echo "Please answer y or n";;
     esac
 done
 
 
 # Suspend account
-$gam update user $UserEmail suspended on
+"$GAM_PATH" update user "$UserEmail" suspended on
 
 
 echo "Completed Successfully. Getting updated user info"
@@ -40,5 +41,5 @@ echo "Completed Successfully. Getting updated user info"
 # Wait for 10 seconds to give GAM time to update user info
 sleep 10
 
-$gam info user $UserEmail
+"$GAM_PATH" info user "$UserEmail"
 

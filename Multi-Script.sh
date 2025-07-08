@@ -1,8 +1,9 @@
 #! /bin/bash
 
-gam=/home/isaac/bin/gamadv-xtd3/gam #set this to the location of your GAM binaries
+# Source shared configuration
+source "$(dirname "$0")/shared-config.sh"
 start_date=`date +%Y-%m-%d` # sets date for vacation message in proper formate   
-end_date=`date -v+90d +%Y-%m-%d` #adds 90 days to todays date for vacation message
+end_date=`date -d '+90 days' +%Y-%m-%d` #adds 90 days to todays date for vacation message
 
 
 # Color variables
@@ -21,7 +22,7 @@ clear='\033[0m'
 newuser(){
    echo "     gApps Admin"
   read -p "Enter email address to admin: " email
-    if [[ -z $email ]];
+    if [[ -z "$email" ]];
       then echo "Please enter an email address to proceed";
       read -p "Enter email address to admin: " email
     fi  
@@ -67,18 +68,18 @@ ${magenta}
     case $opt in
     
      1) echo "************ Check Group Membership ************";
-        $gam print groups domain santafeschool.org members managers owners | $gam print group-members | grep "$email"
+        "$GAM_PATH" print groups domain "$DOMAIN" members managers owners | "$GAM_PATH" print group-members | grep "$email"
         echo "Groups have been checked [enter] key to continue. . .";
         read enterKey;;
      
      2) echo "************ Delete All Other Contacts ************";
-        $gam user $email delete othercontacts emailmatchpattern ".*"
+        "$GAM_PATH" user "$email" delete othercontacts emailmatchpattern ".*"
         echo "Other Contacts have been deleted. Press [enter] key to continue. . .";
         read enterKey;;
    
      
      3) echo "************ Check Last Login Time ************";
-        $gam report users select users $email parameters accounts:last_login_time;
+        "$GAM_PATH" report users select users "$email" parameters accounts:last_login_time;
         echo "Press [enter] key to continue. . .";
         read enterKey;;
    
@@ -199,25 +200,25 @@ ${magenta}
 
          echo "Updating family groups"
          #unicorn
-         gam update group "$groupUNIFAMstatic" sync members "$groupUNIFAMnestPK1,$groupUNIFAMnestPK2"
+         "$GAM_PATH" update group "$groupUNIFAMstatic" sync members "$groupUNIFAMnestPK1,$groupUNIFAMnestPK2"
          #grasshopper
-         gam update group "$groupGRASSFAMstatic" sync members "$groupGRASSFAMnestK"
+         "$GAM_PATH" update group "$groupGRASSFAMstatic" sync members "$groupGRASSFAMnestK"
          #stargazer
-         gam update group "$groupSTARFAMstatic" sync members "$group1FAMstatic,$group2FAMstatic"
-         gam update group "$group1FAMstatic" sync members "$groupSTARFAMnest1"
-         gam update group "$group2FAMstatic" sync members "$groupSTARFAMnest2"
+         "$GAM_PATH" update group "$groupSTARFAMstatic" sync members "$group1FAMstatic,$group2FAMstatic"
+         "$GAM_PATH" update group "$group1FAMstatic" sync members "$groupSTARFAMnest1"
+         "$GAM_PATH" update group "$group2FAMstatic" sync members "$groupSTARFAMnest2"
          #centaur
-         gam update group "$groupCENTFAMstatic" sync members "$group3FAMstatic,$group4FAMstatic"
-         gam update group "$group3FAMstatic" sync members "$groupCENTFAMnest3"
-         gam update group "$group4FAMstatic" sync members "$groupCENTFAMnest4"        
+         "$GAM_PATH" update group "$groupCENTFAMstatic" sync members "$group3FAMstatic,$group4FAMstatic"
+         "$GAM_PATH" update group "$group3FAMstatic" sync members "$groupCENTFAMnest3"
+         "$GAM_PATH" update group "$group4FAMstatic" sync members "$groupCENTFAMnest4"        
          #badger
-         gam update group "$groupBADGFAMstatic" sync members "$group5FAMstatic,$group6FAMstatic"
-         gam update group "$group5FAMstatic" sync members "$groupBADGFAMnest5"
-         gam update group "$group6FAMstatic" sync members "$groupBADGFAMnest6" 
+         "$GAM_PATH" update group "$groupBADGFAMstatic" sync members "$group5FAMstatic,$group6FAMstatic"
+         "$GAM_PATH" update group "$group5FAMstatic" sync members "$groupBADGFAMnest5"
+         "$GAM_PATH" update group "$group6FAMstatic" sync members "$groupBADGFAMnest6" 
          #middle school
-         gam update group "$groupMSFAMstatic" sync members "$group7FAMstatic,$group8FAMstatic"
-         gam update group "$group7FAMstatic" sync members "$groupMSFAMnest7"
-         gam update group "$group8FAMstatic" sync members "$groupMSFAMnest8" 
+         "$GAM_PATH" update group "$groupMSFAMstatic" sync members "$group7FAMstatic,$group8FAMstatic"
+         "$GAM_PATH" update group "$group7FAMstatic" sync members "$groupMSFAMnest7"
+         "$GAM_PATH" update group "$group8FAMstatic" sync members "$groupMSFAMnest8" 
 
          echo "Verify family lists are good. otherwise CTRL+C to exit or press [enter] key to continue...";
          read enterKey;
@@ -227,48 +228,48 @@ ${magenta}
          echo "Updating student groups"
 
          #centaur
-         gam update group "$groupCENTSTUDstatic" sync members "$group3STUDstatic,$group4STUDstatic"
-         gam update group "$group3STUDstatic" sync members "$groupCENTSTUDnest3"
-         gam update group "$group4STUDstatic" sync members "$groupCENTSTUDest4"        
+         "$GAM_PATH" update group "$groupCENTSTUDstatic" sync members "$group3STUDstatic,$group4STUDstatic"
+         "$GAM_PATH" update group "$group3STUDstatic" sync members "$groupCENTSTUDnest3"
+         "$GAM_PATH" update group "$group4STUDstatic" sync members "$groupCENTSTUDnest4"        
          #badger
-         gam update group "$groupBADGSTUDstatic" sync members "$group5STUDstatic,$group6STUDstatic"
-         gam update group "$group5STUDstatic" sync members "$groupBADGSTUDnest5"
-         gam update group "$group6STUDstatic" sync members "$groupBADGSTUDnest6" 
+         "$GAM_PATH" update group "$groupBADGSTUDstatic" sync members "$group5STUDstatic,$group6STUDstatic"
+         "$GAM_PATH" update group "$group5STUDstatic" sync members "$groupBADGSTUDnest5"
+         "$GAM_PATH" update group "$group6STUDstatic" sync members "$groupBADGSTUDnest6" 
          #middle school
-         gam update group "$groupMSSTUDstatic" sync members "$group7STUDtatic,$group8STUDstatic"
-         gam update group "$group7STUDstatic" sync members "$groupMSSTUDnest7"
-         gam update group "$group8STUDstatic" sync members "$groupMSSTUDnest8" 
+         "$GAM_PATH" update group "$groupMSSTUDstatic" sync members "$groupMSSTUD7static,$groupMSSTUD8static"
+         "$GAM_PATH" update group "$groupMSSTUD7static" sync members "$groupMSSTUDnest7"
+         "$GAM_PATH" update group "$groupMSSTUD8static" sync members "$groupMSSTUDnest8" 
 
          echo "Verify student lists are good. otherwise CTRL+C to exit or press [enter] key to continue...";
          read enterKey;;
 
      5) echo "************ Reset Password ************";
         randpassword=$(env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 8) #creates random 8 charecter password
-        $gam update user $email password $randpassword
+        "$GAM_PATH" update user "$email" password "$randpassword"
         echo "Password has been reset to $randpassword [enter] key to continue. . .";
         read enterKey;;  
 
      6) echo "************ Suspend  User ************";
-        $gam update user $email suspended on
+        "$GAM_PATH" update user "$email" suspended on
         echo "User is now suspended press [enter] key to continue. . .";
         read enterKey;;
 
      7) echo "************ Offboarding Student ************";
-        $gam user $email delete groups;
-        $gam update org '/Users/Suspended-Users/Withdrawn Students' add users $email;
-        $gam update user $email suspended on
+        "$GAM_PATH" user "$email" delete groups;
+        "$GAM_PATH" update org "$SUSPENDED_STUDENTS_OU" add users "$email";
+        "$GAM_PATH" update user "$email" suspended on
         echo "$email has been removed from all groups, suspended, and placed in Withdrawn Students OU  [enter] key to continue. . .";
         read enterKey;;
 
      8) echo "************ Offboarding Staff ************";
-        $gam user $email delete groups;
-        $gam update org '/Users/Suspended-Users/Archive Staff' add users $email;
-        $gam update user $email suspended on
+        "$GAM_PATH" user "$email" delete groups;
+        "$GAM_PATH" update org "$SUSPENDED_STAFF_OU" add users "$email";
+        "$GAM_PATH" update user "$email" suspended on
         echo "$email has been removed from all groups, suspended, and placed in Withdrawn Staff OU  [enter] key to continue. . .";
         read enterKey;;
 
      9) echo "************ Offboarding Family ************";
-        $gam user $email delete groups;
+        "$GAM_PATH" user "$email" delete groups;
         echo "$email has been removed from all groups  [enter] key to continue. . .";
         read enterKey;;
       
