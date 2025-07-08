@@ -14,6 +14,11 @@ mailchimp/*.env
 *.csv
 CSV/
 
+# Mailchimp generated files
+mailchimp/mailchimp_tags.md
+mailchimp/raw_tags.json
+mailchimp/*.json
+
 # Temporary files
 *.tmp
 *.bak
