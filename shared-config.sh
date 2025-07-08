@@ -64,16 +64,16 @@ validate_email() {
     fi
 }
 
-# Mailchimp API Configuration
-export MAILCHIMP_API_KEY="${MAILCHIMP_API_KEY:-}"
-export MAILCHIMP_SERVER_PREFIX="${MAILCHIMP_SERVER_PREFIX:-us1}"
-export MAILCHIMP_LIST_ID="${MAILCHIMP_LIST_ID:-}"
-
 # Source local secrets if available (gitignored)
 LOCAL_SECRETS="$(dirname "$0")/local-secrets.sh"
 if [[ -f "$LOCAL_SECRETS" ]]; then
     source "$LOCAL_SECRETS"
 fi
+
+# Mailchimp API Configuration (with fallback defaults)
+export MAILCHIMP_API_KEY="${MAILCHIMP_API_KEY:-}"
+export MAILCHIMP_SERVER_PREFIX="${MAILCHIMP_SERVER_PREFIX:-us1}"
+export MAILCHIMP_LIST_ID="${MAILCHIMP_LIST_ID:-}"
 
 # Mailchimp utility functions
 check_mailchimp_config() {
