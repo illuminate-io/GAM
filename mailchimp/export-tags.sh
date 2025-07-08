@@ -129,6 +129,7 @@ EOF
     
     echo "✅ Successfully exported tags to $OUTPUT_FILE"
     echo "📁 File location: $(pwd)/$OUTPUT_FILE"
+    echo "ℹ️  Note: This file is gitignored and won't be committed to the repository"
     
 else
     echo "❌ Failed to fetch Mailchimp tags"
