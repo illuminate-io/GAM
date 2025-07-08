@@ -68,6 +68,48 @@ These scripts automate common Google Workspace administrative tasks for educatio
 
 ## Configuration
 
+### API Configuration
+
+#### Mailchimp Integration
+
+To use Mailchimp features for mailing list management:
+
+1. **Copy the secrets template:**
+   ```bash
+   cp local-secrets.example.sh local-secrets.sh
+   ```
+
+2. **Edit `local-secrets.sh` with your actual credentials:**
+   ```bash
+   # Get your API key from: https://mailchimp.com/help/about-api-keys/
+   export MAILCHIMP_API_KEY="your-actual-api-key-here"
+   export MAILCHIMP_SERVER_PREFIX="us1"  # Found in your API key after the dash
+   export MAILCHIMP_LIST_ID="your-list-id"  # Found in audience settings
+   ```
+
+3. **Test your configuration:**
+   ```bash
+   source shared-config.sh && check_mailchimp_config
+   ```
+
+**Alternative: Environment Variables**
+```bash
+export MAILCHIMP_API_KEY="your-api-key"
+export MAILCHIMP_SERVER_PREFIX="us1"
+export MAILCHIMP_LIST_ID="your-list-id"
+```
+
+#### Available Mailchimp Functions
+
+Once configured, you can use these functions in your scripts:
+
+- `mailchimp_add_subscriber(email, first_name, last_name, status)` - Add/update subscriber
+- `mailchimp_remove_subscriber(email)` - Remove subscriber
+- `mailchimp_api_call(endpoint, method, data)` - Make custom API calls
+- `check_mailchimp_config()` - Validate configuration
+
+**Security Note**: The `local-secrets.sh` file is automatically ignored by git and will never be committed to the repository.
+
 ### Shared Configuration
 
 All scripts use `shared-config.sh` for centralized configuration:

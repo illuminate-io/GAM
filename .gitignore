@@ -1,0 +1,27 @@
+# Secrets and API Keys - DO NOT COMMIT
+local-secrets.sh
+*.env
+.secrets/
+mailchimp.conf
+
+# Log files
+*.log
+/var/log/gam-admin/
+
+# CSV exports
+*.csv
+CSV/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
