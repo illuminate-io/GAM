@@ -65,10 +65,20 @@ validate_email() {
 }
 
 # Source local secrets if available (gitignored)
-LOCAL_SECRETS="$(dirname "$0")/local-secrets.sh"
-if [[ -f "$LOCAL_SECRETS" ]]; then
-    source "$LOCAL_SECRETS"
-fi
+# Try multiple locations for local-secrets.sh
+LOCAL_SECRETS_LOCATIONS=(
+    "$(dirname "$0")/local-secrets.sh"              # Same directory as the calling script
+    "$(dirname "${BASH_SOURCE[0]}")/local-secrets.sh"  # Same directory as shared-config.sh
+    "./local-secrets.sh"                             # Current working directory
+    "../local-secrets.sh"                           # Parent directory (for subdirectories)
+)
+
+for LOCAL_SECRETS in "${LOCAL_SECRETS_LOCATIONS[@]}"; do
+    if [[ -f "$LOCAL_SECRETS" ]]; then
+        source "$LOCAL_SECRETS"
+        break
+    fi
+done
 
 # Mailchimp API Configuration (with fallback defaults)
 export MAILCHIMP_API_KEY="${MAILCHIMP_API_KEY:-}"
@@ -154,6 +164,230 @@ EOF
         log_action "Mailchimp ERROR: Failed to add subscriber $email - $result"
         echo "ERROR: Failed to add subscriber $email"
         echo "$result"
+        return 1
+    fi
+}
+
+# Function to get all tags/interests from the audience
+mailchimp_get_tags() {
+    check_mailchimp_config || return 1
+    
+    if [[ -z "$MAILCHIMP_LIST_ID" ]]; then
+        echo "ERROR: MAILCHIMP_LIST_ID not configured"
+        return 1
+    fi
+    
+    local result
+    result=$(mailchimp_api_call "/lists/$MAILCHIMP_LIST_ID/interest-categories" "GET")
+    
+    if echo "$result" | grep -q '"categories"'; then
+        echo "$result"
+        return 0
+    else
+        log_action "Mailchimp ERROR: Failed to get tags - $result"
+        echo "ERROR: Failed to get tags"
+        echo "$result"
+        return 1
+    fi
+}
+
+# Function to get specific interests within a category
+mailchimp_get_interests() {
+    local category_id="$1"
+    
+    check_mailchimp_config || return 1
+    
+    if [[ -z "$MAILCHIMP_LIST_ID" ]]; then
+        echo "ERROR: MAILCHIMP_LIST_ID not configured"
+        return 1
+    fi
+    
+    if [[ -z "$category_id" ]]; then
+        echo "ERROR: Category ID required"
+        return 1
+    fi
+    
+    local result
+    result=$(mailchimp_api_call "/lists/$MAILCHIMP_LIST_ID/interest-categories/$category_id/interests" "GET")
+    
+    if echo "$result" | grep -q '"interests"'; then
+        echo "$result"
+        return 0
+    else
+        log_action "Mailchimp ERROR: Failed to get interests for category $category_id - $result"
+        echo "ERROR: Failed to get interests"
+        echo "$result"
+        return 1
+    fi
+}
+
+# Function to get actual tags using the tag-search endpoint
+mailchimp_get_tags() {
+    local tag_name="${1:-}"  # Optional: search for specific tag name
+    
+    check_mailchimp_config || return 1
+    
+    if [[ -z "$MAILCHIMP_LIST_ID" ]]; then
+        echo "ERROR: MAILCHIMP_LIST_ID not configured"
+        return 1
+    fi
+    
+    local endpoint="/lists/$MAILCHIMP_LIST_ID/tag-search"
+    if [[ -n "$tag_name" ]]; then
+        endpoint="${endpoint}?name=${tag_name}"
+    fi
+    
+    local result
+    result=$(mailchimp_api_call "$endpoint" "GET")
+    
+    if echo "$result" | grep -q '"tags"'; then
+        echo "$result"
+        return 0
+    else
+        log_action "Mailchimp ERROR: Failed to get tags - $result"
+        echo "ERROR: Failed to get tags"
+        echo "$result"
+        return 1
+    fi
+}
+
+# Function to list all tags in a readable format
+mailchimp_list_tags() {
+    local search_name="${1:-}"  # Optional: search for specific tag
+    local result
+    result=$(mailchimp_get_tags "$search_name")
+    
+    if [[ $? -eq 0 ]]; then
+        echo "=== Mailchimp Tags ==="
+        
+        if echo "$result" | grep -q '"tags"'; then
+            local tag_count
+            tag_count=$(echo "$result" | grep -o '"name":"[^"]*' | wc -l)
+            
+            if [[ $tag_count -gt 0 ]]; then
+                echo "Found $tag_count tags:"
+                echo "$result" | grep -o '"name":"[^"]*' | cut -d'"' -f4 | nl
+            else
+                echo "No tags found"
+            fi
+        else
+            echo "No tags found or unexpected response format"
+        fi
+        
+        echo
+        echo "Raw JSON for details:"
+        echo "$result" | python3 -m json.tool 2>/dev/null || echo "$result"
+        return 0
+    else
+        echo "Failed to retrieve tags"
+        return 1
+    fi
+}
+
+# Function to get segments (the previous "tags" functionality)
+mailchimp_get_segments() {
+    check_mailchimp_config || return 1
+    
+    if [[ -z "$MAILCHIMP_LIST_ID" ]]; then
+        echo "ERROR: MAILCHIMP_LIST_ID not configured"
+        return 1
+    fi
+    
+    local result
+    result=$(mailchimp_api_call "/lists/$MAILCHIMP_LIST_ID/segments" "GET")
+    
+    if echo "$result" | grep -q '"segments"'; then
+        echo "$result"
+        return 0
+    else
+        log_action "Mailchimp ERROR: Failed to get segments - $result"
+        echo "ERROR: Failed to get segments"
+        echo "$result"
+        return 1
+    fi
+}
+
+# Function to list segments in a readable format
+mailchimp_list_segments() {
+    local result
+    result=$(mailchimp_get_segments)
+    
+    if [[ $? -eq 0 ]]; then
+        echo "=== Mailchimp Segments ==="
+        echo "Found segments (tag-like groups):"
+        echo "$result" | grep -o '"name":"[^"]*' | cut -d'"' -f4 | nl
+        
+        echo
+        echo "Raw JSON for details:"
+        echo "$result" | python3 -m json.tool 2>/dev/null || echo "$result"
+        return 0
+    else
+        echo "Failed to retrieve segments"
+        return 1
+    fi
+}
+
+# Function to get interest groups (the original function renamed for clarity)
+mailchimp_get_interest_categories() {
+    check_mailchimp_config || return 1
+    
+    if [[ -z "$MAILCHIMP_LIST_ID" ]]; then
+        echo "ERROR: MAILCHIMP_LIST_ID not configured"
+        return 1
+    fi
+    
+    local result
+    result=$(mailchimp_api_call "/lists/$MAILCHIMP_LIST_ID/interest-categories" "GET")
+    
+    if echo "$result" | grep -q '"categories"'; then
+        echo "$result"
+        return 0
+    else
+        log_action "Mailchimp ERROR: Failed to get interest categories - $result"
+        echo "ERROR: Failed to get interest categories"
+        echo "$result"
+        return 1
+    fi
+}
+
+# Function to get interest groups in a simplified format  
+mailchimp_list_groups() {
+    local result
+    result=$(mailchimp_get_interest_categories)
+    
+    if [[ $? -eq 0 ]]; then
+        echo "=== Mailchimp Interest Categories (Groups) ==="
+        
+        # Extract category info
+        local categories
+        categories=$(echo "$result" | grep -o '"id":"[^"]*","title":"[^"]*' | while read -r line; do
+            local id=$(echo "$line" | grep -o '"id":"[^"]*' | cut -d'"' -f4)
+            local title=$(echo "$line" | grep -o '"title":"[^"]*' | cut -d'"' -f4)
+            echo "$id|$title"
+        done)
+        
+        local count=1
+        while IFS='|' read -r category_id category_title; do
+            if [[ -n "$category_id" ]]; then
+                echo "$count. $category_title (ID: $category_id)"
+                
+                # Get interests for this category
+                local interests_result
+                interests_result=$(mailchimp_get_interests "$category_id" 2>/dev/null)
+                
+                if [[ $? -eq 0 ]]; then
+                    echo "$interests_result" | grep -o '"name":"[^"]*' | cut -d'"' -f4 | sed 's/^/   - /'
+                else
+                    echo "   - (No interests found)"
+                fi
+                echo
+                ((count++))
+            fi
+        done <<< "$categories"
+        
+        return 0
+    else
+        echo "Failed to retrieve interest groups"
         return 1
     fi
 }

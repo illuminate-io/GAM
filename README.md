@@ -105,6 +105,9 @@ Once configured, you can use these functions in your scripts:
 
 - `mailchimp_add_subscriber(email, first_name, last_name, status)` - Add/update subscriber
 - `mailchimp_remove_subscriber(email)` - Remove subscriber
+- `mailchimp_list_tags()` - List all interest categories and tags
+- `mailchimp_get_tags()` - Get raw JSON of interest categories
+- `mailchimp_get_interests(category_id)` - Get interests within a specific category
 - `mailchimp_api_call(endpoint, method, data)` - Make custom API calls
 - `check_mailchimp_config()` - Validate configuration
 

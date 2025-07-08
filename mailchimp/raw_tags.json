@@ -1,0 +1,3 @@
+ERROR: Mailchimp API key not configured
+Please create local-secrets.sh or set MAILCHIMP_API_KEY environment variable
+Example: cp local-secrets.example.sh local-secrets.sh

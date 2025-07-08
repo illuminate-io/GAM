@@ -3,6 +3,8 @@ local-secrets.sh
 *.env
 .secrets/
 mailchimp.conf
+mailchimp/local-secrets.sh
+mailchimp/*.env
 
 # Log files
 *.log
